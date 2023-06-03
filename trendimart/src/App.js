@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
         <p>
           this is trendimart.com updated code and updated again.
+          this is updated with kp backend.
         </p>
         <a
           className="App-link"
