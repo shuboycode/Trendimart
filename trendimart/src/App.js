@@ -1,6 +1,9 @@
 import "./App.scss";
 import * as React from "react";
 import HomePage from "./pages/HomePage";
+import styled from "@emotion/styled";
+import { alpha } from "@mui/system";
+import { InputBase } from "@mui/material";
 
 function App() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
