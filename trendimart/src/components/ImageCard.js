@@ -5,12 +5,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import den1 from "../styles/components/assets/icons/den1.svg";
+import women1 from "../styles/components/assets/images/women1.svg";
 import darkstar from "../styles/components/assets/icons/darkstar.svg";
 import Container from "@mui/material/Container";
-import mandanim from "../styles/components/assets/icons/mandanim.svg";
-import womendan2 from "../styles/components/assets/icons/womendan2.svg";
-import women4 from "../styles/components/assets/icons/women4.svg";
+import mandanim from "../styles/components/assets/images/mandanim.svg";
+import womendan2 from "../styles/components/assets/images/womendan2.svg";
+import women4 from "../styles/components/assets/images/women4.svg";
 
 export default function ImgMediaCard() {
   return (
@@ -28,7 +28,7 @@ export default function ImgMediaCard() {
         <div className="styling-card-wrapper"> 
         <Card sx={{ minWidth: 410 }} className="wrapper-card">
           <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-            <img src={den1} alt="women-danim" className="card-image" />
+            <img src={women1} alt="women-danim" className="card-image" />
 
           
             <div className="card-content">
@@ -318,7 +318,7 @@ export default function ImgMediaCard() {
         {/* 5th card */}
         <Card sx={{ minWidth: 410 }} className="wrapper-card">
           <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-            <img src={den1} alt="women-danim" className="card-image" />
+            <img src={women1} alt="women-danim" className="card-image" />
 
           
             <div className="card-content">
@@ -390,7 +390,7 @@ export default function ImgMediaCard() {
         {/* 6th card */}
         <Card sx={{ minWidth: 410 }} className="wrapper-card">
           <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-            <img src={den1} alt="women-danim" className="card-image" />
+            <img src={women1} alt="women-danim" className="card-image" />
 
           
             <div className="card-content">
@@ -461,7 +461,7 @@ export default function ImgMediaCard() {
         {/* 7th card */}
         <Card sx={{ minWidth: 410 }} className="wrapper-card">
           <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-            <img src={den1} alt="women-danim" className="card-image" />
+            <img src={women1} alt="women-danim" className="card-image" />
 
           
             <div className="card-content">
@@ -532,7 +532,7 @@ export default function ImgMediaCard() {
         {/* 8th card */}
         <Card sx={{ minWidth: 410 }} className="wrapper-card">
           <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-            <img src={den1} alt="women-danim" className="card-image" />
+            <img src={women1} alt="women-danim" className="card-image" />
 
           
             <div className="card-content">
@@ -604,7 +604,7 @@ export default function ImgMediaCard() {
       
         <Card sx={{ minWidth: 410 }} className="wrapper-card">
           <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-            <img src={den1} alt="women-danim" className="card-image" />
+            <img src={women1} alt="women-danim" className="card-image" />
 
           
             <div className="card-content">
@@ -675,7 +675,7 @@ export default function ImgMediaCard() {
 
         <Card sx={{ minWidth: 410 }} className="wrapper-card">
           <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-            <img src={den1} alt="women-danim" className="card-image" />
+            <img src={women1} alt="women-danim" className="card-image" />
 
           
             <div className="card-content">
