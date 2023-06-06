@@ -1,5 +1,5 @@
 {
-  "name": "trendimart",
+  "name": "react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,6 +15,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.1",
     "react-swipeable-views-utils": "^0.14.0",
+    "sass": "^1.62.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
