@@ -2,8 +2,14 @@
 @import "../src/styles/main.scss";
 
 * {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Playfair Display", serif;
+   
 }
+
+body{
+    background: #f5f5f5;
+}
+
 
 // app bar
 .app-bar-wrapper {
@@ -12,7 +18,7 @@
   display: flex;
   justify-content: center;
   .logo-icon {
-    margin-right: 150px;
+    height: 48px;
   }
   .content {
     display: flex;
@@ -44,49 +50,51 @@
       height: 100%;
     }
 
-    .searchTerm {
+    .search-term {
       width: 100%;
       border: 8px solid #f0f0f0;
       background: #f0f0f0;
-      // $primary-color:color("light","base");
+
       border-right: none;
-      // padding: 5px;
-      // height: 20px;
+
       border-radius: 5px 0 0 5px;
       outline: none;
-      color: #272727;
+      color: color("primary", "primary");
       font-size: 18px;
       line-height: 22px;
-      color: #272727;
-      // padding-left: 36px;
     }
 
-    .searchButton {
+    .search-button {
       width: 40px;
-      // height: 36px;
+
       border: 8px solid #f0f0f0;
       background: #f0f0f0;
       text-align: center;
-      color: #fff;
+
+      color: color("tertiary", "tertiary");
       border-radius: 0 5px 5px 0;
       cursor: pointer;
       font-size: 20px;
       img {
         height: 22px;
         width: 22px;
-        // padding-right: 14px;
       }
     }
   }
 
   .button-content {
     button {
-      font-family: "Libre Baskerville", serif;
       font-size: 18px;
       line-height: 22px;
-      color: #272727;
+      color: color("primary", "primary");
       text-transform: unset;
       margin-left: 40px;
+
+        &.active{
+          border-bottom: 4px solid #002482;
+          color: #002482;
+          border-radius: 0;
+        }
     }
   }
   .icon-wrapper {
@@ -99,28 +107,32 @@
       width: 29px;
     }
     img {
-      color: #272727;
+      color: color("primary", "primary");
       height: 29px;
       width: 29px;
-      padding-left: 32px;
+      margin-left: 32px;
     }
   }
   .notification-info {
     font-size: 18px;
     line-height: 22px;
-    color: #272727;
+    color: color("primary", "primary");
     display: flex;
     position: absolute;
-    color: #272727;
+
     justify-content: center;
     width: 100%;
-    bottom: -52px;
+    bottom: -47px;
     background: #f9faff;
-    color: black;
+
     z-index: 1;
+    height: 47px;
+    align-items: center;
     p {
       width: calc(100% - 87px);
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     span {
       color: #00398f;
@@ -129,10 +141,9 @@
     a {
       text-decoration: none;
     }
-    svg {
-      margin-top: 15px;
-      color: #848484;
-    }
+    // svg {
+    //   color: #848484;
+    // }
   }
 }
 
@@ -145,6 +156,7 @@
     margin-top: 27px;
     overflow: auto;
     padding-bottom: 9px;
+
     &::-webkit-scrollbar {
       width: 10px;
       height: 7px;
@@ -158,21 +170,17 @@
       background: #80808091;
       border-radius: 10px;
       cursor: pointer;
-      // &:hover{
-      //     cursor: pointer;
-      // }
     }
   }
   .slider-heading {
-    font-family: "Libre Baskerville", serif;
     font-weight: 700;
     font-size: 36px;
     line-height: 45px;
-    color: #272727;
+    color: color("primary", "primary");
   }
   .wrapper-card {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
-    // height: 423px;
+
     width: 410px;
     margin-right: 40px;
     border-radius: 10px;
@@ -190,15 +198,15 @@
       .brand-name {
         font-size: 18px;
         line-height: 22px;
-        font-family: "Libre Baskerville", serif;
-        color: #272727;
+
+        color: color("primary", "primary");
       }
 
       .right-content {
         display: flex;
+        align-items: center;
         .rating {
           margin-left: 30px;
-          font-family: "Libre Baskerville";
           font-size: 18px;
           line-height: 22px;
         }
@@ -211,32 +219,29 @@
     }
     padding: 10px 10px 18px 21px;
     .heading {
-      font-family: "Libre Baskerville", serif;
       font-style: normal;
       font-weight: 700;
       font-size: 24px;
       line-height: 30px;
-      color: #272727;
+      color: color("primary", "primary");
       margin: 0;
     }
     .discount {
       .discount-primary {
-        font-family: "Libre Baskerville", serif;
         font-weight: 700;
         font-size: 24px;
         line-height: 30px;
-        color: #272727;
+        color: color("primary", "primary");
       }
       .discount-secondary {
         font-size: 18px;
         line-height: 22px;
         text-decoration-line: line-through;
-        color: #848484;
+        color: color("light", "light");
         padding-left: 7px;
       }
 
       .discount-tartionary {
-        font-family: "Libre Baskerville", serif;
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
@@ -275,21 +280,19 @@
       }
       .card-info1 {
         .brand-style {
-          font-family: "Libre Baskerville", serif;
           font-weight: 700;
           font-size: 36px;
           line-height: 45px;
-          color: #272727;
+          color: color("primary", "primary");
           margin-top: 43px;
         }
         .discount-primary {
-          font-family: "Libre Baskerville", serif;
           margin-top: 23px;
           font-weight: 700;
           font-size: 24px;
           line-height: 30px;
 
-          color: #272727;
+          color: color("primary", "primary");
         }
       }
     }
@@ -300,12 +303,9 @@
 .slider-section {
   margin-top: 67px;
   .slider-heading {
-    font-family: "Libre Baskerville", serif;
-
     font-weight: 700;
     font-size: 36px;
     line-height: 45px;
-
     color: $primary-text-color;
   }
 }
@@ -314,44 +314,122 @@
 .brand-banner {
   background-image: url("./styles/components/assets/images/brand-banner-img.svg");
   height: 892px;
-  background-color: rgb(39 39 39 / 50%);
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 93px;
+  position: relative;
+
+  .brand-color {
+    position: absolute;
+    background-color: rgb(39 39 39 / 50%);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
   span {
     display: block;
   }
   .banner-wrapper {
-    img{
+    z-index: 1;
+    img {
       height: 88px;
     }
     .myButtonClass {
-      font-family: "Libre Baskerville", serif;
       font-size: 24px;
       line-height: 30px;
       border: 2px solid #ffffff;
       border-radius: 10px;
-      color: #ffffff;
+      color: color("tertiary", "tertiary");
       text-transform: capitalize;
       margin-top: 84px;
-      padding: 9px 37px;
-
+      padding-left: 37px;
+      padding-right: 37px;
+      height: 48px;
     }
     text-align: center;
     .brand-heading {
-      font-family: "Libre Baskerville", serif;
       margin-top: 91px;
       font-size: 48px;
       line-height: 60px;
-      color: #ffffff;
+      color: color("tertiary", "tertiary");
     }
     .brand-discount {
-      font-family: "Libre Baskerville", serif;
       margin-top: 36px;
       font-size: 42px;
       line-height: 52px;
+      color: color("tertiary", "tertiary");
+    }
+  }
+}
 
-      color: #ffffff;
+//women card
+.wrapper-card {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+  // height: 423px;
+  width: 410px;
+  margin-right: 40px;
+  border-radius: 10px;
+}
+.card-image {
+  height: 301px;
+  width: 100%;
+  object-fit: cover;
+}
+.card-content {
+  .card-info {
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 12px;
+    .brand-name {
+      font-size: 18px;
+      line-height: 22px;
+      color: color("primary", "primary");
+    }
+
+    .right-content {
+      display: flex;
+      .rating {
+        margin-left: 30px;
+        font-size: 18px;
+        line-height: 22px;
+      }
+      .icon-brand {
+        margin-left: 4px;
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
+  padding: 10px 10px 18px 21px;
+  .heading {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: color("primary", "primary");
+    margin: 0;
+  }
+  .discount {
+    .discount-primary {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 30px;
+      color: color("primary", "primary");
+    }
+    .discount-secondary {
+      font-size: 18px;
+      line-height: 22px;
+      text-decoration-line: line-through;
+      color: color("light", "light");
+      padding-left: 7px;
+    }
+
+    .discount-tartionary {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      padding-left: 7px;
+      color: #0a8200;
     }
   }
 }

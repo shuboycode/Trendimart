@@ -1,0 +1,20 @@
+
+.wishlist-wrapper{
+    .WishList-content{
+        margin-top: 26px;
+        &.card{
+            margin-top: 52px;
+        }
+    }
+    .heading{
+        font-size: 36px;
+        line-height: 48px;
+        color: $primary-text-color;
+        margin-top: 56px;
+        font-family: 'Playfair Display', serif;
+
+        &.text{
+          color: $text-blue;
+        }
+    }
+}

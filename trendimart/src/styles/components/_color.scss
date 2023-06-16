@@ -1,4 +1,62 @@
-// @import "components/variables";
-// $light: (
-//   "base":      #F0F0F0
-// );
+$primary: (
+  "primary": #272727,
+);
+
+$secondary: (
+  "secondary": #002482,
+);
+
+$tertiary: (
+  "tertiary": #ffffff,
+);
+
+$black: (
+  "black": #050505,
+);
+
+$light: (
+  "light": #848484,
+);
+
+// to avoid to repeating map-get($colors, ...)
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary,
+  "black": $black,
+  "light": $light,
+) !default;
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type== "base" {
+      .#{$color_name} {
+        background-color: $color_value !important;
+      }
+
+      .#{$color_name}-text {
+        color: $color_value !important;
+      }
+    } @else if $color_name != "shades" {
+      .#{$color_name}.#{$color_type} {
+        background-color: $color_value !important;
+      }
+
+      .#{$color_name}-text.text-#{$color_type} {
+        color: $color_value !important;
+      }
+    }
+  }
+}
+
+@function color($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+
+  @return null;
+}

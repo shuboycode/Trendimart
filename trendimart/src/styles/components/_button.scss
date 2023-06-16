@@ -1,0 +1,41 @@
+.MuiButton-root {
+  &.MuiButtonBase-root {
+    font-family: "Playfair Display", serif;
+  }
+  &.MuiButton {
+    &-outlined,
+    &-outlined:hover {
+      font-size: 24px;
+      line-height: 30px;
+      color: color("primary", "primary");
+      border: 3px solid #272727;
+      text-transform: none;
+      border-radius: 12px;
+      height: 48px;
+      &.outlined-button {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 0px 36px;
+        height: 48px;
+      }
+    }
+
+    &-contained {
+      background: color("secondary", "secondary");
+      height: 48px;
+      display: flex;
+      color: color("tertiary", "tertiary");
+      align-items: center;
+      border: none;
+      text-transform: none;
+      font-size: 18px;
+      padding: 0px 36px;
+      border: 1px solid #004e49;
+      border-radius: 10px;
+
+      &:hover {
+        background: color("secondary", "secondary");
+      }
+    }
+  }
+}

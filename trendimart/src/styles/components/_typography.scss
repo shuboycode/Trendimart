@@ -1,0 +1,32 @@
+.text-color {
+  color: #272727;
+}
+
+.text-light {
+  color: #646464;
+}
+
+.green {
+  color: #299e00;
+}
+
+.text-blue {
+  color: #00398f;
+}
+
+.text-light-blue {
+  color: #002482;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h6,
+span ,
+div {
+  &.MuiTypography-root {
+    font-family: "Playfair Display", serif;
+  }
+}
