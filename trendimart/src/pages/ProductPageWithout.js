@@ -7,6 +7,7 @@ import TuneIcon from "@mui/icons-material/Tune";
 import FooterSection from "../components/FooterSection";
 import WomenCard from "../components/WomenCard";
 import DropdownMenu from "../components/atomComponents/DropdownMenu";
+import CardTwo from "../components/CardTwo";
 
 const ProductPageWithout = () => {
   return (
@@ -14,7 +15,7 @@ const ProductPageWithout = () => {
       {/* nav bar start here */}
 
       <Header> </Header>
-      
+
       <Container
         maxWidth="false"
         sx={{ maxWidth: "1920px" }}
@@ -34,32 +35,42 @@ const ProductPageWithout = () => {
           </div>
 
           {/* content card start here */}
-          <div className="flex mt-9">
-            <WomenCard></WomenCard>
+         
+         
+          <div>
+            <div className="flex mt-9">
+              <WomenCard></WomenCard>
+              {/* <CardTwo></CardTwo> */}
+            </div>
+
+            <div className="flex mt-9">
+              <WomenCard></WomenCard>
+              {/* <CardTwo></CardTwo> */}
+            </div>
+
+            <div className="flex mt-9">
+              <WomenCard></WomenCard>
+              {/* <CardTwo></CardTwo> */}
+            </div>
+
+            <div className="flex mt-9">
+              <WomenCard></WomenCard>
+              {/* <CardTwo></CardTwo> */}
+            </div>
+
+            <div className="flex mt-9">
+              <WomenCard></WomenCard>
+              {/* <CardTwo></CardTwo> */}
+            </div>
+
+            <div className="flex mt-9">
+              <WomenCard></WomenCard>
+              {/* <CardTwo></CardTwo> */}
+            </div>
           </div>
 
-          <div className="flex mt-9">
-            <WomenCard></WomenCard>
-          </div>
-
-          <div className="flex mt-9">
-            <WomenCard></WomenCard>
-          </div>
-
-          <div className="flex mt-9">
-            <WomenCard></WomenCard>
-          </div>
-
-          <div className="flex mt-9">
-            <WomenCard></WomenCard>
-          </div>
-
-          <div className="flex mt-9">
-            <WomenCard></WomenCard>
-          </div>
         </div>
       </Container>
-      
 
       {/* footer section start here */}
       <div className="sec-bottom">

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Container from "@mui/material/Container";
 import WomenCard from "../components/WomenCard";
+import FooterSection from "../components/FooterSection";
 
 const FooterWish = () => {
   return (
@@ -24,10 +25,10 @@ const FooterWish = () => {
         </div>
       </Container>
 
-      <div className="wishlist-footer">
+      <div className="wishlist-footer sec-bottom">
       <Container maxWidth="false" sx={{ maxWidth: "1920px" }}>
          
-
+      <FooterSection></FooterSection>
         </Container>
 
       </div>

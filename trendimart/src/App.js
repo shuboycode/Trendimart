@@ -3,8 +3,14 @@ import * as React from "react";
 import HomePage from "./pages/HomePage";
 import ProductDetailsSection from "./pages/ProductDetailsSection";
 import ProductPageWithout from "./pages/ProductPageWithout";
+import ProductPageSec from "./pages/ProductPageSec";
+import FilterSlider from "./components/atomComponents/PlainSlider";
+import FilterBox from "./components/atomComponents/FilterBox";
+import PaymentPage from "./pages/PaymentPageSection";
 
 import FooterWish from "./pages/FooterWish";
+import OrderPage from "./pages/OrderPage";
+import CardAddress from "./components/PaymentSection/CardAddress";
 
 function App() {
   const [] = React.useState(null);
@@ -16,12 +22,21 @@ function App() {
 
       {/* <ProductDetailsSection></ProductDetailsSection> */}
 
-      {/* product page without filter */}
+      {/* <ProductPageWithout></ProductPageWithout> */}
 
-      <ProductPageWithout></ProductPageWithout>
+      {/* <ProductPageSec></ProductPageSec> */}
 
-      {/* <FooterWish></FooterWish> */}
+      {/* <FooterWish></FooterWish>    */}
+      
+
+      {/* <OrderPage></OrderPage> */}
+
+       {/* <PaymentPage> </PaymentPage> */}
+
+       <CardAddress></CardAddress>
+
     </>
   );
 }
+
 export default App;

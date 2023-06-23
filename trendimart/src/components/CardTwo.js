@@ -5,10 +5,11 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import women1 from "../styles/components/assets/images/women1.svg";
 import darkstar from "../styles/components/assets/icons/darkstar.svg";
+import { Paper } from "@mui/material";
 
-const WomenCard = () => {
+const CardTwo = () => {
   const cardElements = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 3; i++) {
     cardElements.push(
       <div key={i} className="card-wrapper">
         <Card sx={{ minWidth: 410 }} className="wrapper-card" elevation={0}>
@@ -77,12 +78,11 @@ const WomenCard = () => {
             </div>
           </CardContent>
         </Card>
-      </div>
+      // </div>
     );
-  }
-
-
+  
+    }
   return <>{cardElements}</>;
 };
 
-export default WomenCard;
+export default CardTwo;

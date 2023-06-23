@@ -6,10 +6,15 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6 ,
+hr {
   margin: 0;
 }
 
+
+hr{
+  border-bottom: 0;
+}
 a {
   text-decoration: none;
 }
@@ -25,7 +30,7 @@ ul {
 
 $spacing: 4px;
 
-@for $i from 0 through 12 {
+@for $i from 0 through 22 {
   .mt-#{$i} {
     margin-top: $i * $spacing !important;
   }
@@ -61,7 +66,7 @@ $spacing: 4px;
 }
 
 // Padding Loop
-@for $i from 0 through 12 {
+@for $i from 0 through 22 {
   .p-#{$i} {
     padding: $i * $spacing !important;
   }
@@ -120,6 +125,11 @@ p {
 .justify-around {
   display: flex;
   justify-content: space-around;
+}
+
+.justify-between{
+  display: flex;
+  justify-content: space-between;
 }
 
 .display {

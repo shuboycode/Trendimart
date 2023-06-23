@@ -4,28 +4,37 @@ $primary: (
 
 $secondary: (
   "secondary": #002482,
+  "base":#00398F,
 );
 
-$tertiary: (
-  "tertiary": #ffffff,
+$White: (
+  "White": #ffffff,
 );
 
 $black: (
   "black": #050505,
 );
 
-$light: (
+$light:(
   "light": #848484,
+);
+
+$grey:(
+  "base": #6D6D6D,
+  "lighten-1":#939393,
+  "lighten-2":#636363,
+  "lighten-3":#848484,
 );
 
 // to avoid to repeating map-get($colors, ...)
 $colors: (
   "primary": $primary,
   "secondary": $secondary,
-  "tertiary": $tertiary,
+  "White": $White,
   "black": $black,
   "light": $light,
-) !default;
+  "grey": $grey, 
+ ) !default;
 
 @each $color_name, $color in $colors {
   @each $color_type, $color_value in $color {

@@ -5,10 +5,17 @@
 @import "components/mixins";
 @import "components/global";
 @import "components/color";
-@import "components/CategoriesSection";
+@import "components/Pages/CategoriesSection";
 @import "components/button";
-@import "components/ProductDetails";
+@import "components/Pages/ProductDetails";
 @import "components/typography";
-@import "components/WithoutFilterPage";
+@import "components/Pages/WithoutFilterPage";
 @import "components/dropdown";
-@import "components/Wishlist";
+@import "components/pages/Wishlist";
+@import "components/mat";
+@import "components/FilterBox";
+@import "components/Pages/order";
+@import "components/Pages//PaymentPage";
+
+
+

@@ -1,0 +1,91 @@
+.order-wrapper {
+  .heading-order-sec {
+    font-size: 36px;
+    line-height: 48px;
+    
+    .main {
+      color: color("primry", "primary");
+    }
+    .sub-heading {
+      color: color("secondary", "secondary");
+    }
+    .item-text {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  .order-sec {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 0;
+   
+    .card{
+      padding: 24px;
+      background-color: color("White", "White");
+      border-radius: 10px !important;
+      img {
+        height: 248px;
+        object-fit: cover;
+        border-radius: 10px;
+        width: 223px;
+      }
+      .order-card {
+        width: -webkit-fill-available;
+        .order-detail {
+          color: color("primary", "primary");
+          width: -webkit-fill-available;
+          .heading {
+            font-size: 24px;
+            line-height: 32px;
+          }
+          .sub-heading {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 400;
+          }
+          span {
+            font-size: 24px;
+            line-height: 32px;
+          }
+        }
+        .order-loaction {
+          span {
+            font-size: 18px;
+            line-height: 24px;
+            color: color("primary", "primary");
+            font-family: "Playfair Display", serif;
+            &.text {
+              color: color("light", "light");
+              font-family: "Lato", sans-serif;
+            }
+          }
+        }
+
+        .button-wrapper {
+          display: flex;
+          gap: 27px;
+        }
+      }
+      .order-id {
+        width: 50%;
+        font-size: 18px;
+        line-height: 22px;
+        .order-no {
+          font-family: "Lato", sans-serif;
+          margin-bottom: 14px;
+          gap: 10px;
+          .heading {
+            color: color("primary", "primary");
+          }
+
+          .transaction-id {
+            color: color("light", "light");
+          }
+        }
+        span {
+          color: color("secondary", "base");
+        }
+      }
+    }
+  }
+}

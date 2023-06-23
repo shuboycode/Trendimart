@@ -1,0 +1,28 @@
+.plain-slider {
+  .MuiSlider-mark {
+    top: 35px;
+    background-color: color("grey", "base");
+    height: 5px;
+    width: 5px;
+    border-radius: 3px;
+  }
+
+  .MuiSlider-thumb {
+    &::before {
+      background-color: color("White", "White");
+      box-shadow: none;
+      border: 1px solid #898989;
+    }
+  }
+  .MuiSlider-rail {
+    color: color("grey","lighten-1");
+  }
+}
+
+
+
+
+// card border radius 
+.wrapper-card.MuiPaper-rounded{
+  border-radius: 10px;
+}

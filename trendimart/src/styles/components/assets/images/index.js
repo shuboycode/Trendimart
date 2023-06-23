@@ -7,6 +7,7 @@ import DanimImage from "./DanimImage.svg";
 import DanimLadish from "./DanimLadish.svg";
 import DanimColor from "./DanimColor.svg";
 import Review from "./Review.svg";
+import ItemOne from "./ItemOne.svg";
 
 
-export{aboutus,logoTrendimart,t,logot,DanimImage, DanimLadish,DanimColor,Review};
+export{aboutus,logoTrendimart,t,logot,DanimImage, DanimLadish,DanimColor,Review,ItemOne};

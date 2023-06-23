@@ -1,30 +1,42 @@
 .MuiButton-root {
+  &.medium {
+    font-size: 18px;
+    line-height: 24px;
+    color: color("secondary","base");
+    text-transform: capitalize;
+    &:hover{
+      background-color: none !important;
+    }
+  }
   &.MuiButtonBase-root {
     font-family: "Playfair Display", serif;
+    &.button-text {
+      text-transform: inherit;
+    }
   }
   &.MuiButton {
     &-outlined,
-    &-outlined:hover {
-      font-size: 24px;
-      line-height: 30px;
-      color: color("primary", "primary");
-      border: 3px solid #272727;
-      text-transform: none;
-      border-radius: 12px;
-      height: 48px;
-      &.outlined-button {
-        font-size: 18px;
-        line-height: 22px;
-        padding: 0px 36px;
-        height: 48px;
-      }
-    }
-
+    // &-outlined:hover {
+    //   font-size: 24px;
+    //   line-height: 30px;
+    //   color: color("primary", "primary");
+    //   border: 3px solid #272727;
+    //   text-transform: none;
+    //   border-radius: 12px;
+    //   height: 48px;
+    //   &.outlined-button {
+    //     font-size: 18px;
+    //     line-height: 22px;
+    //     padding: 0px 36px;
+    //     height: 48px;
+    //   }
+    // }
+    
     &-contained {
-      background: color("secondary", "secondary");
+      // background: color("secondary", "secondary");
       height: 48px;
       display: flex;
-      color: color("tertiary", "tertiary");
+      color: color("White", "White");
       align-items: center;
       border: none;
       text-transform: none;
@@ -32,10 +44,26 @@
       padding: 0px 36px;
       border: 1px solid #004e49;
       border-radius: 10px;
-
-      &:hover {
-        background: color("secondary", "secondary");
-      }
+      
+      // &:hover {
+      //   background: color("secondary", "secondary");
+      // }
     }
+  }
+  &.small {
+    height: 35px ;
+    padding: 0 14px;
+    border: 1px solid #00398f;
+    border-radius: 5px;
+    text-transform: initial;
+    color: color("primary", "primary");
+    font-family: "Lato", sans-serif !important;
+    font-size: 18px;
+    line-height: 22px; 
+    // &:hover {
+    //   border: 2px solid #00398f;
+    // }  
+  
+
   }
 }

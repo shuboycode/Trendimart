@@ -4,6 +4,8 @@ import './index.scss';
 import App from './App';
 import '../src/styles/main.scss';
 import reportWebVitals from './reportWebVitals';
+// import "../src/Fonts/libre-baskerville/LibreBaskerville-Bold.Woff";
+// import '../src/Fonts/libre-baskerville/LibreBaskerville-Bold.Woff';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

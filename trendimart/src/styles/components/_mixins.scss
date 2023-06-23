@@ -161,3 +161,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@mixin space-between{
+  display:flex;
+  justify-content: space-between;
+
+}
