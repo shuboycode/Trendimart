@@ -1,0 +1,109 @@
+.dropdown-wrapper {
+  width: 460px;
+  background: color("White", "White");
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  padding: 31px 23px 31px 23px;
+}
+
+.heading-text {
+  @include space-between;
+  font-size: 36px;
+  line-height: 45px;
+  color: color("primary", "primary");
+}
+.button-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: capitalize;
+}
+
+.price-wrapper {
+  .plain-slider {
+    height: 5px;
+  }
+  .sub-heading {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: color("black", "black");
+  }
+}
+
+.number-wrapper {
+  .content-wrapper {
+    width: 50%;
+    span {
+      display: block;
+      letter-spacing: 0.05em;
+      &.heading {
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.05em;
+        color: color("grey", "lighten-2");
+      }
+      &.number {
+        font-size: 16px;
+        line-height: 20px;
+        color: color("black", "black");
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.simple-accordion {
+  .MuiAccordionSummary-root {
+    padding: 0;
+  }
+  .MuiAccordionSummary-content {
+    margin: 17px 0;
+  }
+  .MuiAccordion-root {
+    &.accordion-style {
+      box-shadow: none;
+    }
+  }
+  .heading {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: color("black", "black");
+    font-weight: bold;
+  }
+  .MuiSvgIcon-root {
+    color: color("grey", "lighten-3");
+    // height: 30px;
+    // width: 30px;
+  }
+
+  .accordian-icon{
+    .MuiSvgIcon-root{
+    font-size: 34px;
+  }
+}
+  .MuiAccordionDetails-root {
+    padding: 0;
+    margin-bottom: 25px;
+  }
+
+  .MuiButton-text {
+    text-transform: lowercase;
+    font-size: 18px;
+    line-height: 22px;
+    color: color("secondary", "base");
+  }
+}
+
+.MuiFormControlLabel-root {
+  span {
+    font-size: 18px;
+    line-height: 22px;
+    color: color("primary", "primary");
+    &.text-color {
+      color: color("light", "light");
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+
+
+.filter-sec-wrapper {
+  .content-wrapper {
+    padding-top: 56px;
+    &.text{
+      padding: 0;
+    }
+   
+    .filter-subheading {
+      gap: 49px;
+      .icon-wrapper {
+        gap: 15px;
+        span {
+          font-size: 24px;
+          line-height: 30px;
+          color: color("primary", "primary");
+        }
+        .icon-tune {
+          color: color("light", "light");
+          font-size: 29px;
+        }
+
+      }
+    }
+  }
+}
+

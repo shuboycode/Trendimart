@@ -1,0 +1,289 @@
+// render section sec.
+
+.product-wrapper {
+  margin-top: 47px;
+  .left-wrapper {
+    .render-image {
+      img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 10px;
+        &:hover {
+          transform: scale(1.5);
+          transition: 200ms all;
+        }
+      }
+    }
+    .image-wrapper {
+      img {
+        width: 600px;
+        height: 600px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+  .product-content-wrapper {
+    margin-left: 96px;
+    .content-heading {
+      font-size: 36px;
+      line-height: 45px;
+      color: color("primary", "primary");
+    }
+    .brand-text {
+      font-size: 24px;
+      line-height: 30px;
+      color: color("primary", "primary");
+    }
+    .author-name {
+      color: color("primary", "primary");
+      font-size: 18px;
+      line-height: 22px;
+      margin-top: 22px;
+    }
+    .rating-text {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    .number-wrapper {
+      display: flex;
+      align-items: center;
+      .low-prize {
+        font-size: 24px;
+        line-height: 30px;
+        color: color("primary", "primary");
+      }
+      .high-prize {
+        font-size: 18px;
+        line-height: 22px;
+      }
+      .discount {
+      }
+    }
+    .size-selection {
+      color: color("primary", "primary");
+      font-size: 24px;
+      line-height: 30px;
+      margin-top: 30px;
+    }
+
+    .chart-wrapper {
+      display: flex;
+      align-items: center;
+      margin-top: 23px;
+      h5 {
+        font-size: 18px;
+        line-height: 22px;
+        margin-right: 15px;
+      }
+    }
+    .size-chart-wrapper {
+      margin-top: 21px;
+
+      .size-symbol {
+        margin-right: 19px;
+        border-radius: 50%;
+        height: 35px;
+        width: 35px;
+        border: 1px solid #bababa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: color("primary", "primary");
+
+        &.disable {
+          color: #bababa;
+          &::after {
+            content: " ";
+            border: 1px solid #bababa;
+            transform: rotate(316deg);
+            width: 100%;
+            position: absolute;
+            color: #bababa !important;
+          }
+        }
+      }
+    }
+
+    .color-selector {
+      margin-top: 22px;
+      span {
+        display: block;
+        font-size: 24px;
+        line-height: 30px;
+      }
+      img {
+        height: 74px;
+        width: 74px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-right: 18px;
+      }
+    }
+
+    .offer-content {
+      .offer {
+        font-size: 24px;
+        line-height: 30px;
+        color: color("primary", "primary");
+      }
+      .offer-type {
+        font-size: 16px;
+        .offer-discount {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 22px;
+          color: color("primary", "primary");
+        }
+        .term {
+          font-size: 18px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+
+// tab section start here
+
+.tab-wrapper {
+  margin-top: 80px;
+  .product-detail {
+    span {
+      display: block;
+      &.heading {
+        font-size: 24px;
+        line-height: 30px;
+        color: color("primary", "primary");
+      }
+      &.content {
+        font-size: 18px;
+        line-height: 22px;
+        color: color("primary", "primary");
+      }
+    }
+  }
+  button {
+    width: 100%;
+    max-width: 484px;
+  }
+
+  // specification tab
+  h5 {
+    font-size: 24px;
+    line-height: 30px;
+    color: color("primary", "primary");
+  }
+  .cartegories-wrapper {
+    gap: 98px;
+
+    hr {
+      margin-top: 10px;
+    }
+    .size {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      margin-top: 8px;
+      color: color("light", "light");
+    }
+    .product-type {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      margin-top: 8px;
+      color: color("primary", "primary");
+    }
+  }
+
+  // rating and reviews section start here
+  .review-wrapper {
+    .view-link {
+      font-size: 24px;
+      line-height: 32px;
+      color: #00398f;
+    }
+    width: 754px;
+    .rating-wrapper {
+      margin-top: 29px;
+      .rating-text {
+        margin-left: 0;
+        font-size: 48px;
+        line-height: 60px;
+        color: color("primary", "primary");
+        margin-right: 3px;
+      }
+    }
+    .heading {
+      font-size: 24px;
+      line-height: 30px;
+      color: color("primary", "primary");
+    }
+    .verified-rating {
+      font-size: 18px;
+      line-height: 22px;
+
+      color: color("primary", "primary");
+    }
+
+    .rating-content {
+      .paragraph {
+        margin-top: 15px;
+        font-size: 18px;
+        line-height: 22px;
+        color: color("primary", "primary");
+        a {
+          font-size: 18px;
+          line-height: 22px;
+
+          color: #00398f;
+        }
+      }
+      margin-top: 50px;
+      .review-images {
+        img {
+          height: 140px;
+          width: 140px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+        gap: 15px;
+        margin-top: 16px;
+        .text-img {
+          position: relative;
+        }
+        .centered {
+          position: absolute;
+          bottom: 27%;
+          left: 27%;
+
+          font-size: 48px;
+          line-height: 60px;
+          color: color("White", "White");
+        }
+      }
+      .text-wrapper {
+        align-items: center;
+        margin-top: 15px;
+        margin-bottom: 51px;
+        gap: 6px;
+        .border-text {
+          border-right: 1px solid #848484;
+          .name {
+            margin-right: 6px;
+            font-size: 18px;
+            line-height: 22px;
+            color: color("primary", "primary");
+          }
+          .date {
+            font-size: 18px;
+            line-height: 22px;
+            color: color("primary", "primary");
+          }
+        }
+      }
+    }
+  }
+}
