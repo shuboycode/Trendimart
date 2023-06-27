@@ -16,6 +16,21 @@
 @import "components/FilterBox";
 @import "components/Pages/order";
 @import "components/Pages//PaymentPage";
+@import "components/Pages/Payment";
 
 
 
+.dropdown {
+    #demo-select-small.MuiSelect-select.MuiSelect-select.MuiInputBase-input.MuiFilledInput-input.MuiInputBase-inputSizeSmall {
+      /* FONT-VARIANT: JIS04; */
+      padding: 4px 14px !important;
+      height: 20px !important;
+      font-size: 14px !important;
+  
+      min-height: 20px;
+      height: 20px;
+      padding: 0 12px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }

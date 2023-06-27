@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10" fill="none">
+<rect width="8" height="10" fill="#F5F5F5"/>
+<rect id="Rectangle 1" x="-362" y="-521" width="1411" height="1189" fill="white"/>
+<rect id="Rectangle 3" x="-413" y="-507" width="1411" height="1189" fill="white"/>
+<g id="div.desktop-base-cartLayout">
+<g id="div#cartItemsList">
+<g id="div.itemContainer-base-item">
+<rect x="-135.5" y="-108.94" width="592.39" height="184.14" rx="3.5" fill="white"/>
+<g id="div.itemContainer-base-details">
+<g id="div.itemContainer-base-price">
+<g id="div.h2d-f7189bff">
+<g id="SVG" clip-path="url(#clip0_0_1)">
+<g id="Frame">
+<path id="Vector" d="M3.47625 9.70001L1.20825 5.74361V4.81121H1.96425C2.26665 4.81121 2.53125 4.76891 2.75805 4.68521C2.99385 4.59251 3.18645 4.46291 3.33765 4.29461C3.49785 4.12631 3.60675 3.92561 3.66525 3.68981H1.20825V2.75741H3.65265C3.60626 2.54773 3.51609 2.35022 3.38805 2.17781C3.2667 2.00672 3.10123 1.87173 2.90925 1.78721C2.68973 1.68054 2.44761 1.62865 2.20365 1.63601H1.20825V0.703613H6.89085V1.63601H4.91265C5.05575 1.79531 5.17365 1.96811 5.26545 2.15261C5.36625 2.33711 5.43375 2.53961 5.46705 2.75741H6.89085V3.68981H5.49225C5.40855 4.31081 5.16825 4.79861 4.77405 5.15141C4.37985 5.49611 3.87135 5.73101 3.24945 5.85701L5.71905 9.70001H3.47625Z" fill="black"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<rect x="-135.5" y="-108.94" width="592.39" height="184.14" rx="3.5" stroke="#EAEAEC"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="8" height="9" fill="white" transform="translate(0 0.700012)"/>
+</clipPath>
+</defs>
+</svg>
