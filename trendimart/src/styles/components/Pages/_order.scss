@@ -55,7 +55,7 @@
             color: color("primary", "primary");
             font-family: "Playfair Display", serif;
             &.text {
-              color: color("light", "light");
+              color: color("brown", "light");
               font-family: "Lato", sans-serif;
             }
           }
@@ -79,7 +79,7 @@
           }
 
           .transaction-id {
-            color: color("light", "light");
+            color: color("brown", "light");
           }
         }
         span {

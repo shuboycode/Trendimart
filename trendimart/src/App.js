@@ -11,6 +11,12 @@ import PaymentPage from "./pages/PaymentPageSection";
 import FooterWish from "./pages/FooterWish";
 import OrderPage from "./pages/OrderPage";
 import CardAddress from "./components/PaymentSection/CardAddress";
+import FormComponents from "./components/PaymentSection/FormComponents";
+import SmallDropdown from "./components/atomComponents/SmallDropdown";
+import PaymentPageSection from "./pages/PaymentPageSection";
+import PlaceOrder from "./components/PaymentSection/PlaceOrder";
+
+
 
 function App() {
   const [] = React.useState(null);
@@ -28,12 +34,20 @@ function App() {
 
       {/* <FooterWish></FooterWish>    */}
       
+{/* 
+      <OrderPage></OrderPage>  */}
 
-      {/* <OrderPage></OrderPage> */}
+      <PaymentPageSection></PaymentPageSection>  
 
-       {/* <PaymentPage> </PaymentPage> */}
+      {/* <PlaceOrder></PlaceOrder> */}
 
-       <CardAddress></CardAddress>
+       {/* <CardAddress> </CardAddress> */}
+   
+       {/* <SmallDropdown></SmallDropdown> */}
+       
+{/* 
+       <FormComponents></FormComponents> */}
+      
 
     </>
   );

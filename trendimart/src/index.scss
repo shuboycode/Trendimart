@@ -1,17 +1,16 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
 
 // @font-face {
 //   font-family: "LibreBaskerVille";
@@ -23,3 +22,214 @@ code {
 // .font-face-lb {
 //   font-family: "libre-baskerville";
 // }
+
+// card address
+
+@import "../src/styles/components/variables";
+@import "../src//styles/components/color";
+
+.data {
+  color: color("black", "base");
+  line-height: 16px;
+  .brand-title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .info {
+    color: color("grey", "lighten-4"); // grey color
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 2px;
+  }
+  .description {
+    font-weight: 400;
+  }
+}
+
+.subheading {
+  span {
+    color: color("brown", "lighten-1");
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 15px;
+    text-transform: uppercase;
+
+    &.heading {
+      margin-left: 25px;
+    }
+    p {
+      margin-right: 25px;
+    }
+
+    &.line {
+      border-right: 1px solid #eaeaec !important;
+      height: 32px;
+    }
+  }
+}
+
+.detailed {
+  // width: 592px;
+}
+
+.content-payment {
+  margin-top: 31px;
+  border-radius: 4px;
+  padding: 13px 19px 24px 13px !important;
+  border: 1px solid #eaeaec;
+  background-color: color("white", " white");
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+  // width: 823px;
+  .content-img {
+    position: relative;
+    .left-image {
+      width: 111px !important;
+      height: 148px !important;
+      border-radius: 0 !important;
+      object-fit: cover !important;
+    }
+    .MuiBox-root {
+      position: absolute;
+      margin-left: 0;
+      top: -6px;
+    }
+  }
+}
+
+.form-label {
+  width: 823px;
+  justify-content: space-between;
+}
+
+.MuiFilledInput-underline.MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-sizeSmall {
+  width: 90px;
+  &::before {
+    border-bottom: 0;
+  }
+}
+
+.MuiCheckbox-root.MuiCheckbox-colorPrimary.PrivateSwitchBase-root.MuiCheckbox-root {
+  color: color("primary", "primary");  //272727
+}
+.MuiButtonBase-root.MuiCheckbox-root.MuiCheckbox-colorPrimary.MuiCheckbox-root {
+  // color: #272727;
+  color: color("primary", "primary");
+}
+
+.MuiFormControl-root.MuiFormControl-root {
+  margin: 0;
+}
+
+// place order css start here
+.detail-wrapper {
+  width: 320px;
+  .heading {
+    color: color("brown","lighten-2"); //brown
+    font-size: 18px;
+    line-height: 17px;
+  }
+  .amount {
+    span {
+      color: #282c3f;
+      font-size: 16px;
+      line-height: 16px;
+      &.light {
+        color: #03a685;
+      }
+    }
+  }
+  .text {
+    color: #3e4152;
+    font-size: 15px;
+
+    font-weight: 700;
+    line-height: 16px;
+  }
+}
+
+.address-wrapper {
+  margin-top: 80px;
+  max-width: 1223px;
+  gap: 61px;
+ 
+  .address {
+    .address-button{
+      min-width: 241px;
+      padding: 24px;
+    }
+    color: #282c3f;
+    gap: 36px;
+    max-width: 100%;
+    margin-bottom: 37px;
+    border-radius: 4px;
+    border: 1px solid #bababa;
+    padding: 17px;
+
+    span {
+      font-size: 18px;
+      line-height: 20px;
+      .dark {
+        font-weight: 700;
+      }
+    }
+    p {
+      font-size: 14px;
+      line-height: 15px;
+    }
+  }
+}
+
+
+.MuiFormControlLabel-root .MuiFormControlLabel-label {
+  color: color("black", "base");
+  font-size: 18px !important;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+
+
+.number-wrapper {
+  .number {
+    display: flex;
+    align-items: baseline;
+    margin-right: 7px;
+    img {
+      width: 8px;
+      height: 9px;
+    }
+    span {
+      color: color("black", "base");
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+      &.text {
+        color: #94969f;
+        text-decoration: line-through;
+      }
+    }
+  }
+  .benifit {
+    color: #f16565;
+    margin-left: 7px;
+  }
+}
+
+
+
+.frame-wrapper {
+  margin-top: 10px;
+  gap: 6px;
+  span {
+    color: #282c3f;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 17px;
+  }
+}
+
+
+.MuiFormControlLabel-labelPlacementEnd.MuiFormControlLabel-root{
+  margin-left: -4px;
+}
