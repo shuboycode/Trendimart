@@ -66,15 +66,18 @@ const PlaceOrder = () => {
           <Button
             variant="contained"
             disableElevation="true"
-            className="width-100"
+            className="width-100 pay-button"
           >
             {" "}
             PLACE ORDER
           </Button>
         </div>
       </div>
+
+
     </>
   );
 };
+
 
 export default PlaceOrder;

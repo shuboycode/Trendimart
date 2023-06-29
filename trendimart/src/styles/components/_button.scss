@@ -16,6 +16,7 @@
   &.medium {
     font-size: 18px;
     line-height: 24px;
+    height: 48px;
     color: color("secondary", "base");
     text-transform: capitalize;
     &:hover {
@@ -23,31 +24,20 @@
     }
   }
   &.MuiButtonBase-root {
-    font-family: "Playfair Display", serif;
+    font-family: 'Roboto', sans-serif;
+    // background-color: rgba(0, 36, 130, 1);
     &.button-text {
       text-transform: inherit;
     }
   }
   &.MuiButton {
-    &-outlined,
-   
-    // &-outlined:hover {
-    //   font-size: 24px;
-    //   line-height: 30px;
-    //   color: color("primary", "primary");
-    //   border: 3px solid #272727;
-    //   text-transform: none;
-    //   border-radius: 12px;
-    //   height: 48px;
-    //   &.outlined-button {
-    //     font-size: 18px;
-    //     line-height: 22px;
-    //     padding: 0px 36px;
-    //     height: 48px;
-    //   }
-    // }
-
+    &-outlined {
+      border-radius: 10px;
+    }
     &-contained {
+      &.pay-button{
+        background-color: rgba(0, 36, 130, 1);
+      }
       // background: color("secondary", "secondary");
       height: 48px;
       // display: flex;

@@ -29,7 +29,7 @@ const ProductPageWithout = () => {
               <TuneIcon className="icon-tune"></TuneIcon>
             </div>
 
-            <div className="right-content align-items ">
+            <div className="right-content baseline ">
               <DropdownMenu className="drop-menu"></DropdownMenu>
             </div>
           </div>

@@ -99,7 +99,7 @@ const CustomCard = ({ imageSrc, title, content }) => {
         </Card>
       </div>
       <div className="blog-card-button justify-center">
-        <Button variant="outlined" className="blog-card-button">
+        <Button variant="outlined" className="blog-card-button text medium">
           View all
         </Button>
       </div>

@@ -26,11 +26,13 @@ const AboutSection = () => {
         <span className="detail font-weight-700 mt-6">Contact Information</span>
         <span className="contact-no mt-4">+91 1256378409</span>
         <span className="personal-mail mt-3">Someting@random.com</span>
-        <Button variant="outlined" className="mt-7 outlined-button">Directions</Button>
+        <div className="blog-card-button about">
+        <Button variant="outlined" className="mt-7 outlined-button blog-card-button text medium">Directions</Button>
+        </div>
       </Grid>
       <Grid item xs={6}>
         <div className="info-img">
-          <img src={aboutus} alt="summer-collection" className=" " />
+          <img src={aboutus} alt="summer-collection" className=" "/>
         </div>
       </Grid>
     </Grid>

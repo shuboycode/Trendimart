@@ -35,7 +35,7 @@ const ProductPageSec = () => {
                     <TuneIcon className="icon-tune" fontSize="30px"></TuneIcon>
                   </div>
 
-                  <div className="right-content align-items ">
+                  <div className="right-contentbaseline">
                     <DropdownMenu className="drop-menu"></DropdownMenu>
                   </div>
                 </div>

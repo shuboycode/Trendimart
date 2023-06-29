@@ -33,7 +33,7 @@ const WomenCard = () => {
                 >
                   Brand Name
                 </Typography>
-                <div className="right-content align-items pl-7">
+                <div className="right-content baseline pl-7">
                   <Typography
                     variant="body2"
                     color="text.secondary"
