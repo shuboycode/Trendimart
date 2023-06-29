@@ -1,5 +1,11 @@
 import "./App.scss";
 import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProductDetailsSection from "./pages/ProductDetailsSection";
 import ProductPageWithout from "./pages/ProductPageWithout";
@@ -17,6 +23,8 @@ import PaymentPageSection from "./pages/PaymentPageSection";
 import PlaceOrder from "./components/PaymentSection/PlaceOrder";
 import PaymentForm from "./pages/PaymentForm";
 import Gateway from "./components/PaymentSection/Gateway";
+import AppRoutes from "./routes";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const [] = React.useState(null);
@@ -24,9 +32,19 @@ function App() {
 
   return (
     <>
-      <HomePage />
+      {/* <HomePage /> */}
+      {/* <Router>
+        <div>
+          <Switch>
+            <Route exact path="/" component={<HomePage />} />
+            <Route path="/about" component={<ProductPageSec />} />
+          </Switch>
+        </div>
+      </Router> */}
+        <AppRoutes />
+      {/* <HomePage /> */}
 
-      <ProductDetailsSection></ProductDetailsSection>
+      {/* <ProductDetailsSection></ProductDetailsSection>
 
       <ProductPageWithout></ProductPageWithout>
 
@@ -38,7 +56,7 @@ function App() {
 
       <PaymentPageSection></PaymentPageSection>
 
-      <SmallDropdown></SmallDropdown>
+      <SmallDropdown></SmallDropdown> */}
 
       {/* 
        <PaymentForm></PaymentForm> */}

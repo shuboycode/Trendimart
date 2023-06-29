@@ -76,8 +76,8 @@ export default function IndeterminateCheckbox() {
             <h4 className="info mt-2">Sold By : REDTAPE LIMITED</h4>
 
             <div className="flex dropdown pt-2">
-              <SmallDropdown heading="Size: 9"></SmallDropdown>
-              <SmallDropdown heading="Qty: 1"></SmallDropdown>
+              <SmallDropdown heading="Size"></SmallDropdown>
+              <SmallDropdown heading="Qty"></SmallDropdown>
             </div>
 
             <div className="number-wrapper flex pt-2">
