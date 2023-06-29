@@ -1,10 +1,11 @@
 import "./App.scss";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-// import {
-//   createBrowserRouter,
-//   RouterProvider,
-// } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProductDetailsSection from "./pages/ProductDetailsSection";
 import ProductPageWithout from "./pages/ProductPageWithout";
@@ -20,6 +21,7 @@ import FormComponents from "./components/PaymentSection/FormComponents";
 import SmallDropdown from "./components/atomComponents/SmallDropdown";
 import PaymentPageSection from "./pages/PaymentPageSection";
 import PlaceOrder from "./components/PaymentSection/PlaceOrder";
+import AppRoutes from "./routes";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -36,6 +38,7 @@ function App() {
           </Switch>
         </div>
       </Router> */}
+        <AppRoutes />
       {/* <HomePage /> */}
 
       {/* <ProductDetailsSection></ProductDetailsSection> */}
@@ -49,7 +52,7 @@ function App() {
       {/* 
       <OrderPage></OrderPage>  */}
 
-      <PaymentPageSection></PaymentPageSection>
+      {/* <PaymentPageSection></PaymentPageSection> */}
 
       {/* <PlaceOrder></PlaceOrder> */}
 

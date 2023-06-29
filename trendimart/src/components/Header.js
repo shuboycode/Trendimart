@@ -22,9 +22,25 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 
 import LogoHead from "../styles/components/assets/images/LogoHead.jpg";
+import { Link } from "react-router-dom";
 
-const Header = ({ InviteBrand = false ,}) => {
+const Header = ({ InviteBrand = false }) => {
   const pages = ["Men", "Women", "Kids", "Shop", "Contact us"];
+  const navLinks = [
+    {
+      title: "Home",
+      path: "/",
+    },
+    {
+      title: "About",
+      path: "/about",
+    },
+    {
+      title: "Contact",
+      path: "/contact",
+    },
+  ];
+
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -44,8 +60,6 @@ const Header = ({ InviteBrand = false ,}) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
-
 
   return (
     <>
@@ -142,14 +156,16 @@ const Header = ({ InviteBrand = false ,}) => {
               sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
               className="button-content"
             >
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, display: "block" }}
-                >
-                  {page}
-                </Button>
+              {navLinks.map((navLinks, index) => (
+                <Link to={navLinks.path}>
+                  <Button
+                    key={index}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, display: "block" }}
+                  >
+                    {navLinks.title}
+                  </Button>
+                </Link>
               ))}
             </Box>
 
