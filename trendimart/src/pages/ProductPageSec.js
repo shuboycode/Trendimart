@@ -7,11 +7,10 @@ import TuneIcon from "@mui/icons-material/Tune";
 import CardTwo from "../components/CardTwo";
 import FooterSection from "../components/FooterSection";
 
-
 const ProductPageSec = () => {
   return (
     <>
-      <Header></Header>
+      {/* <Header></Header> */}
 
       {/* content section start here */}
 
@@ -35,51 +34,44 @@ const ProductPageSec = () => {
                     <TuneIcon className="icon-tune" fontSize="30px"></TuneIcon>
                   </div>
 
-                  <div className="right-content align-items ">
+                  <div className="right-contentbaseline">
                     <DropdownMenu className="drop-menu"></DropdownMenu>
                   </div>
                 </div>
               </div>
 
+              <div>
+                <div className="flex mt-9">
+                  <CardTwo></CardTwo>
+                </div>
 
-             
-                
-            
-               
-                <div>
-              <div className="flex mt-9">
-                <CardTwo></CardTwo>
+                <div className="flex mt-11">
+                  <CardTwo></CardTwo>
+                </div>
+
+                <div className="flex mt-11">
+                  <CardTwo></CardTwo>
+                </div>
+
+                <div className="flex mt-11">
+                  <CardTwo></CardTwo>
+                </div>
+
+                <div className="flex mt-11">
+                  <CardTwo></CardTwo>
+                </div>
+
+                <div className="flex mt-11">
+                  <CardTwo></CardTwo>
+                </div>
               </div>
-
-              <div className="flex mt-11">
-                <CardTwo></CardTwo>
-              </div>
-
-              <div className="flex mt-11">
-                <CardTwo></CardTwo>
-              </div>
-
-              <div className="flex mt-11">
-                <CardTwo></CardTwo>
-              </div>
-
-              <div className="flex mt-11">
-                <CardTwo></CardTwo>
-              </div>
-
-              <div className="flex mt-11">
-                <CardTwo></CardTwo>
-              </div>
-              </div>
-
-
             </div>
           </Container>
         </div>
       </div>
 
       {/* footer sec start here */}
-      <div className="sec-bottom">
+      {/* <div className="sec-bottom">
         <Container
           maxWidth="false"
           sx={{ maxWidth: "1920px" }}
@@ -87,8 +79,7 @@ const ProductPageSec = () => {
         >
           <FooterSection></FooterSection>
         </Container>
-      </div>
-      
+      </div> */}
     </>
   );
 };

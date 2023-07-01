@@ -117,6 +117,11 @@ p {
   justify-content: center;
 }
 
+.baseline{
+  display: flex;
+  align-items: baseline;
+}
+
 .align-items {
   display: flex;
   align-items: center;
@@ -134,6 +139,10 @@ p {
 
 .display {
   display: inline-block;
+}
+
+.text-end{
+text-align: end
 }
 
 .display-end {
@@ -174,6 +183,10 @@ p {
 
 .width-100{
   width: 100%;
+}
+
+.width-50{
+  width: 50%;
 }
 .line-clamp-4 {
   display: -webkit-box;

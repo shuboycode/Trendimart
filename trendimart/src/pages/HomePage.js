@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <>
       {/* header section start here */}
-      <Header InviteBrand={true}></Header>
+      {/* <Header InviteBrand={true}></Header> */}
 
       {/* banner section start here */}
       <section className="banner-wrapper">
@@ -136,7 +136,7 @@ const HomePage = () => {
       </Container>
 
       {/* footer sec start here */}
-      <div className="sec-bottom">
+      {/* <div className="sec-bottom">
         <Container
           className="personal-info-wrapper"
           maxWidth="false"
@@ -144,7 +144,7 @@ const HomePage = () => {
         >
           <FooterSection></FooterSection>
         </Container>
-      </div>
+      </div> */}
     </>
   );
 };

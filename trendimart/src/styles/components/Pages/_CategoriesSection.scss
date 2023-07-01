@@ -46,7 +46,7 @@
     .card-info {
       display: block;
       .rating-text {
-        font-family: "Playfair Display", serif;
+        font-family: "Roboto", sans-serif;
         font-size: 18px;
         line-height: 24px;
         color: color("black", "black");
@@ -163,7 +163,15 @@
 
 .blog-card-button {
   margin-top: 71px;
-  padding: 9px 38px !important;
+  padding: 0px 38px !important;
+  color: rgb(34, 34, 34) !important;
+  &.text {
+    border: 2px solid rgba(132, 132, 132, 1) !important;
+  }
+  &.about{
+    padding: 0 !important;
+    margin: 0;
+  }
 }
 
 // 3rd last sec start offer

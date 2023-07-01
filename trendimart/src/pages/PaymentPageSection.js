@@ -41,9 +41,9 @@ const PaymentPageSection = () => {
                   <Button>CHANGE ADDRESS</Button>
                 </ButtonGroup> */}
                 <Button
-                  variant="contained"
+                  variant="outlined"
                   disableElevation="true"
-                   className="address-button"
+                   className="address-button pay-button"
                 >
                   {" "}
                   CHANGE ADDRESS

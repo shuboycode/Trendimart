@@ -187,7 +187,7 @@ const CarouselSection = () => {
               aria-label="Disabled elevation buttons"
               className="cart-button mr-4"
             >
-              <Button>Add to cart</Button>
+              <Button className="pay-button">Add to cart</Button>
             </ButtonGroup>
 
             <FavoriteBorderIcon></FavoriteBorderIcon>

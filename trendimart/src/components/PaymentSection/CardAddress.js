@@ -73,11 +73,11 @@ export default function IndeterminateCheckbox() {
           <div className="data ml-3">
             <h4 className="brand-title">Brand Name</h4>
             <h4 className="description mt-2">Men Woven Design Basics Sneakers</h4>
-            <h4 className="info">Sold By : REDTAPE LIMITED</h4>
+            <h4 className="info mt-2">Sold By : REDTAPE LIMITED</h4>
 
             <div className="flex dropdown pt-2">
-              <SmallDropdown heading="Size: 9"></SmallDropdown>
-              <SmallDropdown heading="Qty: 1"></SmallDropdown>
+              <SmallDropdown heading="Size"></SmallDropdown>
+              <SmallDropdown heading="Qty"></SmallDropdown>
             </div>
 
             <div className="number-wrapper flex pt-2">

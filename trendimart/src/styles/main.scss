@@ -15,8 +15,10 @@
 @import "components/mat";
 @import "components/FilterBox";
 @import "components/Pages/order";
-@import "components/Pages//PaymentPage";
+// @import "components/Pages//PaymentPage";
 @import "components/Pages/Payment";
+@import "components/Pages/HomePage";
+
 
 
 
@@ -26,7 +28,6 @@
       padding: 4px 14px !important;
       height: 20px !important;
       font-size: 14px !important;
-  
       min-height: 20px;
       height: 20px;
       padding: 0 12px;
