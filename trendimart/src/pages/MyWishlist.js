@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Container from "@mui/material/Container";
 import WomenCard from "../components/WomenCard";
-import FooterSection from "../components/FooterSection";
+// import FooterSection from "../components/FooterSection";
 
 const FooterWish = () => {
   return (

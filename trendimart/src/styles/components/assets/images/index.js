@@ -20,6 +20,7 @@ import atm from "./atm.svg";
 import date from "./date.png";
 import setting from "./setting.svg";
 
+import removecolor from "./removecolor.png";
 
 
-export{aboutus,logoTrendimart,t,logot,DanimImage, DanimLadish,DanimColor,Review,ItemOne, Jacket,Rupees,Frame,Rup,Rupe,visaPic,americanPic,payPic,atm,date,setting};
+export{aboutus,logoTrendimart,t,logot,DanimImage, DanimLadish,DanimColor,Review,ItemOne, Jacket,Rupees,Frame,Rup,Rupe,visaPic,americanPic,payPic,atm,date,setting,removecolor};

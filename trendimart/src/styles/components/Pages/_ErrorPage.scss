@@ -1,0 +1,16 @@
+.error-page {
+  .error-img {
+    
+  }
+
+  gap: 112px;
+
+  .error-content {
+    color: color("black", "black");
+    font-size: 64px;
+    font-weight: 700;
+    .heading {
+      font-weight: 400;
+    }
+  }
+}
