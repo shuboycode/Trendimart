@@ -28,16 +28,24 @@ const Header = ({ InviteBrand = false }) => {
   const pages = ["Men", "Women", "Kids", "Shop", "Contact us"];
   const navLinks = [
     {
-      title: "Home",
-      path: "/",
+      title: "Men",
+      path: "/categories/men",
     },
     {
-      title: "About",
-      path: "/about",
+      title: "Women",
+      path: "/categories/women",
     },
     {
-      title: "Contact",
-      path: "/contact",
+      title: "Kids",
+      path: "/categories/kids",
+    },
+    {
+      title: "Shop",
+      path: "/categories/all",
+    },
+    {
+      title: "Contact Us",
+      path: "/contactus",
     },
   ];
 
@@ -156,7 +164,7 @@ const Header = ({ InviteBrand = false }) => {
               sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
               className="button-content"
             >
-              {/* {navLinks.map((navLinks, index) => (
+              {navLinks.map((navLinks, index) => (
                 <Link to={navLinks.path}>
                   <Button
                     key={index}
@@ -166,8 +174,8 @@ const Header = ({ InviteBrand = false }) => {
                     {navLinks.title}
                   </Button>
                 </Link>
-              ))} */}
-              {pages.map((pages, index) => (
+              ))}
+              {/* {pages.map((pages, index) => (
                 <Link to={pages.path}>
                   <Button 
                     key={index}
@@ -177,7 +185,7 @@ const Header = ({ InviteBrand = false }) => {
                     {pages}
                   </Button>
                 </Link>
-              ))}
+              ))} */}
             </Box>
 
             <Box sx={{ flexGrow: 0 }} className="right-navbar">

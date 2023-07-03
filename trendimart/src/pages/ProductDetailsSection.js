@@ -9,13 +9,8 @@ import Header from "../components/Header";
 const ProductDetailsSection = () => {
   return (
     <>
-      {/* // carousel section start here 2nd  */}
-
-      <Header></Header>
+      {/* <Header></Header> */}
       <Container maxWidth="false" sx={{ maxWidth: "1920px" }}>
-        {/* header section start here */}
-        {/* <Header></Header> */}
-
         {/* sec section */}
         <ProductDetails></ProductDetails>
 
@@ -28,17 +23,6 @@ const ProductDetailsSection = () => {
         {/* 5th section image card */}
         <ImageCard title="Customer Also Like"></ImageCard>
       </Container>
-
-      {/* footer sec start here */}
-      <div className="sec-bottom">
-        <Container
-          maxWidth="false"
-          sx={{ maxWidth: "1920px" }}
-          className="filter-sec-wrapper"
-        >
-          <FooterSection></FooterSection>
-        </Container>
-      </div>
     </>
   );
 };
