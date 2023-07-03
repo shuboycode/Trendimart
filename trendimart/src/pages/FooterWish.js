@@ -9,7 +9,7 @@ const FooterWish = () => {
     <>
       {/* header sec start here */}
 
-      <Header></Header>
+     
 
       <Container maxWidth="false" sx={{ maxWidth: "1920px" }} className="wishlist-wrapper">
         {/* content-section start here */}
@@ -25,13 +25,7 @@ const FooterWish = () => {
         </div>
       </Container>
 
-      <div className="wishlist-footer sec-bottom">
-      <Container maxWidth="false" sx={{ maxWidth: "1920px" }}>
-         
-      <FooterSection></FooterSection>
-        </Container>
-
-      </div>
+   
     </>
   );
 };

@@ -11,7 +11,6 @@ const ProductDetailsSection = () => {
     <>
       {/* // carousel section start here 2nd  */}
 
-      <Header></Header>
       <Container maxWidth="false" sx={{ maxWidth: "1920px" }}>
         {/* header section start here */}
         {/* <Header></Header> */}
@@ -30,15 +29,7 @@ const ProductDetailsSection = () => {
       </Container>
 
       {/* footer sec start here */}
-      <div className="sec-bottom">
-        <Container
-          maxWidth="false"
-          sx={{ maxWidth: "1920px" }}
-          className="filter-sec-wrapper"
-        >
-          <FooterSection></FooterSection>
-        </Container>
-      </div>
+    
     </>
   );
 };

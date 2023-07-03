@@ -14,7 +14,7 @@ const ProductPageWithout = () => {
     <>
       {/* nav bar start here */}
 
-      <Header> </Header>
+    
 
       <Container
         maxWidth="false"
@@ -72,16 +72,9 @@ const ProductPageWithout = () => {
         </div>
       </Container>
 
-      {/* footer section start here */}
-      <div className="sec-bottom">
-        <Container
-          maxWidth="false"
-          sx={{ maxWidth: "1920px" }}
-          className="filter-sec-wrapper"
-        >
-          <FooterSection></FooterSection>
-        </Container>
-      </div>
+    
+     
+
     </>
   );
 };

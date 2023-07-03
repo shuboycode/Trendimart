@@ -5,7 +5,7 @@
 .MuiFormLabel-root.MuiInputLabel-root.label-text {
   position: relative;
   top: 13px;
-  // color: #282c3f;
+
   color: color("black", "base");
   font-size: 14px;
   font-weight: 700;
@@ -338,12 +338,10 @@
       color: color("black", "base");
     }
 
-    // .pay-button {
-    //   padding: 0px 33px;
-    //   background-color: rgba(0, 36, 130, 1);
-    // }
+   
   }
 }
+
 
 .pay-button {
   padding: 0px 33px;

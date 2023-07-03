@@ -9,27 +9,16 @@ import Gateway from "../components/PaymentSection/Gateway";
 const PaymentForm = () => {
   return (
     <>
-      <Header></Header>
       <Container maxWidth="false" sx={{ maxWidth: "1920px" }} className="">
         <div className="payment-wrapper justify-center">
           <div className="width-50">
             <CardAddress></CardAddress>
           </div>
-          {/* <FormComponents></FormComponents> */}
+        
 
           <Gateway></Gateway>
         </div>
       </Container>
-
-      <div className="sec-bottom">
-        <Container
-          maxWidth="false"
-          sx={{ maxWidth: "1920px" }}
-          className="filter-sec-wrapper"
-        >
-          <FooterSection></FooterSection>
-        </Container>
-      </div>
     </>
   );
 };
