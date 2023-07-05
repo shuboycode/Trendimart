@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchProductsData = createAsyncThunk(
   'api/fetchData',
   async () => {
-    const response = await axios.get('https://kanhaiya.kuroit.in/trendimart/public/api/products');
+    const response = await axios.get('http://localhost:3001/products');
     return response.data;
   }
 );

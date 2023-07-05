@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Product 1",
+      "type": "Type A",
+      "price": 11,
+      "brand": "levis",
+      "category": "men",
+      "rating": "4.5",
+      "seller": "Seller A",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 4,
+      "title": "Product 4",
+      "type": "Type A",
+      "price": 8,
+      "brand": "puma",
+      "category": "men",
+      "rating": "4.7",
+      "seller": "Seller A",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 7,
+      "title": "Product 7",
+      "type": "Type A",
+      "price": 13,
+      "brand": "levis",
+      "category": "men",
+      "rating": "4.8",
+      "seller": "Seller A",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 10,
+      "title": "Product 10",
+      "type": "Type A",
+      "price": 11,
+      "brand": "perter england",
+      "category": "men",
+      "rating": "4.2",
+      "seller": "Seller A",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 2,
+      "title": "Product 2",
+      "type": "Type B",
+      "price": 20,
+      "brand": "nike",
+      "category": "women",
+      "rating": "3.8",
+      "seller": "Seller B",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 5,
+      "title": "Product 5",
+      "type": "Type B",
+      "price": 15,
+      "brand": "perter england",
+      "category": "women",
+      "rating": "3.5",
+      "seller": "Seller B",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 8,
+      "title": "Product 8",
+      "type": "Type B",
+      "price": 10,
+      "brand": "nike",
+      "category": "women",
+      "rating": "3.2",
+      "seller": "Seller B",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 3,
+      "title": "Product 3",
+      "type": "Type C",
+      "price": 6,
+      "brand": "adidas",
+      "category": "kids",
+      "rating": "4.2",
+      "seller": "Seller C",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 6,
+      "title": "Product 6",
+      "type": "Type C",
+      "price": 8,
+      "brand": "puma",
+      "category": "kids",
+      "rating": "4",
+      "seller": "Seller C",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 9,
+      "title": "Product 9",
+      "type": "Type C",
+      "price": 7,
+      "brand": "adidas",
+      "category": "kids",
+      "rating": "4.5",
+      "seller": "Seller C",
+      "created_at": null,
+      "updated_at": null
+    }
+  ]
+}
