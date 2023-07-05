@@ -60,7 +60,8 @@
     }
     .customer-card {
       border: 10px solid #ffffff;
-      width: 946px;
+      max-width: 946px;
+      width: 100%;
       padding: 58px 32px;
       background-color: color("White", "White");
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

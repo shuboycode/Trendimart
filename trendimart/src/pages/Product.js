@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsData } from "../store/slices/productSlice";
-import { Container } from "@mui/material";
-
+import { Container, Grid } from "@mui/material";
+import Box from "@mui/material/Box";
 import Header from "../components/Header";
 import FilterBox from "../components/atomComponents/FilterBox";
 import DropdownMenu from "../components/atomComponents/DropdownMenu";
@@ -12,6 +13,7 @@ import CardTwo from "../components/CardTwo";
 import FooterSection from "../components/FooterSection";
 
 const ProductPageSec = () => {
+  const [showFilterBox, setShowFilterBox] = useState(false);
   const { slug } = useParams();
 
   console.log("slug", slug);
@@ -32,14 +34,23 @@ const ProductPageSec = () => {
 
   const category = data.filter((el) => el.category === slug);
 
+  // function toggleFilterBox() {
+  //   setShowFilterBox(!showFilterBox);
+  // }
+
+  function handleClick() {
+    // toggleFilterBox();
+    setShowFilterBox(!showFilterBox);
+  }
+
   return (
     <>
       {/* content section start here */}
 
       <div className="page-content-wrapper  justify-center mt-14">
-        <div className="filter-content">
+        {/* <div className="filter-content">
           <FilterBox></FilterBox>
-        </div>
+        </div> */}
 
         <div className="main-content flex">
           <Container
@@ -47,30 +58,62 @@ const ProductPageSec = () => {
             sx={{ maxWidth: "1920px" }}
             className="filter-sec-wrapper"
           >
-            <div>
-              <div className="content-wrapper text">
-                <div className="filter-subheading display-end">
-                  <div className="icon-wrapper align-items ">
-                    <span className="font-weight-700 ">Filters</span>
-
-                    <TuneIcon className="icon-tune" fontSize="30px"></TuneIcon>
-                  </div>
-
-                  <div className="right-contentbaseline">
-                    <DropdownMenu className="drop-menu"></DropdownMenu>
-                  </div>
-                </div>
+            <div className="flex wrapper">
+              <div className="filter-content">
+                {showFilterBox && <FilterBox></FilterBox>}
               </div>
 
               <div>
-                {/* <div className="flex mt-9">
+                <div className="content-wrapper text">
+                  <div className="filter-subheading display-end">
+                    <div
+                      className="icon-wrapper align-items"
+                      onClick={handleClick}
+                    >
+                      <span className="font-weight-700 ">Filters</span>
+
+                      <TuneIcon
+                        className="icon-tune"
+                        fontSize="30px"
+                      ></TuneIcon>
+                    </div>
+
+                    <div className="right-contentbaseline">
+                      <DropdownMenu className="drop-menu"></DropdownMenu>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  {/* <div className="flex mt-9">
                   {category.map((item) => {
                     console.log("item", item);
                     return <CardTwo prop={item}></CardTwo>;
                   })}
                 </div> */}
 
-               {/*  <div className="flex mt-9">
+                  <div className="flex mt-9">
+                    <Box sx={{ flexGrow: 1 }}>
+                      <Grid
+                        container
+                        spacing={{ xs: 2, md: 3 }}
+                        // spacing={12}
+                        columns={{ xs: 4, sm: 8, md: 12 }}
+                      >
+                        {category.map((item) => {
+                          console.log("item", item);
+                          return (
+                            <CardTwo
+                              prop={item}
+                              filterOn={showFilterBox}
+                            ></CardTwo>
+                          );
+                        })}
+                      </Grid>
+                    </Box>
+                  </div>
+
+                  {/* <div className="flex mt-9">
                   {category.map((item) => {
                     console.log("item", item);
                     return <CardTwo prop={item}></CardTwo>;
@@ -82,16 +125,9 @@ const ProductPageSec = () => {
                     console.log("item", item);
                     return <CardTwo prop={item}></CardTwo>;
                   })}
-                </div>
-
-                <div className="flex mt-9">
-                  {category.map((item) => {
-                    console.log("item", item);
-                    return <CardTwo prop={item}></CardTwo>;
-                  })}
                 </div> */}
 
-                <div className="flex mt-11">
+                  {/* <div className="flex mt-11">
                   <CardTwo></CardTwo>
                 </div>
 
@@ -109,6 +145,7 @@ const ProductPageSec = () => {
 
                 <div className="flex mt-11">
                   <CardTwo></CardTwo>
+                </div> */}
                 </div>
               </div>
             </div>
