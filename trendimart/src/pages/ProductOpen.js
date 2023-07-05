@@ -9,7 +9,6 @@ import Header from "../components/Header";
 const ProductDetailsSection = () => {
   return (
     <>
-      {/* <Header></Header> */}
       <Container maxWidth="false" sx={{ maxWidth: "1920px" }}>
         {/* sec section */}
         <ProductDetails></ProductDetails>
@@ -23,6 +22,7 @@ const ProductDetailsSection = () => {
         {/* 5th section image card */}
         <ImageCard title="Customer Also Like"></ImageCard>
       </Container>
+      
     </>
   );
 };

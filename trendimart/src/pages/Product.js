@@ -63,53 +63,53 @@ const ProductPageSec = () => {
               </div>
 
               <div>
-                <div className="flex mt-9">
+                {/* <div className="flex mt-9">
                   {category.map((item) => {
                     console.log("item", item);
                     return <CardTwo prop={item}></CardTwo>;
                   })}
-                </div>
-
-                <div className="flex mt-9">
-                  {category.map((item) => {
-                    console.log("item", item);
-                    return <CardTwo prop={item}></CardTwo>;
-                  })}
-                </div>
-
-                <div className="flex mt-9">
-                  {category.map((item) => {
-                    console.log("item", item);
-                    return <CardTwo prop={item}></CardTwo>;
-                  })}
-                </div>
-
-                <div className="flex mt-9">
-                  {category.map((item) => {
-                    console.log("item", item);
-                    return <CardTwo prop={item}></CardTwo>;
-                  })}
-                </div>
-
-                {/* <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
                 </div> */}
+
+               {/*  <div className="flex mt-9">
+                  {category.map((item) => {
+                    console.log("item", item);
+                    return <CardTwo prop={item}></CardTwo>;
+                  })}
+                </div>
+
+                <div className="flex mt-9">
+                  {category.map((item) => {
+                    console.log("item", item);
+                    return <CardTwo prop={item}></CardTwo>;
+                  })}
+                </div>
+
+                <div className="flex mt-9">
+                  {category.map((item) => {
+                    console.log("item", item);
+                    return <CardTwo prop={item}></CardTwo>;
+                  })}
+                </div> */}
+
+                <div className="flex mt-11">
+                  <CardTwo></CardTwo>
+                </div>
+
+                <div className="flex mt-11">
+                  <CardTwo></CardTwo>
+                </div>
+
+                <div className="flex mt-11">
+                  <CardTwo></CardTwo>
+                </div>
+
+                <div className="flex mt-11">
+                  <CardTwo></CardTwo>
+                </div>
+
+                <div className="flex mt-11">
+                  <CardTwo></CardTwo>
+                </div>
               </div>
             </div>
           </Container>

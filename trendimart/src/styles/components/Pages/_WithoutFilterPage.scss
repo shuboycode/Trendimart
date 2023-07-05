@@ -1,12 +1,10 @@
-
-
 .filter-sec-wrapper {
   .content-wrapper {
     padding-top: 56px;
-    &.text{
+    &.text {
       padding: 0;
     }
-   
+
     .filter-subheading {
       gap: 49px;
       .icon-wrapper {
@@ -20,9 +18,7 @@
           color: color("brown", "light");
           font-size: 29px;
         }
-
       }
     }
   }
 }
-

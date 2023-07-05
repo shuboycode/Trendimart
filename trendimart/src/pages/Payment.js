@@ -10,7 +10,6 @@ import { ButtonGroup } from "@mui/material";
 const PaymentPageSection = () => {
   return (
     <>
-      <Header></Header>
       <Container
         maxWidth="false"
         sx={{ maxWidth: "1920px" }}
@@ -32,18 +31,10 @@ const PaymentPageSection = () => {
                   </p>
                 </div>
 
-                {/* <ButtonGroup
-                  disableElevation
-                  variant="outlined"
-                  aria-label="Disabled elevation buttons"
-                  className="cart-button mr-4"
-                >
-                  <Button>CHANGE ADDRESS</Button>
-                </ButtonGroup> */}
                 <Button
                   variant="outlined"
                   disableElevation="true"
-                   className="address-button pay-button"
+                  className="address-button pay-button"
                 >
                   {" "}
                   CHANGE ADDRESS
@@ -61,16 +52,6 @@ const PaymentPageSection = () => {
           </div>
         </div>
       </Container>
-
-      <div className="sec-bottom">
-        <Container
-          maxWidth="false"
-          sx={{ maxWidth: "1920px" }}
-          className="filter-sec-wrapper"
-        >
-          <FooterSection></FooterSection>
-        </Container>
-      </div>
     </>
   );
 };
