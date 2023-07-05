@@ -48,9 +48,36 @@ export default function ImgMediaCard({ title }) {
       <div className="styling-card-wrapper">
         {data.map((product) => {
           return (
-            <Card sx={{ minWidth: 410 }} className="wrapper-card">
+            <Card
+              sx={{ minWidth: 410 }}
+              className="wrapper-card"
+              key={product.id}
+            >
               <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-                <img src={women1} alt="women-danim" className="card-image" />
+                {/* <img src={product.image} alt="women-danim" className="card-image" /> */}
+
+                <div>
+                  {/* {product.image ? (
+                    <img
+                      src={product.image}
+                      alt="women-danim"
+                      className="card-image"
+                    />
+                  ) : (
+                    <img
+                      src={
+                        "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
+                      }
+                      alt="women-danim"
+                      className="card-image"
+                    />
+                  )} */}
+                   <img
+                      src={product.image ? product.image : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"}
+                      alt="women-danim"
+                      className="card-image"
+                    />
+                </div>
 
                 <div className="card-content">
                   <Typography

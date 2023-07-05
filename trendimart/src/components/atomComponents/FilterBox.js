@@ -42,6 +42,7 @@ const FilterBox = () => {
         <div className="simple-accordion">
           <hr sx="width:50%;text-align:left;" className="mt-6" />
 
+
           <div>
             <Accordion className="accordion-style">
               <AccordionSummary className="accordian-icon"

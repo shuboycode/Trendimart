@@ -10,7 +10,8 @@
       "rating": "4.5",
       "seller": "Seller A",
       "created_at": null,
-      "updated_at": null
+      "updated_at": null,
+      "image":"https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
     },
     {
       "id": 4,
@@ -22,7 +23,8 @@
       "rating": "4.7",
       "seller": "Seller A",
       "created_at": null,
-      "updated_at": null
+      "updated_at": null,
+      "image":"https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
     },
     {
       "id": 7,
@@ -34,7 +36,8 @@
       "rating": "4.8",
       "seller": "Seller A",
       "created_at": null,
-      "updated_at": null
+      "updated_at": null,
+      "image":"https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
     },
     {
       "id": 10,
@@ -46,7 +49,8 @@
       "rating": "4.2",
       "seller": "Seller A",
       "created_at": null,
-      "updated_at": null
+      "updated_at": null,
+      "image":"https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
     },
     {
       "id": 2,
@@ -59,6 +63,7 @@
       "seller": "Seller B",
       "created_at": null,
       "updated_at": null
+      
     },
     {
       "id": 5,
@@ -117,6 +122,114 @@
       "category": "kids",
       "rating": "4.5",
       "seller": "Seller C",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 21,
+      "title": "Product 1",
+      "type": "Type A",
+      "price": 11,
+      "brand": "Levis",
+      "category": "men",
+      "rating": "4.5",
+      "seller": "Seller A",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 22,
+      "title": "Product 2",
+      "type": "Type B",
+      "price": 20,
+      "brand": "Nike",
+      "category": "men",
+      "rating": "4.2",
+      "seller": "Seller B",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 23,
+      "title": "Product 3",
+      "type": "Type C",
+      "price": 15,
+      "brand": "Adidas",
+      "category": "men",
+      "rating": "4.8",
+      "seller": "Seller C",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 24,
+      "title": "Product 4",
+      "type": "Type D",
+      "price": 25,
+      "brand": "Puma",
+      "category": "men",
+      "rating": "4.1",
+      "seller": "Seller D",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 25,
+      "title": "Product 5",
+      "type": "Type E",
+      "price": 18,
+      "brand": "Vans",
+      "category": "men",
+      "rating": "4.7",
+      "seller": "Seller E",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 26,
+      "title": "Product 6",
+      "type": "Type F",
+      "price": 30,
+      "brand": "New Balance",
+      "category": "men",
+      "rating": "4.6",
+      "seller": "Seller F",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 27,
+      "title": "Product 7",
+      "type": "Type G",
+      "price": 22,
+      "brand": "Converse",
+      "category": "men",
+      "rating": "4.3",
+      "seller": "Seller G",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 28,
+      "title": "Product 8",
+      "type": "Type H",
+      "price": 28,
+      "brand": "Reebok",
+      "category": "men",
+      "rating": "4.4",
+      "seller": "Seller H",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 29,
+      "title": "Product 9",
+      "type": "Type I",
+      "price": 16,
+      "brand": "Under Armour",
+      "category": "men",
+      "rating": "4.9",
+      "seller": "Seller I",
       "created_at": null,
       "updated_at": null
     }
