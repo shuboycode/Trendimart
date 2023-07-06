@@ -68,7 +68,7 @@ const ProductPageSec = () => {
                 <div className="content-wrapper text">
                   <div className="filter-subheading display-end">
                     <div
-                      className="icon-wrapper align-items"
+                      className="icon-wrapper pointer align-items"
                       onClick={handleClick}
                     >
                       <span className="font-weight-700 ">Filters</span>
@@ -104,12 +104,12 @@ const ProductPageSec = () => {
                         {category.map((item) => {
                           console.log("item", item);
                           return (
-                            <Link to={`products`}>
+                            // <Link to={`products`}>
                             <CardTwo
                               prop={item}
                               filterOn={showFilterBox}
                             ></CardTwo>
-                            </Link>
+                            // </Link>
                           );
                         })}
                       </Grid>

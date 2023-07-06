@@ -1,0 +1,16 @@
+// media queries started here
+
+@media screen and (max-width: 1520px) {
+  .app-bar-wrapper .button-content button {
+    font-size: 15px;
+    margin-left: 25px;
+  }
+}
+
+
+@media screen and (max-width: 1320px) {
+  .app-bar-wrapper .button-content button {
+    font-size: 14px;
+    margin-left: 15px;
+  }
+}

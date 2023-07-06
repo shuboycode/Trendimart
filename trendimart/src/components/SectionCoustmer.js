@@ -8,7 +8,7 @@ import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 
 const createCarouselItemImage = (index, options = {}) => (
-  <div key={index} className="pt-4 pb-4">
+  <div key={index} className="pt-4 pb-4 pl-5 pr-5">
    
     <Card className="customer-card">
       <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
@@ -58,7 +58,7 @@ const SectionCoustmer = ({ apnaclass }) => {
     <Carousel
       infiniteLoop
       centerMode
-      centerSlidePercentage="53"
+      centerSlidePercentage="52"
       showThumbs={false}
       showIndicators={false}
       showArrows={true}
