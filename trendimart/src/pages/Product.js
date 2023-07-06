@@ -104,12 +104,12 @@ const ProductPageSec = () => {
                         {category.map((item) => {
                           console.log("item", item);
                           return (
-                            <Link to={`products`}>
+                            // <Link to={`products`}>
                             <CardTwo
                               prop={item}
                               filterOn={showFilterBox}
                             ></CardTwo>
-                            </Link>
+                            // </Link>
                           );
                         })}
                       </Grid>

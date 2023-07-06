@@ -7,7 +7,7 @@
   position: sticky !important;
   top: 0;
   z-index: 1;
- 
+
   .logo-icon {
     height: 48px;
   }
@@ -22,10 +22,14 @@
 
   .right-navbar {
     display: flex;
+    width: 50%;
   }
 
   // serach icon
   .wrap {
+    max-width: 534px;
+    width: 100% !important;
+    display: flex;
     background: #f0f0f0;
     margin-right: 61px;
     border-radius: 8px;
@@ -34,10 +38,11 @@
     padding-right: 25px;
     height: 52px;
     .search {
-      width: 100%;
+      // max-width: 534px !important;
       position: relative;
       display: flex;
-      width: 534px;
+      //  min-width: 534px ;
+      width: 100%;
       height: 100%;
     }
 
@@ -247,18 +252,18 @@
   }
   .styling-card-wrapper {
     .wrapper-card1 {
-      min-width: 489px;
+      min-width: 409px;
       margin-right: 70px;
     }
     .img-wrapper-banner {
       .card-image-deals {
-        height: 301px;
+        height: 269px;
         width: 100%;
         object-fit: cover;
       }
     }
     .card-content1 {
-      padding: 30px 10px 38px 10px;
+      padding: 10px 15px 11px 14px;
       text-align: center;
       .logo-brand1 {
         width: 151px;
@@ -271,20 +276,22 @@
           font-size: 36px;
           line-height: 45px;
           color: color("primary", "primary");
-          margin-top: 43px;
+          margin-top: 17px;
         }
         .discount-primary {
           margin-top: 23px;
           font-weight: 700;
           font-size: 24px;
           line-height: 30px;
-
           color: color("primary", "primary");
         }
       }
     }
   }
 }
+
+
+
 
 // trending offer section start here
 .slider-section {
@@ -431,7 +438,7 @@
   .main-content {
     width: 100%;
   }
-  .wrapper{
+  .wrapper {
     gap: 68px;
   }
   .img-wrapper-banner.MuiCardContent-root:last-child {
@@ -443,4 +450,33 @@
   .img-wrapper-banner.MuiCardContent-root:last-child {
     padding-bottom: 0;
   }
+}
+
+
+
+
+
+.carousel.carousel-slider {
+	.control-arrow {
+		top: 50%;
+		color: #ffffff;
+		font-size: 26px;
+		bottom: 0;
+		margin-top: 0;
+		padding: 5px;
+		background: color("black","black");
+		border-radius: 50%;
+		height: 40px;
+		width: 36px;
+		padding: 0;
+	}
+	overflow: visible;
+}
+.carousel {
+	.control-dots {
+		bottom: -39px;
+		.dot {
+			background-color: rgba(0, 36, 130, 1);;
+		}
+	}
 }

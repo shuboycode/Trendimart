@@ -39,6 +39,8 @@ const Slider3 = ({ apnaclass }) => {
       showIndicators={false}
       {...getConfigurableProps()}
       className={apnaclass}
+      showStatus={false}
+
     >
       {baseChildren.props.children}
     </Carousel>
