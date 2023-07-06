@@ -11,8 +11,12 @@ import { arrow } from "../../styles/components/assets/icons";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
+import { useParams } from "react-router";
 
 const CarouselSection = () => {
+  const { id } = useParams();
+
+  console.log("slug with id: ", id);
   return (
     <div className="product-wrapper flex">
       <div className="left-wrapper flex">

@@ -11,6 +11,7 @@ import DropdownMenu from "../components/atomComponents/DropdownMenu";
 import TuneIcon from "@mui/icons-material/Tune";
 import CardTwo from "../components/CardTwo";
 import FooterSection from "../components/FooterSection";
+import { Link } from "react-router-dom";
 
 const ProductPageSec = () => {
   const [showFilterBox, setShowFilterBox] = useState(false);
@@ -63,7 +64,7 @@ const ProductPageSec = () => {
                 {showFilterBox && <FilterBox></FilterBox>}
               </div>
 
-              <div>
+              <div className="width-100">
                 <div className="content-wrapper text">
                   <div className="filter-subheading display-end">
                     <div
@@ -103,10 +104,12 @@ const ProductPageSec = () => {
                         {category.map((item) => {
                           console.log("item", item);
                           return (
+                            <Link to={`products`}>
                             <CardTwo
                               prop={item}
                               filterOn={showFilterBox}
                             ></CardTwo>
+                            </Link>
                           );
                         })}
                       </Grid>

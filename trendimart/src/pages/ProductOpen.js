@@ -5,13 +5,18 @@ import TabSection from "../components/ProductDetails/TabSection";
 import ImageCard from "../components/ImageCard";
 import FooterSection from "../components/FooterSection";
 import Header from "../components/Header";
+import { useParams } from "react-router";
 
 const ProductDetailsSection = () => {
+  const { id } = useParams();
+
+  console.log("slug with id: ", id);
+
   return (
     <>
       <Container maxWidth="false" sx={{ maxWidth: "1920px" }}>
         {/* sec section */}
-        <ProductDetails></ProductDetails>
+        <ProductDetails ></ProductDetails>
 
         {/* 3rd section tab  tab */}
         <TabSection></TabSection>
