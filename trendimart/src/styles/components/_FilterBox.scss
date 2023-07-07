@@ -1,4 +1,6 @@
 .dropdown-wrapper {
+  position: sticky;
+  top: 134px;
   width: 460px;
   background: color("White", "White");
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.07);
@@ -27,7 +29,7 @@
     font-size: 24px;
     line-height: 30px;
     letter-spacing: 0.05em;
-    color: color("black", "black");
+    color: color("black", "darken");
   }
 }
 
@@ -46,7 +48,7 @@
       &.number {
         font-size: 16px;
         line-height: 20px;
-        color: color("black", "black");
+        color: color("black", "darken");
         font-weight: bold;
       }
     }
@@ -69,7 +71,7 @@
     font-size: 24px;
     line-height: 30px;
     letter-spacing: 0.05em;
-    color: color("black", "black");
+    color: color("black", "darken");
     font-weight: bold;
   }
   .MuiSvgIcon-root {

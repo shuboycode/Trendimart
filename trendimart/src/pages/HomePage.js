@@ -39,6 +39,8 @@ const HomePage = () => {
           interval={2000}
           infiniteLoop="true"
           showThumbs={false}
+          showStatus={false}
+
         >
           <div>
             <img src={bannerw} alt="image1" />
