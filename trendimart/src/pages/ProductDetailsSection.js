@@ -5,15 +5,11 @@ import TabSection from "../components/ProductDetails/TabSection";
 import ImageCard from "../components/ImageCard";
 import FooterSection from "../components/FooterSection";
 import Header from "../components/Header";
-import { useParams } from "react-router";
 
 const ProductDetailsSection = () => {
-  // const { id } = useParams();
-
-  // console.log("slug with id: ", id,);
-
   return (
     <>
+      {/* <Header></Header> */}
       <Container maxWidth="false" sx={{ maxWidth: "1920px" }}>
         {/* sec section */}
         <ProductDetails></ProductDetails>
@@ -27,7 +23,6 @@ const ProductDetailsSection = () => {
         {/* 5th section image card */}
         <ImageCard title="Customer Also Like"></ImageCard>
       </Container>
-      
     </>
   );
 };

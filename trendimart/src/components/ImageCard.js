@@ -25,7 +25,7 @@ export default function ImgMediaCard({ title }) {
     dispatch(fetchProductsData());
   }, [dispatch]);
 
-  console.log(data);
+  // console.log(data);
 
   if (loading) {
     return console.log("loading");

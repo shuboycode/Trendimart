@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   DanimImage,
   DanimLadish,
@@ -12,11 +12,35 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProductsData } from "../../store/slices/productSlice";
 
 const CarouselSection = () => {
   const { id } = useParams();
 
-  console.log("slug with id: ", id);
+  const { data, loading, error } = useSelector((state) => state.products);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProductsData());
+  }, [dispatch]);
+
+  let singleItem = data.filter((el) => el.id === parseInt(id));
+  singleItem = singleItem[0];
+
+  console.log("slug with id inside: ", id);
+
+  if (error) {
+    // If an error occurred during API call, redirect to the 404 page
+    return <link to="/*" />;
+  }
+
+  if (loading) {
+    // If an error occurred during API call, redirect to the 404 page
+    return <div>product is loading...</div>;
+  }
+
   return (
     <div className="product-wrapper flex">
       <div className="left-wrapper flex">
@@ -68,10 +92,13 @@ const CarouselSection = () => {
 
       <div className="product-content-wrapper">
         <h3 className="content-heading font-weight-700">
-          Womens Denim Jacket (Blue)
+          {/* Womens Denim Jacket (Blue) */}
+          {singleItem?.title}
         </h3>
-        <h4 className="brand-text mt-6 font-weight-400">Brand Name</h4>
-        <h4 className="author-name font-weight-400">Sold By : Sellers Name</h4>
+        <h4 className="brand-text mt-6 font-weight-400"> {singleItem?.brand}</h4>
+        <h4 className="author-name font-weight-400">
+          Sold By : {singleItem?.seller}
+        </h4>
         <Box
           className="rating-product mt-7"
           sx={{
@@ -88,16 +115,18 @@ const CarouselSection = () => {
             emptyIcon={<StarIcon style={{ opacity: 0.5 }} fontSize="inherit" />}
           />
           <Box sx={{ ml: 2 }} className="rating-text text-color">
-            4.4
+            {singleItem?.Rating}
           </Box>
           <Box sx={{ ml: 2 }} className="rating-text text-color">
             36 Reviews
           </Box>
         </Box>
         <div className="number-wrapper mt-7 mb-3">
-          <span className="low-prize font-weight-700 mr-4">Rs. 700</span>
+          <span className="low-prize font-weight-700 mr-4">
+            Rs. {singleItem?.price * 100}
+          </span>
           <span className="high-prize text-light mr-4 text-decoration-line">
-            Rs. 1000
+            Rs. {singleItem?.price * 100 * 1.3}
           </span>
           <span className="discount green mr-4">(30% off)</span>
         </div>

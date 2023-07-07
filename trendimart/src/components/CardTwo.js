@@ -12,10 +12,10 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { useParams } from "react-router";
 
-const CardTwo = ({ prop, filterOn }) => {
-  const { id } = useParams();
-
-  console.log("id", id);
+const CardTwo = ({ prop, filterOn, key }) => {
+  // const { id } = useParams();
+// console.log('key: ', key);
+//   console.log("id", id);
 
   // const cardElements = [];
   // for (let i = 0; i < 3; i++) {

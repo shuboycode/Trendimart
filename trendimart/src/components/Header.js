@@ -40,7 +40,7 @@ const Header = ({ InviteBrand = false }) => {
       path: "/categories/kids",
     },
     {
-      title: "Shop",
+      title: "All Products",
       path: "/categories/all",
     },
     {
