@@ -11,6 +11,7 @@ import Box from "@mui/material/Box";
 
 import Grid from "@mui/material/Grid";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 const CardTwo = ({ prop, filterOn, key }) => {
   // const { id } = useParams();
@@ -30,6 +31,7 @@ const CardTwo = ({ prop, filterOn, key }) => {
     // {condition1 ? (condition2 ? 4 : 3) : 3}
 
     <Grid item xs={2} sm={4} md={filterOn ? 4 : 3} key={prop.id}>
+      <Link to={`${prop.id}`}>
       <div key={prop.id} className="card-wrapper">
         <Card sx={{ minWidth: 410 }} className="wrapper-card" elevation={0}>
           <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
@@ -100,6 +102,7 @@ const CardTwo = ({ prop, filterOn, key }) => {
           </CardContent>
         </Card>
       </div>
+      </Link>
     </Grid>
     //   </Grid>
     // </Box>
