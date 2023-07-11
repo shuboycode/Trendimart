@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 
 import Container from "@mui/material/Container";
 
@@ -21,17 +21,22 @@ import TransactionSection from "../components/TransectionSection";
 import AboutSection from "../components/AboutSection";
 import FooterSection from "../components/FooterSection";
 import Header from "../components/Header";
+import { MyContext } from "../App";
+
 
 const HomePage = () => {
   const [] = React.useState(null);
   const [] = React.useState(null);
 
+  // consume data here.
+  const sharedData = useContext(MyContext);
+  console.log('sharedData:', sharedData)
   return (
     <>
-      {/* header section start here */}
+    
       {/* <Header InviteBrand={true}></Header> */}
 
-      {/* banner section start here */}
+  
       <section className="banner-wrapper">
         {/* <Banner></Banner>  */}
         <Carousel
