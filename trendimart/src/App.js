@@ -35,8 +35,6 @@ function App() {
   // console.log(data);
   // console.log('app component rendered');
 
-  
-
   return (
     <>
       <AppRoutes />
