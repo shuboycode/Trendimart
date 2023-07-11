@@ -31,10 +31,10 @@ const CardTwo = ({ prop, filterOn, key }) => {
     // {condition1 ? (condition2 ? 4 : 3) : 3}
     <Grid item xs={2} sm={4} md={filterOn ? 4 : 3} key={prop.id}>
       <Link to={`${prop.id}`}>
-        <div key={prop.id} className="card-wrapper">
-          <Card sx={{ minWidth: 410 }} className="wrapper-card" elevation={0}>
-            <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-              <img src={women1} alt="women-danim" className="card-image" />
+      <div key={prop.id} className="card-wrapper">
+        <Card sx={{ minWidth: 410 }} className="wrapper-card" elevation={0}>
+          <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
+            <img src={women1} alt="women-danim" className="card-image" />
 
               <div className="card-content">
                 <Typography

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   DanimImage,
   DanimLadish,
@@ -29,7 +29,48 @@ const CarouselSection = () => {
   let singleItem = data.filter((el) => el.id === parseInt(id));
   singleItem = singleItem[0];
 
-  console.log("slug with id inside: ", id);
+  // console.log("slug with id inside: ", id);
+
+  // const [isActive, setIsActive] = useState(false);
+
+  // const handleMouseEnter = (e) => {
+  //   setIsActive(true);
+  //   // document.getElementsByClassName("left-image").className = "isActive";
+  //   let elements = document.getElementsByClassName("left-image");
+  //   for (let i = 0; i < elements.length; i++) {
+  //     elements[i].classList.toggle("isActive");
+  //   }
+  //   console.log(handleMouseEnter);
+  // };
+
+  // const handleMouseEnter = () => {
+  //   setIsActive(true);
+  //   const element = document.getElementById("your-element-id");
+  //   if (element) {
+  //     element.style.opacity = "1";
+  //   }
+  //   else{
+  //     element.style.opacity = "0.5";
+  //   }
+  // };
+
+  // const handleMouseLeave = (e) => {
+  //   // if (e._targetInst.key === )
+  //   // document.getElementsByClassName("left-image")
+  //   // const el1 = document.querySelector(`[key="${e._targetInst.key}"]`);
+  //   // setIsActive(false);
+  //   // console.log("handleMouseLeave", el1);
+  //   setIsActive(false);
+  //   console.log("handleMouseLeave", e.target.getAttribute("targetInst.key"));
+  // };
+
+  // const activeStyle = {
+  //   opacity: isActive ? "0.5" : "1",
+  // };
+
+  // const toggleActiveState = () => {
+  //   setIsActive(!isActive);
+  // };
 
   if (error) {
     // If an error occurred during API call, redirect to the 404 page
@@ -46,40 +87,61 @@ const CarouselSection = () => {
       <div className="left-wrapper flex">
         <div className="render-image">
           <div>
+            {Array.from({ length: 5 }, (_, i) => (
+              <div className="hover-card"> 
+                <img
+                  // style={activeStyle}
+                  // onMouseEnter={handleMouseEnter}
+                  // onMouseLeave={handleMouseLeave}
+                  src={DanimImage}
+                  key={i}
+                  alt="summer-collection"
+                  className="left-image pointer" 
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* <div>
             <img
+              style={activeStyle}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
               src={DanimImage}
               alt="summer-collection"
-              className="left-image pointer mt-4"
+              className={`left-image pointer mt-4  ${isActive ? 'active' : 'inactive'}`}
             />
           </div>
           <div>
             <img
+              style={activeStyle}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
               src={DanimImage}
               alt="summer-collection"
-              className="left-image pointer mt-4"
+              className={`left-image pointer mt-4  ${isActive ? 'active' : 'inactive'}`}
             />
           </div>
           <div>
             <img
+              style={activeStyle}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
               src={DanimImage}
               alt="summer-collection"
-              className="left-image pointer mt-4"
+              className={`left-image pointer mt-4  ${isActive ? 'active' : 'inactive'}`}
             />
           </div>
           <div>
             <img
+              style={activeStyle}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
               src={DanimImage}
               alt="summer-collection"
-              className="left-image pointer mt-4"
+              className={`left-image pointer mt-4  ${isActive ? 'active' : 'inactive'}`}
             />
-          </div>
-          <div>
-            <img
-              src={DanimImage}
-              alt="summer-collection"
-              className="left-image pointer mt-4"
-            />
-          </div>
+          </div> */}
         </div>
         <div className="image-wrapper ml-5">
           <img
@@ -95,7 +157,10 @@ const CarouselSection = () => {
           {/* Womens Denim Jacket (Blue) */}
           {singleItem?.title}
         </h3>
-        <h4 className="brand-text mt-6 font-weight-400"> {singleItem?.brand}</h4>
+        <h4 className="brand-text mt-6 font-weight-400">
+          {" "}
+          {singleItem?.brand}
+        </h4>
         <h4 className="author-name font-weight-400">
           Sold By : {singleItem?.seller}
         </h4>
