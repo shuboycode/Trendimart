@@ -102,13 +102,13 @@ const ProductPageSec = () => {
                         {category.map((item) => {
                           // console.log("item", item);
                           return (
-                            <Link to={`${item.id}`}>
+                            // <Link to={`${item.id}`}>
                               <CardTwo
                                 prop={item}
                                 filterOn={showFilterBox}
                                 key={item.id}
                               ></CardTwo>
-                            </Link>
+                            // </Link>
                           );
                         })}
                       </Grid>

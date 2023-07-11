@@ -8,7 +8,7 @@ import Header from "../components/Header";
 import { useParams } from "react-router";
 
 const ProductDetailsSection = () => {
-  // const { id } = useParams();
+  const { id } = useParams();
 
   // console.log("slug with id: ", id,);
 

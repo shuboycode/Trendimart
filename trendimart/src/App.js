@@ -1,5 +1,5 @@
 import "./App.scss";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 // import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -16,8 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsData } from "./store/slices/productSlice";
 import axios from "axios";
 
-
-
+export const MyContext = createContext();
 
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import axios from "axios";
@@ -35,13 +34,17 @@ function App() {
   // console.log(data);
   // console.log('app component rendered');
 
-  
+  const sharedData = {
+    username: "John Doe",
+    age: 25,
+    isAdmin: false,
+  };
 
   return (
     <>
-      <AppRoutes />
-    
-  
+      <MyContext.Provider value={sharedData}>
+        <AppRoutes />
+      </MyContext.Provider>
     </>
   );
 }
