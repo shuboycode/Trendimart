@@ -141,6 +141,10 @@ p {
   display: inline-block;
 }
 
+.display-block{
+  display: block;
+}
+
 .text-end{
 text-align: end
 }
@@ -177,6 +181,7 @@ text-align: end
   height: 50%;
 }
 
+
 .width-28 {
   width: 28%;
 }
@@ -188,6 +193,11 @@ text-align: end
 .width-50{
   width: 50%;
 }
+ 
+.height-52{
+  height: 52px;
+}
+
 .line-clamp-4 {
   display: -webkit-box;
   -webkit-line-clamp: 4;

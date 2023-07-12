@@ -35,8 +35,7 @@ const HomePage = () => {
     <>
     
       {/* <Header InviteBrand={true}></Header> */}
-
-  
+      
       <section className="banner-wrapper">
         {/* <Banner></Banner>  */}
         <Carousel

@@ -15,6 +15,9 @@ import AppRoutes from "./routes";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsData } from "./store/slices/productSlice";
 import axios from "axios";
+import ContactUs from "./pages/ContactUs";
+
+// import { increment } from '../src//store//slices//cardSlice';
 
 export const MyContext = createContext();
 
@@ -33,6 +36,8 @@ function App() {
   // }, []);
   // console.log(data);
   // console.log('app component rendered');
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
 
   const sharedData = {
     username: "John Doe",
@@ -45,6 +50,8 @@ function App() {
       <MyContext.Provider value={sharedData}>
         <AppRoutes />
       </MyContext.Provider>
+
+     {/* <ContactUs></ContactUs> */}
     </>
   );
 }

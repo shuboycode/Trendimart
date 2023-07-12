@@ -12,6 +12,7 @@ import Error from "./pages/Error";
 
 import Payment from "./pages/Payment";
 import ProductDetailsSection from "./pages/ProductOpen";
+import ContactUs from "./pages/ContactUs";
 
 const AppRoutes = () => {
   return (
@@ -25,8 +26,12 @@ const AppRoutes = () => {
         <Route path="categories/:slug" element={<Product />} />
         <Route path="categories/:slug/:id" element={<ProductDetailsSection />} />
         <Route path="ProductWithFilter" element={<ProductWithFilter />} />
-        <Route path="PaymentPage" element={<Payment />} />
+        <Route path="Payment" element={<Payment />} />
         <Route path="ProductOpen" element={<ProductOpen />}/>
+        <Route path="ContactUs" element={<ContactUs/>}/>
+       
+
+      
       </Route>
     </Routes>
   );

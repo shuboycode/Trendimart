@@ -23,6 +23,10 @@ import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 
 import LogoHead from "../styles/components/assets/images/LogoHead.jpg";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { Badge } from "@mui/material";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Header = ({ InviteBrand = false }) => {
   const pages = ["Men", "Women", "Kids", "Shop", "Contact us"];
@@ -48,6 +52,21 @@ const Header = ({ InviteBrand = false }) => {
       path: "/contactus",
     },
   ];
+
+  const [CartItem, setCartItem] = useState(0);
+  const CartItemCount = useSelector((state) => state.counter);
+  // const [selectedSize, setSelectedSize] = useState('');
+//   const [isAddedToCart, setAddedToCart] = useState(false);
+
+// const handleGoToCart = () => {
+    
+//   };
+
+
+
+  useEffect(() => {
+    setCartItem(CartItemCount);
+  }, [CartItemCount]);
 
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -202,8 +221,13 @@ const Header = ({ InviteBrand = false }) => {
                 </div>
               </div>
               <div className="icon-wrapper">
-                <FavoriteBorderIcon />
-                <img src={cart} alt="cart-logo" />
+
+                <FavoriteBorderIcon/>
+
+                if()
+                <Badge badgeContent={CartItem} color="primary" className="ml-4">
+                  <ShoppingCartOutlinedIcon />
+                </Badge>
               </div>
 
               <Tooltip title="Open settings">
