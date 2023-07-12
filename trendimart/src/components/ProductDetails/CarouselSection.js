@@ -14,8 +14,26 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsData } from "../../store/slices/productSlice";
+import { increment } from "../../store/slices/cardSlice";
+import { Payment } from "@mui/icons-material";
+import { Link, Route, Routes } from "react-router-dom";
 
 const CarouselSection = () => {
+  const CartItem = useSelector((state) => state.counter);
+
+  // rendering
+  const [showPaymentPage, setShowPaymentPage] = useState(false);
+
+  // const handleButtonClick = () => {
+  //   setShowPaymentPage(true);
+  // };
+
+  const [isShown, setIsShown] = useState(false);
+
+  const handleClick = (event) => {
+    setIsShown((current) => !current);
+  };
+
   const { id } = useParams();
 
   const { data, loading, error } = useSelector((state) => state.products);
@@ -88,7 +106,7 @@ const CarouselSection = () => {
         <div className="render-image">
           <div>
             {Array.from({ length: 5 }, (_, i) => (
-              <div className="hover-card"> 
+              <div className="hover-card">
                 <img
                   // style={activeStyle}
                   // onMouseEnter={handleMouseEnter}
@@ -96,7 +114,7 @@ const CarouselSection = () => {
                   src={DanimImage}
                   key={i}
                   alt="summer-collection"
-                  className="left-image pointer" 
+                  className="left-image pointer"
                 />
               </div>
             ))}
@@ -285,9 +303,30 @@ const CarouselSection = () => {
               aria-label="Disabled elevation buttons"
               className="cart-button mr-4"
             >
-              <Button className="pay-button">Add to cart</Button>
+              {isShown ? (
+                <Link to="/Payment">
+                  <Button
+                    onClick={() => {
+                      handleClick();
+                      dispatch(increment());
+                    }}
+                    className="pay-button"
+                  >
+                    Go to cart
+                  </Button>
+                </Link>
+              ) : (
+                <Button
+                  onClick={() => {
+                    handleClick();
+                    dispatch(increment());
+                  }}
+                  className="pay-button"
+                >
+                  Add to cart
+                </Button>
+              )}
             </ButtonGroup>
-
             <FavoriteBorderIcon></FavoriteBorderIcon>
           </div>
         </div>

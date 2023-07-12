@@ -42,6 +42,8 @@ const ProductPageSec = () => {
     setShowFilterBox(!showFilterBox);
   }
 
+
+
   return (
     <>
       {/* content section start here */}

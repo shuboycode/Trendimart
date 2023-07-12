@@ -28,15 +28,14 @@ const HomePage = () => {
   const [] = React.useState(null);
   const [] = React.useState(null);
 
-
-  // const sharedData = useContext(MyContext);
-  // console.log('sharedData:', sharedData)
+  // consume data here.
+  const sharedData = useContext(MyContext);
+  console.log('sharedData:', sharedData)
   return (
     <>
-      {/* header section start here */}
+    
       {/* <Header InviteBrand={true}></Header> */}
-
-      {/* banner section start here */}
+      
       <section className="banner-wrapper">
         {/* <Banner></Banner>  */}
         <Carousel
