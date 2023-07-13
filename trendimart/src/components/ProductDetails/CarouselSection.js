@@ -17,16 +17,20 @@ import { fetchProductsData } from "../../store/slices/productSlice";
 import { increment } from "../../store/slices/cardSlice";
 import { Payment } from "@mui/icons-material";
 import { Link, Route, Routes } from "react-router-dom";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const CarouselSection = () => {
   const CartItem = useSelector((state) => state.counter);
 
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   // rendering
   const [showPaymentPage, setShowPaymentPage] = useState(false);
-
-  // const handleButtonClick = () => {
-  //   setShowPaymentPage(true);
-  // };
 
   const [isShown, setIsShown] = useState(false);
 
@@ -47,49 +51,6 @@ const CarouselSection = () => {
   let singleItem = data.filter((el) => el.id === parseInt(id));
   singleItem = singleItem[0];
 
-  // console.log("slug with id inside: ", id);
-
-  // const [isActive, setIsActive] = useState(false);
-
-  // const handleMouseEnter = (e) => {
-  //   setIsActive(true);
-  //   // document.getElementsByClassName("left-image").className = "isActive";
-  //   let elements = document.getElementsByClassName("left-image");
-  //   for (let i = 0; i < elements.length; i++) {
-  //     elements[i].classList.toggle("isActive");
-  //   }
-  //   console.log(handleMouseEnter);
-  // };
-
-  // const handleMouseEnter = () => {
-  //   setIsActive(true);
-  //   const element = document.getElementById("your-element-id");
-  //   if (element) {
-  //     element.style.opacity = "1";
-  //   }
-  //   else{
-  //     element.style.opacity = "0.5";
-  //   }
-  // };
-
-  // const handleMouseLeave = (e) => {
-  //   // if (e._targetInst.key === )
-  //   // document.getElementsByClassName("left-image")
-  //   // const el1 = document.querySelector(`[key="${e._targetInst.key}"]`);
-  //   // setIsActive(false);
-  //   // console.log("handleMouseLeave", el1);
-  //   setIsActive(false);
-  //   console.log("handleMouseLeave", e.target.getAttribute("targetInst.key"));
-  // };
-
-  // const activeStyle = {
-  //   opacity: isActive ? "0.5" : "1",
-  // };
-
-  // const toggleActiveState = () => {
-  //   setIsActive(!isActive);
-  // };
-
   if (error) {
     // If an error occurred during API call, redirect to the 404 page
     return <link to="/*" />;
@@ -97,7 +58,13 @@ const CarouselSection = () => {
 
   if (loading) {
     // If an error occurred during API call, redirect to the 404 page
-    return <div>product is loading...</div>;
+    return (
+      <div className="justify-center flex loader-wrapper">
+        {" "}
+        <CircularProgress className="loader"/>
+       
+      </div>
+    );
   }
 
   return (
@@ -108,9 +75,6 @@ const CarouselSection = () => {
             {Array.from({ length: 5 }, (_, i) => (
               <div className="hover-card">
                 <img
-                  // style={activeStyle}
-                  // onMouseEnter={handleMouseEnter}
-                  // onMouseLeave={handleMouseLeave}
                   src={DanimImage}
                   key={i}
                   alt="summer-collection"
@@ -119,47 +83,6 @@ const CarouselSection = () => {
               </div>
             ))}
           </div>
-
-          {/* <div>
-            <img
-              style={activeStyle}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              src={DanimImage}
-              alt="summer-collection"
-              className={`left-image pointer mt-4  ${isActive ? 'active' : 'inactive'}`}
-            />
-          </div>
-          <div>
-            <img
-              style={activeStyle}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              src={DanimImage}
-              alt="summer-collection"
-              className={`left-image pointer mt-4  ${isActive ? 'active' : 'inactive'}`}
-            />
-          </div>
-          <div>
-            <img
-              style={activeStyle}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              src={DanimImage}
-              alt="summer-collection"
-              className={`left-image pointer mt-4  ${isActive ? 'active' : 'inactive'}`}
-            />
-          </div>
-          <div>
-            <img
-              style={activeStyle}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              src={DanimImage}
-              alt="summer-collection"
-              className={`left-image pointer mt-4  ${isActive ? 'active' : 'inactive'}`}
-            />
-          </div> */}
         </div>
         <div className="image-wrapper ml-5">
           <img
@@ -327,7 +250,14 @@ const CarouselSection = () => {
                 </Button>
               )}
             </ButtonGroup>
-            <FavoriteBorderIcon></FavoriteBorderIcon>
+
+            <div onClick={toggleFavorite}>
+              {isFavorite ? (
+                <FavoriteIcon className="fav-icon" />
+              ) : (
+                <FavoriteBorderIcon className="border-icon" />
+              )}
+            </div>
           </div>
         </div>
       </div>

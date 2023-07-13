@@ -9,6 +9,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Checkbox from "@mui/material/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import { useState } from "react";
 
 const FilterBox = () => {
   return (
@@ -23,29 +24,18 @@ const FilterBox = () => {
 
         <div className="price-wrapper">
           <div className="sub-heading mt-4 mb-7">Price</div>
+
           <PlainSlider></PlainSlider>
-
-          <div className="number-wrapper flex mt-7">
-            <div className="content-wrapper">
-              <span className="heading">Min</span>
-              <span className="number mt-2 font-face-lb">Rs. 700</span>
-            </div>
-
-            <div className="content-wrapper">
-              <span className="heading">Max</span>
-              <span className="number mt-2 font-face-lb">Rs. 2000</span>
-            </div>
-          </div>
         </div>
 
         {/* first accordian  */}
         <div className="simple-accordion">
           <hr sx="width:50%;text-align:left;" className="mt-6" />
 
-
           <div>
             <Accordion className="accordion-style">
-              <AccordionSummary className="accordian-icon"
+              <AccordionSummary
+                className="accordian-icon"
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
@@ -55,10 +45,7 @@ const FilterBox = () => {
               <AccordionDetails>
                 <FormGroup>
                   <FormControlLabel
-
-                    control={<Checkbox defaultChecked/>}
-                    
-                  
+                    control={<Checkbox defaultChecked />}
                     label={
                       <span>
                         Tokyo Talkies<span className="text-color">(206)</span>
@@ -115,7 +102,8 @@ const FilterBox = () => {
           <hr sx="width:50%;text-align:left;" />
           <div>
             <Accordion className="accordion-style">
-              <AccordionSummary  className="accordian-icon"
+              <AccordionSummary
+                className="accordian-icon"
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
@@ -186,7 +174,8 @@ const FilterBox = () => {
 
           <div>
             <Accordion className="accordion-style">
-              <AccordionSummary  className="accordian-icon"
+              <AccordionSummary
+                className="accordian-icon"
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
@@ -249,9 +238,8 @@ const FilterBox = () => {
             </Accordion>
           </div>
         </div>
-
-        <hr sx="width:50%;text-align:left;" />
       </div>
+      <hr sx="width:50%;text-align:left;" />
     </>
   );
 };

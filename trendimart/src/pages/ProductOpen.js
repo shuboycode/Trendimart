@@ -10,7 +10,7 @@ import { useParams } from "react-router";
 const ProductDetailsSection = () => {
   const { id } = useParams();
 
-  // console.log("slug with id: ", id,);
+ 
 
   return (
     <>
@@ -25,6 +25,7 @@ const ProductDetailsSection = () => {
         <ImageCard title="Product details"></ImageCard>
 
         {/* 5th section image card */}
+        
         <ImageCard title="Customer Also Like"></ImageCard>
       </Container>
       
