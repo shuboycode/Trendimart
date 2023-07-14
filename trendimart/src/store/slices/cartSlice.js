@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Async thunk action to fetch products from API
 export const fetchCartProducts = createAsyncThunk(
-  "api/fetchData",
+  "api/postData",
   async ({ id, singleItem }, data) => {
     const postRequest = await axios.post(
       `http://localhost:3001/cart`,

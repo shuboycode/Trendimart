@@ -49,9 +49,9 @@ const CarouselSection = () => {
     setIsShown((current) => !current);
     console.log("id :", id);
 
-    if (data.type === "api/fetchData/fulfilled") {
+    // if (cartdata.type === "api/postData/fulfilled") {
       await dispatch(fetchCartProducts({ id, singleItem }));
-    }
+    // }
   };
 
   // console.log("slug with id inside: ", id);
