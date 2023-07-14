@@ -23,28 +23,22 @@ import FooterSection from "../components/FooterSection";
 import Header from "../components/Header";
 import { MyContext } from "../App";
 
-
 const HomePage = () => {
   const [] = React.useState(null);
   const [] = React.useState(null);
 
   // consume data here.
   const sharedData = useContext(MyContext);
-  console.log('sharedData:', sharedData)
+  console.log("sharedData:", sharedData);
   return (
     <>
-    
-      {/* <Header InviteBrand={true}></Header> */}
-      
       <section className="banner-wrapper">
-        {/* <Banner></Banner>  */}
         <Carousel
           autoPlay="true"
           interval={2000}
           infiniteLoop="true"
           showThumbs={false}
           showStatus={false}
-
         >
           <div>
             <img src={bannerw} alt="image1" />
@@ -140,17 +134,6 @@ const HomePage = () => {
       >
         <AboutSection></AboutSection>
       </Container>
-
-      {/* footer sec start here */}
-      {/* <div className="sec-bottom">
-        <Container
-          className="personal-info-wrapper"
-          maxWidth="false"
-          sx={{ maxWidth: "1920px", border: "" }}
-        >
-          <FooterSection></FooterSection>
-        </Container>
-      </div> */}
     </>
   );
 };

@@ -79,11 +79,9 @@ export default function DropdownMenu() {
         id="demo-customized-menu"
         MenuListProps={{
           "aria-labelledby": "demo-customized-button",
-        
         }}
         anchorEl={anchorEl}
         open={open}
-       
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose} disableRipple>

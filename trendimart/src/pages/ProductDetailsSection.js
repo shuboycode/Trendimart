@@ -9,9 +9,11 @@ import Header from "../components/Header";
 const ProductDetailsSection = () => {
   return (
     <>
-      {/* <Header></Header> */}
+     
       <Container maxWidth="false" sx={{ maxWidth: "1920px" }}>
+        
         {/* sec section */}
+
         <ProductDetails></ProductDetails>
 
         {/* 3rd section tab  tab */}

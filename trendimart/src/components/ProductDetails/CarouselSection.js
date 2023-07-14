@@ -250,6 +250,7 @@ const CarouselSection = () => {
                 </Button>
               )}
             </ButtonGroup>
+            
 
             <div onClick={toggleFavorite}>
               {isFavorite ? (

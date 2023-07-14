@@ -3,9 +3,8 @@ import Button from "@mui/material/Button";
 import CardAddress from "../components/PaymentSection/CardAddress";
 import Container from "@mui/material/Container";
 import PlaceOrder from "../components/PaymentSection/PlaceOrder";
-import Header from "../components/Header";
-import FooterSection from "../components/FooterSection";
-import { ButtonGroup } from "@mui/material";
+
+
 
 const PaymentPageSection = () => {
   return (
@@ -15,7 +14,7 @@ const PaymentPageSection = () => {
         sx={{ maxWidth: "1920px" }}
         className="filter-sec-wrapper"
       >
-        <div className="justify-center">
+        <div className="justify-center flex">
           <div className="address-wrapper flex">
             <div className="">
               <div className="address flex">

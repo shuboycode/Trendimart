@@ -13,6 +13,7 @@ import Error from "./pages/Error";
 import Payment from "./pages/Payment";
 import ProductDetailsSection from "./pages/ProductOpen";
 import ContactUs from "./pages/ContactUs";
+import MyWishlist from "./pages/MyWishlist";
 
 const AppRoutes = () => {
   return (
@@ -29,6 +30,7 @@ const AppRoutes = () => {
         <Route path="Payment" element={<Payment />} />
         <Route path="ProductOpen" element={<ProductOpen />}/>
         <Route path="ContactUs" element={<ContactUs/>}/>
+        <Route path="MyWishlist" element={<MyWishlist/>}/>
        
 
       

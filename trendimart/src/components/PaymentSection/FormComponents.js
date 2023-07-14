@@ -2,13 +2,10 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
+
 import { useState } from "react";
-import Input, {
-  getCountries,
-  getCountryCallingCode,
-} from "react-phone-number-input/input";
-import countryNames from "react-phone-number-input/locale/en";
+import Input, { getCountryCallingCode } from "react-phone-number-input/input";
+
 import { Button } from "@mui/material";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";

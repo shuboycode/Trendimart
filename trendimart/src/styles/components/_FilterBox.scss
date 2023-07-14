@@ -1,13 +1,13 @@
 .dropdown-wrapper {
   .value-wrapper {
     h2 {
-      color: color("grey","lighten-2");
+      color: color("grey", "lighten-2");
       font-size: 18px;
       font-weight: 400;
       letter-spacing: 0.9px;
     }
-    .number{
-      font-weight:700;
+    .number {
+      font-weight: 700;
     }
   }
   position: sticky;
@@ -103,12 +103,34 @@
   }
 }
 
-.loader-wrapper{
-  padding-top:  10px;
-  span{
-    &.loader.MuiCircularProgress-root{
+.loader-wrapper {
+  padding-top: 10px;
+  span {
+    &.loader.MuiCircularProgress-root {
       height: 400px !important;
       width: 400px !important;
     }
+  }
+}
+
+// .filter-content {
+//   position: relative;
+//   animation: mymove 2s infinite;
+// }
+
+.filter-content.active {
+  .dropdown-wrapper {
+    animation: mymove 100ms;
+  }
+}
+
+@keyframes mymove {
+  from {
+    width: 0px;
+    opacity: 0;
+  }
+  to {
+    width: 460px;
+    opacity: 1;
   }
 }

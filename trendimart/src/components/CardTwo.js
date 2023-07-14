@@ -5,36 +5,21 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import women1 from "../styles/components/assets/images/women1.svg";
 import darkstar from "../styles/components/assets/icons/darkstar.svg";
-import { Paper } from "@mui/material";
+
 import { experimentalStyled as styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
 
 import Grid from "@mui/material/Grid";
-import { useParams } from "react-router";
+
 import { Link } from "react-router-dom";
 
 const CardTwo = ({ prop, filterOn, key }) => {
-  // const { id } = useParams();
-  // console.log('key: ', key);
-  //   console.log("id", id);
-
-  // const cardElements = [];
-  // for (let i = 0; i < 3; i++) {
-  // cardElements.push(
   return (
-    // <Box sx={{ flexGrow: 1 }}>
-    //   <Grid
-    //     container
-    //     spacing={{ xs: 2, md: 3 }}
-    //     columns={{ xs: 4, sm: 8, md: 12 }}
-    //   >
-    // {condition1 ? (condition2 ? 4 : 3) : 3}
     <Grid item xs={2} sm={4} md={filterOn ? 4 : 3} key={prop.id}>
       <Link to={`${prop.id}`}>
-      <div key={prop.id} className="card-wrapper">
-        <Card sx={{ minWidth: 410 }} className="wrapper-card" elevation={0}>
-          <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-            <img src={women1} alt="women-danim" className="card-image" />
+        <div key={prop.id} className="card-wrapper">
+          <Card sx={{ minWidth: 410 }} className="wrapper-card" elevation={0}>
+            <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
+              <img src={women1} alt="women-danim" className="card-image" />
 
               <div className="card-content">
                 <Typography
@@ -103,12 +88,7 @@ const CardTwo = ({ prop, filterOn, key }) => {
         </div>
       </Link>
     </Grid>
-    //   </Grid>
-    // </Box>
   );
-  //   );
-  // }
-  // return <>{cardElements}</>;
 };
 
 export default CardTwo;

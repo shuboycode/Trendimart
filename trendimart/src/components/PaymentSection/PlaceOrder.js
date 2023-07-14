@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  Jacket,
-  Rupees,
-  Frame,
-  Rup,
-  Rupe,
-} from "../../styles/components/assets/images";
+import { Rupees, Rupe } from "../../styles/components/assets/images";
 import { Button } from "@mui/material";
-import { ButtonGroup } from "@mui/material";
 
 const PlaceOrder = () => {
   return (
@@ -15,7 +8,7 @@ const PlaceOrder = () => {
       <div className="detail-wrapper">
         <h2 className="heading font-weight-700">PRICE DETAILS (1Item)</h2>
         <div>
-          <div className="amount justify-between pt-4">
+          <div className="amount justify-between flex pt-4">
             <span className="">Total MRP</span>
             <div>
               <img
@@ -27,7 +20,7 @@ const PlaceOrder = () => {
             </div>
           </div>
 
-          <div className="amount justify-between pt-2">
+          <div className="amount justify-between flex pt-2">
             <span>Discount on MRP</span>
             <div>
               <img src={Rupe} alt="summer-collection" className="left-image" />
@@ -35,7 +28,7 @@ const PlaceOrder = () => {
             </div>
           </div>
 
-          <div className="amount justify-between pt-2">
+          <div className="amount justify-between flex pt-2">
             <span>
               Convenience Fee <span>Know More</span>
             </span>
@@ -51,7 +44,7 @@ const PlaceOrder = () => {
         </div>
 
         <div className="text">
-          <div className="amount justify-between pt-10 pb-7">
+          <div className="amount justify-between flex pt-10 pb-7">
             <span className="bold-text">Total Amount</span>
             <div>
               <img
@@ -73,11 +66,8 @@ const PlaceOrder = () => {
           </Button>
         </div>
       </div>
-
-
     </>
   );
 };
-
 
 export default PlaceOrder;
