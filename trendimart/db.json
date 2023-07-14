@@ -11,7 +11,7 @@
       "seller": "Seller A",
       "created_at": null,
       "updated_at": null,
-      "image":"https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
+      "image": "https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
     },
     {
       "id": 4,
@@ -24,7 +24,7 @@
       "seller": "Seller A",
       "created_at": null,
       "updated_at": null,
-      "image":"https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
+      "image": "https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
     },
     {
       "id": 7,
@@ -37,7 +37,7 @@
       "seller": "Seller A",
       "created_at": null,
       "updated_at": null,
-      "image":"https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
+      "image": "https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
     },
     {
       "id": 10,
@@ -50,7 +50,7 @@
       "seller": "Seller A",
       "created_at": null,
       "updated_at": null,
-      "image":"https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
+      "image": "https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
     },
     {
       "id": 2,
@@ -63,7 +63,6 @@
       "seller": "Seller B",
       "created_at": null,
       "updated_at": null
-      
     },
     {
       "id": 5,
@@ -230,6 +229,95 @@
       "category": "men",
       "rating": "4.9",
       "seller": "Seller I",
+      "created_at": null,
+      "updated_at": null
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "title": "Product 1",
+      "type": "Type A",
+      "price": 11,
+      "brand": "levis",
+      "category": "men",
+      "rating": "4.5",
+      "seller": "Seller A",
+      "created_at": null,
+      "updated_at": null,
+      "image": "https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Product 4",
+      "type": "Type A",
+      "price": 8,
+      "brand": "puma",
+      "category": "men",
+      "rating": "4.7",
+      "seller": "Seller A",
+      "created_at": null,
+      "updated_at": null,
+      "image": "https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Product 10",
+      "type": "Type A",
+      "price": 11,
+      "brand": "perter england",
+      "category": "men",
+      "rating": "4.2",
+      "seller": "Seller A",
+      "created_at": null,
+      "updated_at": null,
+      "image": "https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Product 2",
+      "type": "Type B",
+      "price": 20,
+      "brand": "Nike",
+      "category": "men",
+      "rating": "4.2",
+      "seller": "Seller B",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 23,
+      "title": "Product 3",
+      "type": "Type C",
+      "price": 15,
+      "brand": "Adidas",
+      "category": "men",
+      "rating": "4.8",
+      "seller": "Seller C",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 27,
+      "title": "Product 7",
+      "type": "Type G",
+      "price": 22,
+      "brand": "Converse",
+      "category": "men",
+      "rating": "4.3",
+      "seller": "Seller G",
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 26,
+      "title": "Product 6",
+      "type": "Type F",
+      "price": 30,
+      "brand": "New Balance",
+      "category": "men",
+      "rating": "4.6",
+      "seller": "Seller F",
       "created_at": null,
       "updated_at": null
     }

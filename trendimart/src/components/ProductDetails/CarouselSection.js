@@ -17,6 +17,7 @@ import { fetchProductsData } from "../../store/slices/productSlice";
 import { increment } from "../../store/slices/cardSlice";
 import { Payment } from "@mui/icons-material";
 import { Link, Route, Routes } from "react-router-dom";
+import { addToCart, fetchCartProducts } from "../../store/slices/cartSlice";
 
 const CarouselSection = () => {
   const CartItem = useSelector((state) => state.counter);
@@ -30,13 +31,7 @@ const CarouselSection = () => {
 
   const [isShown, setIsShown] = useState(false);
 
-  const handleClick = (event) => {
-    setIsShown((current) => !current);
-  };
-
   const { id } = useParams();
-
-  const { data, loading, error } = useSelector((state) => state.products);
 
   const dispatch = useDispatch();
 
@@ -44,8 +39,20 @@ const CarouselSection = () => {
     dispatch(fetchProductsData());
   }, [dispatch]);
 
-  let singleItem = data.filter((el) => el.id === parseInt(id));
-  singleItem = singleItem[0];
+  const { data, loading, error } = useSelector((state) => state.products);
+
+  let singleItem1 = data?.filter((el) => el.id === parseInt(id));
+  console.log("single item:", singleItem1);
+  let singleItem = singleItem1[0];
+
+  const handleClick = async (event) => {
+    setIsShown((current) => !current);
+    console.log("id :", id);
+
+    if (data.type === "api/fetchData/fulfilled") {
+      await dispatch(fetchCartProducts({ id, singleItem }));
+    }
+  };
 
   // console.log("slug with id inside: ", id);
 
