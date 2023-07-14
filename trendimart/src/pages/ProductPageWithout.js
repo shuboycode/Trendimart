@@ -3,11 +3,10 @@ import Container from "@mui/material/Container";
 
 import Header from "../components/Header";
 import TuneIcon from "@mui/icons-material/Tune";
-// import ImageCard from "../components/ImageCard";
+
 import FooterSection from "../components/FooterSection";
 import WomenCard from "../components/WomenCard";
 import DropdownMenu from "../components/atomComponents/DropdownMenu";
-import CardTwo from "../components/CardTwo";
 
 const ProductPageWithout = () => {
   return (
@@ -35,40 +34,32 @@ const ProductPageWithout = () => {
           </div>
 
           {/* content card start here */}
-         
-         
+
           <div>
             <div className="flex mt-9">
               <WomenCard></WomenCard>
-              {/* <CardTwo></CardTwo> */}
             </div>
 
             <div className="flex mt-9">
               <WomenCard></WomenCard>
-              {/* <CardTwo></CardTwo> */}
             </div>
 
             <div className="flex mt-9">
               <WomenCard></WomenCard>
-              {/* <CardTwo></CardTwo> */}
             </div>
 
             <div className="flex mt-9">
               <WomenCard></WomenCard>
-              {/* <CardTwo></CardTwo> */}
             </div>
 
             <div className="flex mt-9">
               <WomenCard></WomenCard>
-              {/* <CardTwo></CardTwo> */}
             </div>
 
             <div className="flex mt-9">
               <WomenCard></WomenCard>
-              {/* <CardTwo></CardTwo> */}
             </div>
           </div>
-
         </div>
       </Container>
 

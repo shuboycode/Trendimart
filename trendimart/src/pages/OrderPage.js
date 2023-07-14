@@ -26,7 +26,6 @@ const OrderPage = () => {
           sx={{ maxWidth: "1220px" }}
           className="order-sec"
         >
-          {/* <div className="order-card flex"> */}
           <div className="card flex  mb-22">
             <div>
               <img src={ItemOne} alt="image3" />
@@ -110,55 +109,6 @@ const OrderPage = () => {
           </div>
         </Container>
       </div>
-
-      {/* <div className="order-wrapper">
-        <Container
-          maxWidth="false"
-          sx={{ maxWidth: "1220px" }}
-          className="order-sec"
-        >
-          <div className="card flex">
-            <div>
-              <img src={ItemOne} alt="image3" />
-            </div>
-
-            <div className="order-card flex ml-10">
-              <div className="order-detail">
-                <h4 className="heading font-weight-700">Womens Black Tshirt</h4>
-                <h5 className="sub-heading mt-3">Brand Name</h5>
-                <span className="mt-3">$100</span>
-
-                <div className="order-loaction mt-3">
-                  <span>Order Placed on :</span>
-                  <span className="text"> 3 October 2020</span>
-                </div>
-
-                <div className="order-loaction mt-2">
-                  <span>Ship To:</span>
-                  <span className="text"> Anna Kathy</span>
-                </div>
-
-                <div className="button-wrapper mt-7">
-                  <Button variant="outlined" size="small" className="small">
-                    Add to cart
-                  </Button>
-                  <Button variant="text" className="medium">
-                    Cancel
-                  </Button>
-                </div>
-              </div>
-
-              <div className="order-id">
-                <div className="order-no flex">
-                  <p className="heading">Order Number :</p>
-                  <p className="transaction-id">#124-5660-9008</p>
-                </div>
-                <span>View Order Details</span>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </div> */}
 
       {/* footer sec start */}
 

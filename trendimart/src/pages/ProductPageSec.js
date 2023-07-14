@@ -4,12 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsData } from "../store/slices/productSlice";
 import { Container } from "@mui/material";
 
-import Header from "../components/Header";
 import FilterBox from "../components/atomComponents/FilterBox";
 import DropdownMenu from "../components/atomComponents/DropdownMenu";
 import TuneIcon from "@mui/icons-material/Tune";
 import CardTwo from "../components/CardTwo";
-import FooterSection from "../components/FooterSection";
 
 const ProductPageSec = () => {
   const { slug } = useParams();
@@ -90,42 +88,11 @@ const ProductPageSec = () => {
                     return <CardTwo prop={item}></CardTwo>;
                   })}
                 </div>
-
-                {/* <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div> */}
               </div>
             </div>
           </Container>
         </div>
       </div>
-
-      {/* footer sec start here */}
-      {/* <div className="sec-bottom">
-        <Container
-          maxWidth="false"
-          sx={{ maxWidth: "1920px" }}
-          className="filter-sec-wrapper"
-        >
-          <FooterSection></FooterSection>
-        </Container>
-      </div> */}
     </>
   );
 };

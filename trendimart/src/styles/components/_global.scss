@@ -114,6 +114,7 @@ p {
 
 .justify-center {
   justify-content: center;
+  display: flex;
 }
 
 .baseline{
@@ -133,6 +134,7 @@ p {
 
 .justify-between{
   justify-content: space-between;
+  display: flex;
 }
 
 .display {

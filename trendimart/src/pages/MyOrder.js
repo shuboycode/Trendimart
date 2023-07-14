@@ -1,9 +1,8 @@
 import React from "react";
-import Header from "../components/Header";
+
 import { Container } from "@mui/material";
 import { ItemOne } from "../styles/components/assets/images";
 import { Button } from "@mui/material";
-import FooterSection from "../components/FooterSection";
 
 const OrderPage = () => {
   return (
@@ -24,7 +23,6 @@ const OrderPage = () => {
           sx={{ maxWidth: "1220px" }}
           className="order-sec"
         >
-          {/* <div className="order-card flex"> */}
           <div className="card flex  mb-22">
             <div>
               <img src={ItemOne} alt="image3" />
@@ -108,8 +106,6 @@ const OrderPage = () => {
           </div>
         </Container>
       </div>
-
-     
     </>
   );
 };

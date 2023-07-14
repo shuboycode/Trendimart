@@ -5,7 +5,6 @@ import Container from "@mui/material/Container";
 import PlaceOrder from "../components/PaymentSection/PlaceOrder";
 import Header from "../components/Header";
 import FooterSection from "../components/FooterSection";
-import { ButtonGroup } from "@mui/material";
 
 const PaymentPageSection = () => {
   return (
@@ -32,18 +31,10 @@ const PaymentPageSection = () => {
                   </p>
                 </div>
 
-                {/* <ButtonGroup
-                  disableElevation
-                  variant="outlined"
-                  aria-label="Disabled elevation buttons"
-                  className="cart-button mr-4"
-                >
-                  <Button>CHANGE ADDRESS</Button>
-                </ButtonGroup> */}
                 <Button
                   variant="outlined"
                   disableElevation="true"
-                   className="address-button pay-button"
+                  className="address-button pay-button"
                 >
                   {" "}
                   CHANGE ADDRESS

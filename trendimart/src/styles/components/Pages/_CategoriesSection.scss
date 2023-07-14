@@ -169,7 +169,7 @@
   &.text {
     border: 2px solid rgba(132, 132, 132, 1) !important;
   }
-  &.about{
+  &.about {
     padding: 0 !important;
     margin: 0;
   }
@@ -270,6 +270,19 @@
 .sec-bottom {
   margin-top: 80px;
   background: #00071b;
+  //  position: fixed;
+  //   left: 0;
+  //   right: 0;
+  //   botttom: 0;
+  //   bottom: 0;
+  //   z-index: -1;
+  //   overflow: hidden;
+  // &.info{
+  //   position: fixed;
+  //   width: 100%;
+  //   left: 0;
+  //   bottom: 0;
+  // }
   .footer-line {
     width: 100%;
     transform: translateX(-50%);
@@ -364,3 +377,5 @@
     }
   }
 }
+
+// min-height: calc(100vh vh - 550px) !important;

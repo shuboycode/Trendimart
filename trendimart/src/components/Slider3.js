@@ -40,6 +40,7 @@ const Slider3 = ({ apnaclass }) => {
       {...getConfigurableProps()}
       className={apnaclass}
       showStatus={false}
+    
 
     >
       {baseChildren.props.children}

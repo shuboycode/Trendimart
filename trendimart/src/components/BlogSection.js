@@ -1,7 +1,7 @@
 import LadishSummer from "../styles/components/assets/images/LadishSummer.svg";
 import Button from "@mui/material/Button";
 import React from "react";
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia } from "@mui/material";
 import BlogIcon from "../styles/components/assets/icons/BlogIcon.svg";
 import WomenWollen from "../styles/components/assets/images/WomenWollen.svg";
 

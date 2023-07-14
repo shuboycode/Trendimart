@@ -5,16 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsData } from "../store/slices/productSlice";
 import { Container, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
-import Header from "../components/Header";
+
 import FilterBox from "../components/atomComponents/FilterBox";
 import DropdownMenu from "../components/atomComponents/DropdownMenu";
 import TuneIcon from "@mui/icons-material/Tune";
 import CardTwo from "../components/CardTwo";
-import FooterSection from "../components/FooterSection";
-import { Link } from "react-router-dom";
 
 const ProductPageSec = () => {
-  const [showFilterBox, setShowFilterBox] = useState(false);
+  // const [showFilterBox, setShowFilterBox] = useState(false);
   const { slug } = useParams();
 
   console.log("slug", slug);
@@ -30,29 +28,24 @@ const ProductPageSec = () => {
     dispatch(fetchProductsData());
   }, [dispatch]);
 
-  // console.log(data.filter((el) => el.category === slug));
-  // console.log(data);
-
-  // const category = data.filter((el) => el.category === slug);
-
   const category =
     slug === "all" ? data : data.filter((el) => el.category === slug);
 
-  function handleClick() {
+  // function handleClick() {
+  //   setShowFilterBox(!showFilterBox);
+  // }
+
+  const [showFilterBox, setShowFilterBox] = useState(false);
+
+  const handleClick = () => {
     setShowFilterBox(!showFilterBox);
-  }
-
-
+  };
 
   return (
     <>
       {/* content section start here */}
 
       <div className="page-content-wrapper  justify-center mt-14">
-        {/* <div className="filter-content">
-          <FilterBox></FilterBox>
-        </div> */}
-
         <div className="main-content flex">
           <Container
             maxWidth="false"
@@ -60,24 +53,48 @@ const ProductPageSec = () => {
             className="filter-sec-wrapper"
           >
             <div className="flex wrapper">
-              <div className="filter-content">
-                {showFilterBox && <FilterBox></FilterBox>}
+              <div className={`filter-content ${showFilterBox ? "active": ""}`}>
+                {showFilterBox &&  <FilterBox></FilterBox>}
+
+
+                        
+                {/* {showFilterBox ? <FilterBox className="active" /> : <FilterBox />} */}
+              
               </div>
 
-              <div className="width-100">
+              <div className="width-100 filtered-product-wrapper">
                 <div className="content-wrapper text">
                   <div className="filter-subheading display-end">
-                    <div
-                      className="icon-wrapper pointer align-items"
-                      onClick={handleClick}
-                    >
-                      <span className="font-weight-700 ">Filters</span>
+                    {/* <div className="filter-container">
+                      <div
+                        className={`icon-wrapper pointer align-items ${
+                          showFilterBox ? "active" : ""
+                        }`}
+                        onClick={handleClick}
+                      >
+                        <span className="font-weight-700">Filters</span>
+                        <TuneIcon
+                          className="icon-tune"
+                          fontSize="30px"
+                        ></TuneIcon>
+                      </div>
+                      {showFilterBox && (
+                        <div className="filter-box"></div>
+                      )}
+                    </div> */}
 
-                      <TuneIcon
-                        className="icon-tune"
-                        fontSize="30px"
-                      ></TuneIcon>
-                    </div>
+                   <div className="filter-container">
+                      <div
+                        className={`icon-wrapper pointer align-items ${
+                          showFilterBox ? "active" : ""
+                        }`}
+                        onClick={handleClick}
+                      >
+                        <span className="font-weight-700">Filters</span>
+                        <TuneIcon className="icon-tune" fontSize="30px" />
+                      </div>
+                      {showFilterBox && <div className="filter-box"></div>}
+                    </div> 
 
                     <div className="right-contentbaseline">
                       <DropdownMenu className="drop-menu"></DropdownMenu>
@@ -86,23 +103,14 @@ const ProductPageSec = () => {
                 </div>
 
                 <div>
-                  {/* <div className="flex mt-9">
-                  {category.map((item) => {
-                    console.log("item", item);
-                    return <CardTwo prop={item}></CardTwo>;
-                  })}
-                </div> */}
-
                   <div className="flex mt-9">
                     <Box sx={{ flexGrow: 1 }}>
                       <Grid
                         container
                         spacing={{ xs: 2, md: 3 }}
-                        // spacing={12}
                         columns={{ xs: 4, sm: 8, md: 12 }}
                       >
                         {category.map((item) => {
-                          // console.log("item", item);
                           return (
                             <CardTwo
                               prop={item}
@@ -114,57 +122,12 @@ const ProductPageSec = () => {
                       </Grid>
                     </Box>
                   </div>
-
-                  {/* <div className="flex mt-9">
-                  {category.map((item) => {
-                    console.log("item", item);
-                    return <CardTwo prop={item}></CardTwo>;
-                  })}
-                </div>
-
-                <div className="flex mt-9">
-                  {category.map((item) => {
-                    console.log("item", item);
-                    return <CardTwo prop={item}></CardTwo>;
-                  })}
-                </div> */}
-
-                  {/* <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div>
-
-                <div className="flex mt-11">
-                  <CardTwo></CardTwo>
-                </div> */}
                 </div>
               </div>
             </div>
           </Container>
         </div>
       </div>
-
-      {/* footer sec start here */}
-      {/* <div className="sec-bottom">
-        <Container
-          maxWidth="false"
-          sx={{ maxWidth: "1920px" }}
-          className="filter-sec-wrapper"
-        >
-          <FooterSection></FooterSection>
-        </Container>
-      </div> */}
     </>
   );
 };

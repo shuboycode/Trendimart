@@ -1,5 +1,4 @@
 .app-bar-wrapper {
-  // position: relative;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1) !important;
   height: 80px;
   display: flex;
@@ -290,9 +289,6 @@
   }
 }
 
-
-
-
 // trending offer section start here
 .slider-section {
   margin-top: 67px;
@@ -452,31 +448,28 @@
   }
 }
 
-
 .carousel.carousel-slider {
-	.control-arrow {
-		top: 50%;
-		color: #ffffff;
-		font-size: 26px;
-		bottom: 0;
-		margin-top: 0;
-		padding: 5px;
-		background: color("black","black");
-		border-radius: 50%;
-		height: 40px;
-		width: 36px;
-		padding: 0;
-	}
-	overflow: visible;
+  .control-arrow {
+    top: 50%;
+    color: #ffffff;
+    font-size: 26px;
+    bottom: 0;
+    margin-top: 0;
+    padding: 5px;
+    background: color("black", "black");
+    border-radius: 50%;
+    height: 40px;
+    width: 36px;
+    padding: 0;
+  }
+  overflow: visible;
 }
-
 
 .carousel {
-	.control-dots {
-		bottom: -39px;
-		.dot {
-			background-color: rgba(0, 36, 130, 1);;
-		}
-	}
+  .control-dots {
+    bottom: -39px;
+    .dot {
+      background-color: rgba(0, 36, 130, 1);
+    }
+  }
 }
-

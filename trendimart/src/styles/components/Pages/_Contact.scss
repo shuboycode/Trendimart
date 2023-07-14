@@ -10,7 +10,7 @@
     border-radius: 0 50px 50px 0;
     box-shadow: 0px 141px 200px -80px rgba(25, 58, 75, 0.3);
   }
- 
+
   border-radius: 50px;
   box-shadow: 0px 141px 200px -80px rgba(25, 58, 75, 0.3);
 
@@ -20,14 +20,14 @@
     padding: 100px;
     .content {
       width: 979px;
-      // background: white;
+
       .form-data {
         max-width: 545px;
 
         input {
           padding: 12px;
           border: 1px solid #e0e0e0;
-          color: color("brown","lighten-5");
+          color: color("brown", "lighten-5");
           font-size: 14px;
           font-weight: 400;
           line-height: 24px;
@@ -36,7 +36,7 @@
         textarea {
           padding: 12px;
           border: 1px solid #e0e0e0;
-          color: color("brown","lighten-5");
+          color: color("brown", "lighten-5");
           font-size: 14px;
           font-weight: 400;
           line-height: 24px;

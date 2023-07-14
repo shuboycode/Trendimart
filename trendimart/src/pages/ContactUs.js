@@ -1,16 +1,14 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import CallIcon from "@mui/icons-material/Call";
-import FaxIcon from "@mui/icons-material/Fax";
+
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { Container } from "@mui/material";
-import Header from "../components/Header";
-import FooterSection from "../components/FooterSection";
 
 const ContactUs = () => {
   return (
     <>
-      <Container maxWidth="false" sx={{ maxWidth: "1520px" }} className="">
+      <Container maxWidth="false" sx={{ maxWidth: "1520px" }} className="filter-sec-wrapper">
         <div className="contact-us flex mt-10">
           <div className="flex detail">
             <div className="content">
@@ -22,8 +20,6 @@ const ContactUs = () => {
                   forward to hearing from you.
                 </p>
               </div>
-
-          
 
               <form
                 action="https://formspree.io/f/mbjvjqko"
@@ -104,8 +100,6 @@ const ContactUs = () => {
           <div className="empty-box"></div>
         </div>
       </Container>
-
-      {/* <FooterSection></FooterSection> */}
     </>
   );
 };

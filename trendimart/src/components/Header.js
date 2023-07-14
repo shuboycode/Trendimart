@@ -23,10 +23,11 @@ import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 
 import LogoHead from "../styles/components/assets/images/LogoHead.jpg";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { Badge } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+
 
 const Header = ({ InviteBrand = false }) => {
   const pages = ["Men", "Women", "Kids", "Shop", "Contact us"];
@@ -53,16 +54,10 @@ const Header = ({ InviteBrand = false }) => {
     },
   ];
 
+  const wishlistRoute = "/MyWishlist";
+  const PaymentRoute = "/Payment";
   const [CartItem, setCartItem] = useState(0);
   const CartItemCount = useSelector((state) => state.counter);
-  // const [selectedSize, setSelectedSize] = useState('');
-//   const [isAddedToCart, setAddedToCart] = useState(false);
-
-// const handleGoToCart = () => {
-    
-//   };
-
-
 
   useEffect(() => {
     setCartItem(CartItemCount);
@@ -194,17 +189,6 @@ const Header = ({ InviteBrand = false }) => {
                   </Button>
                 </Link>
               ))}
-              {/* {pages.map((pages, index) => (
-                <Link to={pages.path}>
-                  <Button 
-                    key={index}
-                    onClick={handleCloseNavMenu}
-                    sx={{ my: 2, display: "block" }}
-                  >
-                    {pages}
-                  </Button>
-                </Link>
-              ))} */}
             </Box>
 
             <Box sx={{ flexGrow: 0 }} className="right-navbar">
@@ -221,12 +205,14 @@ const Header = ({ InviteBrand = false }) => {
                 </div>
               </div>
               <div className="icon-wrapper">
-
-                <FavoriteBorderIcon/>
-
+                <Link to={wishlistRoute}>
+                  <FavoriteBorderIcon />
+                </Link>
                 if()
                 <Badge badgeContent={CartItem} color="primary" className="ml-4">
-                  <ShoppingCartOutlinedIcon />
+                  <Link to={PaymentRoute}>
+                    <ShoppingCartOutlinedIcon />
+                  </Link>
                 </Badge>
               </div>
 
@@ -263,7 +249,7 @@ const Header = ({ InviteBrand = false }) => {
             </Box>
           </Toolbar>
         </Container>
-        {/* <div className {InviteBrand &&} ="notification-info"> */}
+
         {InviteBrand && (
           <div className={"InviteBrand && notification-info"}>
             <p>

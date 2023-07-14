@@ -1,6 +1,6 @@
 import React from "react";
 import womenfashion from "../styles/components/assets/images/womenfashion.svg";
-import { Grid, Typography, Button } from "@mui/material";
+import { Grid } from "@mui/material";
 import CategryMen from "../styles/components/assets/images/CategryMen.svg";
 import WomenCategry from "../styles/components/assets/images/WomenCategry.svg";
 

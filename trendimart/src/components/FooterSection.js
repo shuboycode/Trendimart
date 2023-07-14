@@ -6,7 +6,7 @@ import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
 const FooterSection = () => {
   return (
     <>
-      <div className="sec-bottom">
+      <div className="sec-bottom info">
         <section className="footer-wrapper">
           <div className="footer-logo-wrapper flex">
             <img src={logo} alt="logo" className="logo-brand" />
