@@ -1,4 +1,15 @@
 .dropdown-wrapper {
+  .value-wrapper {
+    h2 {
+      color: color("grey","lighten-2");
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 0.9px;
+    }
+    .number{
+      font-weight:700;
+    }
+  }
   position: sticky;
   top: 134px;
   width: 460px;
@@ -36,22 +47,6 @@
 .number-wrapper {
   .content-wrapper {
     width: 50%;
-    span {
-      display: block;
-      letter-spacing: 0.05em;
-      &.heading {
-        font-size: 18px;
-        line-height: 22px;
-        letter-spacing: 0.05em;
-        color: color("grey", "lighten-2");
-      }
-      &.number {
-        font-size: 16px;
-        line-height: 20px;
-        color: color("black", "darken");
-        font-weight: bold;
-      }
-    }
   }
 }
 
@@ -104,6 +99,16 @@
     &.text-color {
       color: color("brown", "light");
       margin-left: 10px;
+    }
+  }
+}
+
+.loader-wrapper{
+  padding-top:  10px;
+  span{
+    &.loader.MuiCircularProgress-root{
+      height: 400px !important;
+      width: 400px !important;
     }
   }
 }

@@ -1,13 +1,16 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+// import { useState } from "react";
 
 function valuetext(value) {
-  return `${value}°C`;
+  return `$0{value}°C`;
 }
 
 export default function RangeSlider() {
-  const [value, setValue] = React.useState([1, 5]);
+  const [value, setValue] = React.useState([700, 2000]);
+  const minValue = value[0];
+  const maxValue = value[1];
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -21,10 +24,21 @@ export default function RangeSlider() {
         onChange={handleChange}
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
-        marks={true}
-        max={9}
+        max={2000}
+        min={700}
         className="plain-slider"
       />
+
+      <div className="flex justify-between mt-7 value-wrapper">
+        <div>
+          <h2>Min</h2>
+          <div className="mt-2 number"> Rs .{minValue}</div>
+        </div>
+        <div>
+          <h2>Max</h2>
+          <div className="mt-2 number"> Rs .{maxValue}</div>
+        </div>
+      </div>
     </Box>
   );
 }
