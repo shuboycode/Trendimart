@@ -14,22 +14,18 @@ export const fetchCartProducts = createAsyncThunk(
   }
 );
 
-// export const fetchCart = createAsyncThunk(
-//   "api/fetchData",
-//   async() =>{
-//     const response = await axios.get('http://localhost:3001/cart');
-//     return response.data;
-//   }
-// )
-
-
-
+// fetchcart is used here to fetching data.
+export const fetchCart = createAsyncThunk("api/fetchData", async () => {
+  const response = await axios.get("http://localhost:3001/cart");
+  return response.data;
+});
 
 // Redux Toolkit slice
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
     data: [],
+    cartCount: 0,
     isLoading: false,
     error: null,
   },
@@ -40,6 +36,7 @@ const cartSlice = createSlice({
       // state.cart.push(productId);
     },
   },
+
   extraReducers: (builder) => {
     builder
       .addCase(fetchCartProducts.pending, (state) => {
@@ -53,6 +50,21 @@ const cartSlice = createSlice({
       .addCase(fetchCartProducts.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
+      })
+
+      .addCase(fetchCart.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchCart.fulfilled, (state, action) => {
+        state.data.push(...action.payload);
+        state.cartCount=action.payload.length;
+        state.isLoading = false;
+        console.log(action.payload);
+      })
+      .addCase(fetchCart.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
       });
   },
 });
@@ -61,6 +73,7 @@ const cartSlice = createSlice({
 export const { addToCart } = cartSlice.actions;
 
 // Selectors
+
 export const selectCart = (state) => state.products.cart;
 export const selectIsLoading = (state) => state.products.isLoading;
 export const selectError = (state) => state.products.error;

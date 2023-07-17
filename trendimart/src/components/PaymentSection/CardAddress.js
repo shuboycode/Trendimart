@@ -11,6 +11,10 @@ import {
 
 import SmallDropdown from "../atomComponents/SmallDropdown";
 import CloseIcon from "@mui/icons-material/Close";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+
+import { fetchCart } from "../../store/slices/cartSlice";
 
 export default function IndeterminateCheckbox() {
   const [checked, setChecked] = React.useState([true, false]);
@@ -34,6 +38,25 @@ export default function IndeterminateCheckbox() {
       />
     </Box>
   );
+
+  const { data, loading, error } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const discount = 1.3; // 30%
+  
+  useEffect(() => {
+    // dispatching function to store
+    dispatch(fetchCart());
+  }, [dispatch]);
+
+  console.log(data);
+
+  if (loading) {
+    return console.log("loading");
+  }
+
+  if (error) {
+    return console.log("error ", error);
+  }
 
   return (
     <>
@@ -59,67 +82,72 @@ export default function IndeterminateCheckbox() {
           </div>
         </div>
 
-        <div className="content-payment justify-between">
-          <div className="flex">
-            <div className="content-img">
-              {children}
-              <img
-                src={Jacket}
-                alt="summer-collection"
-                className="left-image"
-              />
-            </div>
-
-            <div className="data ml-3">
-              <h4 className="brand-title">Brand Name</h4>
-              <h4 className="description mt-2">
-                Men Woven Design Basics Sneakers
-              </h4>
-              <h4 className="info mt-2">Sold By : REDTAPE LIMITED</h4>
-
-              <div className="flex dropdown pt-2">
-                <SmallDropdown heading="Size"></SmallDropdown>
-                <SmallDropdown heading="Qty"></SmallDropdown>
-              </div>
-
-              <div className="number-wrapper flex pt-2">
-                <div className="number">
+        {data.map((product) => {
+          return (
+            <div className="content-payment justify-between">
+              <div className="flex">
+                <div className="content-img">
+                  {children}
                   <img
-                    src={Rupees}
+                    src={Jacket}
                     alt="summer-collection"
                     className="left-image"
                   />
-                  <span>1,379</span>
                 </div>
 
-                <div className="number">
-                  <img
-                    src={Rup}
-                    alt="summer-collection"
-                    className="left-image"
-                  />
-                  <span className="text">6,899</span>
-                </div>
+                <div className="data ml-3">
+                  <h4 className="brand-title">{product.title}</h4>
+                  <h4 className="description mt-2">
+                   {product.brand}
+                  </h4>
+                  <h4 className="info mt-2">{product.seller}</h4>
 
-                <span className="benifit">80% OFF</span>
+                  <div className="flex dropdown pt-2">
+                    <SmallDropdown heading="Size"></SmallDropdown>
+                    <SmallDropdown heading="Qty"></SmallDropdown>
+                  </div>
+
+                  <div className="number-wrapper flex pt-2">
+                    <div className="number">
+                      <img
+                        src={Rupees}
+                        alt="summer-collection"
+                        className="left-image"
+                      />
+                      <span> {product.price * 100}</span>
+
+                    </div>
+
+                    <div className="number">
+                      <img
+                        src={Rup}
+                        alt="summer-collection"
+                        className="left-image"
+                      />
+                      <span className="text">{product.price * 100 * discount}</span>
+                    </div>
+
+                    <span className="benifit">(30% off)</span>
+                  </div>
+
+                  <div className="frame-wrapper align-items">
+                    <img
+                      src={Frame}
+                      alt="summer-collection"
+                      className="left-image"
+                    />
+                    <span>14days</span>
+                    <span>return available</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="frame-wrapper align-items">
-                <img
-                  src={Frame}
-                  alt="summer-collection"
-                  className="left-image"
-                />
-                <span>14days</span>
-                <span>return available</span>
+              <div className="icon pointer">
+                <CloseIcon></CloseIcon>
               </div>
             </div>
-          </div>
-
-          <div className="icon pointer">
-            <CloseIcon></CloseIcon>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </>
   );

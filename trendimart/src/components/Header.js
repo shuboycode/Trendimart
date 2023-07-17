@@ -56,11 +56,17 @@ const Header = ({ InviteBrand = false }) => {
   const wishlistRoute = "/MyWishlist";
   const PaymentRoute = "/Payment";
   const [CartItem, setCartItem] = useState(0);
-  const CartItemCount = useSelector((state) => state.counter);
+  // const CartItemCount = useSelector((state) => state.counter);
+  const {cartCount} = useSelector((state) => state.cart);
+  console.log("cartcount", cartCount);
 
   useEffect(() => {
-    setCartItem(CartItemCount);
-  }, [CartItemCount]);
+    setCartItem(cartCount);
+  }, [cartCount]);
+
+
+
+
 
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -207,7 +213,11 @@ const Header = ({ InviteBrand = false }) => {
                   <FavoriteBorderIcon />
                 </Link>
                 if()
-                <Badge badgeContent={CartItem} color="primary" className="ml-4">
+                <Badge
+                  badgeContent={CartItem}
+                  color="primary"
+                  className="ml-4"
+                >
                   <Link to={PaymentRoute}>
                     <ShoppingCartOutlinedIcon />
                   </Link>
