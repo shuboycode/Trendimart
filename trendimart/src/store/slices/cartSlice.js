@@ -14,6 +14,17 @@ export const fetchCartProducts = createAsyncThunk(
   }
 );
 
+// export const fetchCart = createAsyncThunk(
+//   "api/fetchData",
+//   async() =>{
+//     const response = await axios.get('http://localhost:3001/cart');
+//     return response.data;
+//   }
+// )
+
+
+
+
 // Redux Toolkit slice
 const cartSlice = createSlice({
   name: "cart",

@@ -23,11 +23,10 @@ import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 
 import LogoHead from "../styles/components/assets/images/LogoHead.jpg";
 import { Link } from "react-router-dom";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { Badge } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-
 
 const Header = ({ InviteBrand = false }) => {
   const pages = ["Men", "Women", "Kids", "Shop", "Contact us"];
@@ -178,14 +177,13 @@ const Header = ({ InviteBrand = false }) => {
               sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
               className="button-content"
             >
-              {navLinks.map((navLinks, index) => (
-                <Link to={navLinks.path}>
+              {navLinks.map((navLink, index) => (
+                <Link key={index} to={navLink.path}>
                   <Button
-                    key={index}
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, display: "block" }}
                   >
-                    {navLinks.title}
+                    {navLink.title}
                   </Button>
                 </Link>
               ))}
