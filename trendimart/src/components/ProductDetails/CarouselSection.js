@@ -23,6 +23,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 const CarouselSection = () => {
   const CartItem = useSelector((state) => state.counter);
+ 
 
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -238,21 +239,23 @@ const CarouselSection = () => {
                   <Button
                     onClick={() => {
                       handleClick();
-                      dispatch(increment());
+                      // dispatch(increment());
+                     
                     }}
                     className="pay-button"
                   >
-                    Go to cart
+                    Go to cart  
                   </Button>
                 </Link>
               ) : (
                 <Button
                   onClick={() => {
                     handleClick();
-                    dispatch(increment());
+                    // dispatch(increment());
+                  
                   }}
                   className="pay-button"
-                >
+                > 
                   Add to cart
                 </Button>
               )}

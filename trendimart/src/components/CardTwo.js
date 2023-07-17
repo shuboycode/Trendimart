@@ -14,7 +14,8 @@ import { Link } from "react-router-dom";
 
 const CardTwo = ({ prop, filterOn, key }) => {
   return (
-    <Grid item xs={2} sm={4} md={filterOn ? 4 : 3} key={prop.id}>
+    
+    <Grid item xs={2} sm={4} md={filterOn ? 4 : 3} key={key}>
       <Link to={`${prop.id}`}>
         <div key={prop.id} className="card-wrapper">
           <Card sx={{ minWidth: 410 }} className="wrapper-card" elevation={0}>
@@ -88,6 +89,9 @@ const CardTwo = ({ prop, filterOn, key }) => {
         </div>
       </Link>
     </Grid>
+    
+
+    
   );
 };
 

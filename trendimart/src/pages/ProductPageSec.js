@@ -61,7 +61,7 @@ const ProductPageSec = () => {
               </div>
 
               <div>
-                <div className="flex mt-9">
+                {/* <div className="flex mt-9">
                   {category.map((item) => {
                     console.log("item", item);
                     return <CardTwo prop={item}></CardTwo>;
@@ -80,14 +80,30 @@ const ProductPageSec = () => {
                     console.log("item", item);
                     return <CardTwo prop={item}></CardTwo>;
                   })}
-                </div>
+                </div> */}
+
+                {/* <div className="flex mt-9">
+                  {category.map((item) => {
+
+                    console.log("item", item);
+                    return <CardTwo prop={item} key={item.id}></CardTwo>;
+                  })}
+                </div> */}
 
                 <div className="flex mt-9">
                   {category.map((item) => {
                     console.log("item", item);
-                    return <CardTwo prop={item}></CardTwo>;
+                    return (
+                      <CardTwo
+                        prop={item}
+                        // keyProp={item.id}
+                        key={item.id}
+                      ></CardTwo>
+                    );
+
                   })}
                 </div>
+                
               </div>
             </div>
           </Container>

@@ -295,6 +295,32 @@
       "seller": "Seller B",
       "created_at": null,
       "updated_at": null
+    },
+    {
+      "id": 10,
+      "title": "Product 10",
+      "type": "Type A",
+      "price": 11,
+      "brand": "perter england",
+      "category": "men",
+      "rating": "4.2",
+      "seller": "Seller A",
+      "created_at": null,
+      "updated_at": null,
+      "image": "https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Product 7",
+      "type": "Type A",
+      "price": 13,
+      "brand": "levis",
+      "category": "men",
+      "rating": "4.8",
+      "seller": "Seller A",
+      "created_at": null,
+      "updated_at": null,
+      "image": "https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
     }
   ]
 }
