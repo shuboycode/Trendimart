@@ -7,6 +7,19 @@ import PlaceOrder from "../components/PaymentSection/PlaceOrder";
 
 
 const PaymentPageSection = () => {
+  // const [formVisible, setFormVisible] = useState(false);
+  // const [showFormComponents, setShowFormComponents] = useState(false);
+
+  // const handlePlaceOrderClick = () => {
+  //   setFormVisible(true);
+  //   setShowFormComponents(false);
+  // };
+
+  // const handleShowFormComponentsClick = () => {
+  //   setFormVisible(false);
+  //   setShowFormComponents(true);
+  // };
+
   return (
     <>
       <Container

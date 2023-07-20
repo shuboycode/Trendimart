@@ -15,8 +15,8 @@ export default function BasicTextFields() {
   const [value, setValue] = useState();
   return (
     <>
-      <div className="form-box">
-        <div className="ml-10">
+      <div className="form-box mt-15">
+        <div className="">
           <h3 className="form-heading">Contact Details</h3>
           <Box
             component="form"
@@ -78,7 +78,7 @@ export default function BasicTextFields() {
           </div>
         </div>
 
-        <div className="ml-10">
+        <div className="">
           {/*2nd part  */}
 
           <h3 className="form-heading mt-8">Shipping Details</h3>
@@ -181,6 +181,7 @@ export default function BasicTextFields() {
           </div>
         </div>
       </div>
+      
     </>
   );
 }

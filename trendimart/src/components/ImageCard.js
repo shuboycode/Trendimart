@@ -3,20 +3,27 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-
 import darkstar from "../styles/components/assets/icons/darkstar.svg";
 import Container from "@mui/material/Container";
 
 import { Link } from "react-router-dom";
 import { fetchProductsData } from "../store/slices/productSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router";
 
 export default function ImgMediaCard({ title }) {
+  // const ProductRoute = "/ProductOpen";
   const dispatch = useDispatch();
   const discount = 1.3; // 30%
 
+  const { id } = useParams();
+
   // getting data from store
   const { data, loading, error } = useSelector((state) => state.products);
+
+  let singleItem1 = data?.filter((el) => el.id === parseInt(id));
+  console.log("single item:", singleItem1);
+  let singleItem = singleItem1[0];
 
   useEffect(() => {
     // dispatching function to store
@@ -43,89 +50,93 @@ export default function ImgMediaCard({ title }) {
         <span className="slider-heading">{title}</span>
       </div>
       {/* first */}
+      {/* <Link to={`/ProductRoute`}> */}
+      {/* <Link to={`${ProductRoute}/${id}`}> */}
       <div className="styling-card-wrapper">
         {data.map((product) => {
           return (
-            <Card
-              sx={{ minWidth: 410 }}
-              className="wrapper-card"
-              key={product.id}
-            >
-              <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-                <div>
-                  <img
-                    src={
-                      product.image
-                        ? product.image
-                        : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
-                    }
-                    alt="women-danim"
-                    className="card-image"
-                  />
-                </div>
+            <Link to={`${product.id}`}>
+              <Card
+                sx={{ minWidth: 410 }}
+                className="wrapper-card"
+                key={product.id}
+              >
+                <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
+                  <div>
+                    <img
+                      src={
+                        product.image
+                          ? product.image
+                          : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
+                      }
+                      alt="women-danim"
+                      className="card-image"
+                    />
+                  </div>
 
-                <div className="card-content">
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    className="heading"
-                  >
-                    {product.title}
-                  </Typography>
-
-                  <div className="card-info">
+                  <div className="card-content">
                     <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      className="brand-name"
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      className="heading"
                     >
-                      {product.brand}
+                      {product.title}
                     </Typography>
-                    <div className="right-content">
+
+                    <div className="card-info">
                       <Typography
                         variant="body2"
                         color="text.secondary"
-                        className="rating"
-                        sx={{}}
+                        className="brand-name"
                       >
-                        {product.rating}
+                        {product.brand}
                       </Typography>
-                      <img
-                        src={darkstar}
-                        alt="women-danim"
-                        className="icon-brand"
-                      />
+                      <div className="right-content">
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          className="rating"
+                          sx={{}}
+                        >
+                          {product.rating}
+                        </Typography>
+                        <img
+                          src={darkstar}
+                          alt="women-danim"
+                          className="icon-brand"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <CardActions className="discount" sx={{ padding: 0 }}>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      className="discount-primary"
-                    >
-                      Rs. {product.price * 100}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      className="discount-secondary primary-font-family"
-                      sx={{ margin: 0 }}
-                    >
-                      Rs. {product.price * 100 * discount}
-                    </Typography>
+                    <CardActions className="discount" sx={{ padding: 0 }}>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        className="discount-primary"
+                      >
+                        Rs. {product.price * 100}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        className="discount-secondary primary-font-family"
+                        sx={{ margin: 0 }}
+                      >
+                        Rs. {product.price * 100 * discount}
+                      </Typography>
 
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      className="discount-tartionary"
-                    >
-                      (30% off)
-                    </Typography>
-                  </CardActions>
-                </div>
-              </CardContent>
-            </Card>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        className="discount-tartionary"
+                      >
+                        (30% off)
+                      </Typography>
+                    </CardActions>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           );
         })}
       </div>
