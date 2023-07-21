@@ -9,8 +9,31 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Checkbox from "@mui/material/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import productSlice from "../../store/slices/productSlice";
+import { useEffect } from "react";
 
-const FilterBox = ( ) => {
+const FilterBox = () => {
+  const { data, loading, error } = useSelector((state) => state.products);
+  const [resultSet, setResultSet] = useState(new Set(data));
+
+  const brands = Array.from(resultSet, (item) => item.brand);
+  console.log("element", brands);
+  const uniqueBrands = [...new Set(brands)];
+  console.log("uniqueBrands", uniqueBrands);
+  
+  const [isZaraChecked, setZaraChecked] = useState(false);
+  const handleCheckboxChange = (event) => {
+    setZaraChecked(event.target.checked);
+    console.log("target", event.target.value);
+  };
+
+  const filteredItems = isZaraChecked
+    ? uniqueBrands.filter((item) => item.brand === "Zara")
+    : uniqueBrands;
+  console.log("filteredItems", filteredItems);
+
   return (
     <>
       <div className="dropdown-wrapper">
@@ -42,54 +65,17 @@ const FilterBox = ( ) => {
                 <Typography className="heading">Brand</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <FormGroup>
-                  <FormControlLabel
-                    control={<Checkbox defaultChecked />}
-                    label={
-                      <span>
-                        Tokyo Talkies<span className="text-color">(206)</span>
-                      </span>
-                    }
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <span>
-                        Roadster<span className="text-color">(26)</span>
-                      </span>
-                    }
-                  />
+                {uniqueBrands.map((brand, index) => (
+                  <FormGroup key={index}>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      onChange={handleCheckboxChange}
+                      label={brand}
+                      value={brand}
+                    />
+                  </FormGroup>
+                ))}
 
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <span>
-                        Here&Now <span className="text-color">(706)</span>
-                      </span>
-                    }
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label="High Star High Star"
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <span>
-                        Miss Chase<span className="text-color">(16)</span>
-                      </span>
-                    }
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <span>
-                        Voxati
-                        <span className="text-color">(20)</span>
-                      </span>
-                    }
-                  />
-                </FormGroup>
                 <Button variant="text">+ 40 more</Button>
               </AccordionDetails>
             </Accordion>

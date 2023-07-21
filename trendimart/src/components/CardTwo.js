@@ -5,22 +5,36 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import women1 from "../styles/components/assets/images/women1.svg";
 import darkstar from "../styles/components/assets/icons/darkstar.svg";
+import { UseSelector } from "react-redux/es/hooks/useSelector";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 import { experimentalStyled as styled } from "@mui/material/styles";
-
+import { fetchProductsData } from "../store/slices/productSlice";
 import Grid from "@mui/material/Grid";
-
 import { Link } from "react-router-dom";
 
 const CardTwo = ({ prop, filterOn, key }) => {
+
   return (
-    
     <Grid item xs={2} sm={4} md={filterOn ? 4 : 3} key={key}>
       <Link to={`${prop.id}`}>
         <div key={prop.id} className="card-wrapper">
           <Card sx={{ minWidth: 410 }} className="wrapper-card" elevation={0}>
             <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
-              <img src={women1} alt="women-danim" className="card-image" />
+              {/* <img src={women1} alt="women-danim" className="card-image" /> */}
+
+              <div>
+                <img
+                  src={
+                    prop.image
+                      ? prop.image
+                      : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
+                  }
+                  alt="women-danim"
+                  className="card-image"
+                />
+              </div>
 
               <div className="card-content">
                 <Typography
@@ -89,7 +103,6 @@ const CardTwo = ({ prop, filterOn, key }) => {
         </div>
       </Link>
     </Grid>
-    
 
     
   );

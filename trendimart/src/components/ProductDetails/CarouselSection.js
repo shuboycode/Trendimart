@@ -20,10 +20,11 @@ import { Link, Route, Routes } from "react-router-dom";
 import { addToCart, fetchCartProducts } from "../../store/slices/cartSlice";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CircularProgress from "@mui/material/CircularProgress";
+import item, { postItemToServer } from "../../store/slices/wishlistSlice";
+// import wishlistSlice from "../../store/slices/wishlistSlice";
 
-const CarouselSection = () => {
+const CarouselSection = (prop) => {
   const CartItem = useSelector((state) => state.counter);
- 
 
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -50,13 +51,15 @@ const CarouselSection = () => {
   console.log("single item:", singleItem1);
   let singleItem = singleItem1[0];
 
+  const handleWishlistClick = () => {
+    dispatch(postItemToServer({ singleItem }));
+  };
+
   const handleClick = async (event) => {
     setIsShown((current) => !current);
     console.log("id :", id);
 
-    // if (cartdata.type === "api/postData/fulfilled") {
-      await dispatch(fetchCartProducts({ id, singleItem }));
-    // }
+    await dispatch(fetchCartProducts({ id, singleItem }));
   };
 
   if (error) {
@@ -69,8 +72,7 @@ const CarouselSection = () => {
     return (
       <div className="justify-center flex loader-wrapper">
         {" "}
-        <CircularProgress className="loader"/>
-       
+        <CircularProgress className="loader" />
       </div>
     );
   }
@@ -82,11 +84,20 @@ const CarouselSection = () => {
           <div>
             {Array.from({ length: 5 }, (_, i) => (
               <div className="hover-card">
-                <img
-                  src={DanimImage}
+                {/* <img
+                  src={
+                    prop.image
+                      ? prop.image
+                      : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
+                  }
                   key={i}
                   alt="summer-collection"
                   className="left-image pointer"
+                /> */}
+                <img
+                  src={singleItem?.image}
+                  alt="summer-collection"
+                  className="product-img"
                 />
               </div>
             ))}
@@ -94,7 +105,7 @@ const CarouselSection = () => {
         </div>
         <div className="image-wrapper ml-5">
           <img
-            src={DanimLadish}
+            src={singleItem?.image}
             alt="summer-collection"
             className="product-img"
           />
@@ -159,21 +170,43 @@ const CarouselSection = () => {
 
         <div className="color-selector">
           <span className="mb-5 font-weight-700">Select Color</span>
-
+          {/* 
           <img
-            src={DanimColor}
+            src={
+              prop.image
+                ? prop.image
+                : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
+            }
             alt="summer-collection"
             className="left-image"
+          /> */}
+          {/* <img
+            src={
+              prop.image
+                ? prop.image
+                : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
+            }
+            alt="summer-collection"
+            className="left-image"
+          /> */}
+          <img
+            src={singleItem?.image}
+            alt="summer-collection"
+            className="product-img"
           />
-          <img
-            src={DanimColor}
+          {/* <img
+            src={
+              prop.image
+                ? prop.image
+                : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
+            }
             alt="summer-collection"
             className="left-image"
-          />
+          /> */}
           <img
-            src={DanimColor}
+            src={singleItem?.image}
             alt="summer-collection"
-            className="left-image"
+            className="product-img"
           />
         </div>
         <div className="offer-content mt-5">
@@ -240,11 +273,10 @@ const CarouselSection = () => {
                     onClick={() => {
                       handleClick();
                       // dispatch(increment());
-                     
                     }}
                     className="pay-button"
                   >
-                    Go to cart  
+                    Go to cart
                   </Button>
                 </Link>
               ) : (
@@ -252,21 +284,29 @@ const CarouselSection = () => {
                   onClick={() => {
                     handleClick();
                     // dispatch(increment());
-                  
                   }}
                   className="pay-button"
-                > 
+                >
                   Add to cart
                 </Button>
               )}
             </ButtonGroup>
-            
 
-            <div onClick={toggleFavorite}>
+            <div
+              onClick={() => {
+                toggleFavorite();
+              }}
+              className="pointer "
+            >
               {isFavorite ? (
                 <FavoriteIcon className="fav-icon" />
               ) : (
-                <FavoriteBorderIcon className="border-icon" />
+                <FavoriteBorderIcon
+                  className="border-icon"
+                  onClick={() => {
+                    handleWishlistClick();
+                  }}
+                />
               )}
             </div>
           </div>

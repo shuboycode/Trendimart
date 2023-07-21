@@ -20,20 +20,22 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
+
+        {/* <Route path="categories/:slug" element={<HomePage/>} /> */}
+      
         <Route path="*" element={<Error></Error>} />
         {/* <Route path="products/:all" element={<Product />} /> */}
         {/* <Route path="products/:id" element={<ProductDetailsSection />} /> */}
         <Route path="categories" element={<Product />} />
         <Route path="categories/:slug" element={<Product />} />
         <Route path="categories/:slug/:id" element={<ProductDetailsSection />} />
+        <Route path="/:id" element={<ProductDetailsSection />} />
         <Route path="ProductWithFilter" element={<ProductWithFilter />} />
         <Route path="Payment" element={<Payment />} />
-        <Route path="ProductOpen" element={<ProductOpen />}/>
+        <Route path="ProductOpen/:slug/:id" element={<ProductOpen />}/>
         <Route path="ContactUs" element={<ContactUs/>}/>
         <Route path="MyWishlist" element={<MyWishlist/>}/>
        
-
-      
       </Route>
     </Routes>
   );

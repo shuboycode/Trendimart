@@ -22,10 +22,43 @@ import AboutSection from "../components/AboutSection";
 import FooterSection from "../components/FooterSection";
 import Header from "../components/Header";
 import { MyContext } from "../App";
+import { useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+
+import { useEffect } from "react";
+import { fetchProductsData } from "../store/slices/productSlice";
+import { useState } from "react";
 
 const HomePage = () => {
   const [] = React.useState(null);
   const [] = React.useState(null);
+  const { slug } = useParams();
+
+  console.log("slug", slug);
+
+  //fetching data
+  const dispatch = useDispatch();
+
+  // getting data from store
+  const { data, loading, error } = useSelector((state) => state.products);
+
+  useEffect(() => {
+    // dispatching function to store
+    dispatch(fetchProductsData());
+  }, [dispatch]);
+
+  const category =
+    slug === "all" ? data : data.filter((el) => el.category === slug);
+
+  // function handleClick() {
+  //   setShowFilterBox(!showFilterBox);
+  // }
+
+  // const [showFilterBox, setShowFilterBox] = useState(false);
+
+  // const handleClick = () => {
+  //   setShowFilterBox(!showFilterBox);
+  // };
 
   // consume data here.
   const sharedData = useContext(MyContext);
