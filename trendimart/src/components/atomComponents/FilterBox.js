@@ -14,25 +14,32 @@ import { useState } from "react";
 import productSlice from "../../store/slices/productSlice";
 import { useEffect } from "react";
 
-const FilterBox = () => {
+const FilterBox = ({ handleFilterCategory }) => {
   const { data, loading, error } = useSelector((state) => state.products);
+  const [isZaraChecked, setZaraChecked] = useState(false);
   const [resultSet, setResultSet] = useState(new Set(data));
 
+  const [isChecked, setchecked] = useState(false);
+  const [categorydata, setcategorydata] = useState([...data]);
+
   const brands = Array.from(resultSet, (item) => item.brand);
-  console.log("element", brands);
   const uniqueBrands = [...new Set(brands)];
+
+  console.log("element", data);
   console.log("uniqueBrands", uniqueBrands);
-  
-  const [isZaraChecked, setZaraChecked] = useState(false);
-  const handleCheckboxChange = (event) => {
-    setZaraChecked(event.target.checked);
-    console.log("target", event.target.value);
+
+  const handleCheckboxChange = () => {
+    setchecked(!isChecked);
+    // setcategorydata(isChecked ? [] : [[...data]]);
   };
 
-  const filteredItems = isZaraChecked
-    ? uniqueBrands.filter((item) => item.brand === "Zara")
-    : uniqueBrands;
-  console.log("filteredItems", filteredItems);
+  // const handleFilterCategory = (event, products) => {
+  //   let filterbrand = event.target.value;
+
+  //   console.log("target", event.target.value);
+  //   let filterProducts = products.filter((item) => item.brand === filterbrand);
+  //   console.log("filterProducts: ", filterProducts);
+  // };
 
   return (
     <>
@@ -69,7 +76,11 @@ const FilterBox = () => {
                   <FormGroup key={index}>
                     <FormControlLabel
                       control={<Checkbox />}
-                      onChange={handleCheckboxChange}
+                      // checked={isChecked}
+                      // onChange={(e) => handleFilterCategory(e, data)}
+                      // onChange={handleCheckboxChange}
+                      onChange={(e) => handleFilterCategory(e, data, handleCheckboxChange)}
+                     
                       label={brand}
                       value={brand}
                     />

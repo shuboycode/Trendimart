@@ -61,12 +61,13 @@ const PlaceOrder = () => {
               <div className="amount justify-between flex pt-2">
                 <span>Discount on MRP</span>
                 <div>
+                  -
                   <img
                     src={Rupe}
                     alt="summer-collection"
                     className="left-image"
                   />
-                  <span className="number light">-{discountResult}</span>
+                  <span className="number light">{discountResult}</span>
                 </div>
               </div>
 
