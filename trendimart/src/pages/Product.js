@@ -31,6 +31,7 @@ const ProductPageSec = () => {
   const category =
     slug === "all" ? data : data.filter((el) => el.category === slug);
 
+    
   // function handleClick() {
   //   setShowFilterBox(!showFilterBox);
   // }

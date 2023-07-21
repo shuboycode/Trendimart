@@ -16,23 +16,28 @@ import { useEffect } from "react";
 
 const FilterBox = () => {
   const { data, loading, error } = useSelector((state) => state.products);
+  const [isZaraChecked, setZaraChecked] = useState(false);
   const [resultSet, setResultSet] = useState(new Set(data));
 
   const brands = Array.from(resultSet, (item) => item.brand);
-  console.log("element", brands);
   const uniqueBrands = [...new Set(brands)];
+
+  console.log("element", brands);
   console.log("uniqueBrands", uniqueBrands);
-  
-  const [isZaraChecked, setZaraChecked] = useState(false);
-  const handleCheckboxChange = (event) => {
-    setZaraChecked(event.target.checked);
+
+  const handleFilterCategory = (event, products) => {
+    // setZaraChecked(event.target.checked);
+    let filterbrand = event.target.value;
+
     console.log("target", event.target.value);
+    let filterProducts = products.filter((item) => item.brand === filterbrand);
+    console.log("filterProducts: ", filterProducts);
   };
 
-  const filteredItems = isZaraChecked
-    ? uniqueBrands.filter((item) => item.brand === "Zara")
-    : uniqueBrands;
-  console.log("filteredItems", filteredItems);
+  // const filteredItems = isZaraChecked
+  //   ? uniqueBrands.filter((item) => item.brand === "Zara")
+  //   : uniqueBrands;
+  // console.log("filteredItems", filteredItems);
 
   return (
     <>
@@ -69,7 +74,7 @@ const FilterBox = () => {
                   <FormGroup key={index}>
                     <FormControlLabel
                       control={<Checkbox />}
-                      onChange={handleCheckboxChange}
+                      onChange={(e)=> handleFilterCategory(e, data)}
                       label={brand}
                       value={brand}
                     />

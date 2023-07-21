@@ -365,6 +365,19 @@
       "created_at": null,
       "updated_at": null,
       "image": "https://i.pinimg.com/236x/ba/eb/f3/baebf33a0bda23f98ba19771ef6da7d7.jpg"
+    },
+    {
+      "id": 23,
+      "title": "trauser pant",
+      "type": "Type C",
+      "price": 15,
+      "brand": "Adidas",
+      "category": "men",
+      "rating": "4.8",
+      "seller": "Calvin Klein",
+      "created_at": null,
+      "updated_at": null,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJAYnEXTjuHAOonEV2fTNxiY9ADSuLqpClNQ&usqp=CAU"
     }
   ],
   "wishlist": [
