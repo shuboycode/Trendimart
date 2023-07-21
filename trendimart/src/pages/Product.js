@@ -44,7 +44,6 @@ const ProductPageSec = () => {
   return (
     <>
       {/* content section start here */}
-
       <div className="page-content-wrapper  justify-center mt-14">
         <div className="main-content flex">
           <Container
@@ -53,37 +52,16 @@ const ProductPageSec = () => {
             className="filter-sec-wrapper"
           >
             <div className="flex wrapper">
-              <div className={`filter-content ${showFilterBox ? "active": ""}`}>
-                {showFilterBox &&  <FilterBox></FilterBox>}
-
-
-                        
-                {/* {showFilterBox ? <FilterBox className="active" /> : <FilterBox />} */}
-              
+              <div
+                className={`filter-content ${showFilterBox ? "active" : ""}`}
+              >
+                {showFilterBox && <FilterBox></FilterBox>}
               </div>
 
               <div className="width-100 filtered-product-wrapper">
                 <div className="content-wrapper text">
                   <div className="filter-subheading display-end">
-                    {/* <div className="filter-container">
-                      <div
-                        className={`icon-wrapper pointer align-items ${
-                          showFilterBox ? "active" : ""
-                        }`}
-                        onClick={handleClick}
-                      >
-                        <span className="font-weight-700">Filters</span>
-                        <TuneIcon
-                          className="icon-tune"
-                          fontSize="30px"
-                        ></TuneIcon>
-                      </div>
-                      {showFilterBox && (
-                        <div className="filter-box"></div>
-                      )}
-                    </div> */}
-
-                   <div className="filter-container">
+                    <div className="filter-container">
                       <div
                         className={`icon-wrapper pointer align-items ${
                           showFilterBox ? "active" : ""
@@ -94,7 +72,7 @@ const ProductPageSec = () => {
                         <TuneIcon className="icon-tune" fontSize="30px" />
                       </div>
                       {showFilterBox && <div className="filter-box"></div>}
-                    </div> 
+                    </div>
 
                     <div className="right-contentbaseline">
                       <DropdownMenu className="drop-menu"></DropdownMenu>

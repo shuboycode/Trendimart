@@ -89,7 +89,7 @@ export default function IndeterminateCheckbox() {
                 <div className="content-img">
                   {children}
                   <img
-                    src={Jacket}
+                    src={product.image}
                     alt="summer-collection"
                     className="left-image"
                   />
@@ -148,6 +148,7 @@ export default function IndeterminateCheckbox() {
             </div>
           );
         })}
+        
       </div>
     </>
   );
