@@ -31,9 +31,6 @@ const AppRoutes = () => {
         <Route path="ProductOpen" element={<ProductOpen />}/>
         <Route path="ContactUs" element={<ContactUs/>}/>
         <Route path="MyWishlist" element={<MyWishlist/>}/>
-       
-
-      
       </Route>
     </Routes>
   );

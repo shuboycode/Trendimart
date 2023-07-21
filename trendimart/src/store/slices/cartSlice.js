@@ -24,7 +24,7 @@ export const fetchCart = createAsyncThunk("api/fetchData", async () => {
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    data: [],
+    cartItems: [],
     cartCount: 0,
     isLoading: false,
     error: null,
@@ -57,7 +57,7 @@ const cartSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchCart.fulfilled, (state, action) => {
-        state.data.push(...action.payload);
+        state.cartItems.push(...action.payload);
         state.cartCount=action.payload.length;
         state.isLoading = false;
         console.log(action.payload);

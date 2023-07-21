@@ -39,7 +39,7 @@ export default function IndeterminateCheckbox() {
     </Box>
   );
 
-  const { data, loading, error } = useSelector((state) => state.cart);
+  const { cartItems, loading, error } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const discount = 1.3; // 30%
   
@@ -48,7 +48,7 @@ export default function IndeterminateCheckbox() {
     dispatch(fetchCart());
   }, [dispatch]);
 
-  console.log(data);
+  console.log("cartItems:",cartItems);
 
   if (loading) {
     return console.log("loading");
@@ -82,7 +82,7 @@ export default function IndeterminateCheckbox() {
           </div>
         </div>
 
-        {data.map((product) => {
+        {cartItems.map((product) => {
           return (
             <div className="content-payment justify-between">
               <div className="flex">
