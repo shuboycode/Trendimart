@@ -41,6 +41,8 @@ const ProductPageSec = () => {
     setShowFilterBox(!showFilterBox);
   };
 
+   const filterBrands = () => console.log("categoryFiltered");
+  // category = newFilterCategory;
   return (
     <>
       {/* content section start here */}
@@ -55,7 +57,7 @@ const ProductPageSec = () => {
               <div
                 className={`filter-content ${showFilterBox ? "active" : ""}`}
               >
-                {showFilterBox && <FilterBox></FilterBox>}
+                {showFilterBox && <FilterBox filterBrands={filterBrands}></FilterBox>}
               </div>
 
               <div className="width-100 filtered-product-wrapper">

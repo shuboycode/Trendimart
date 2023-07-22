@@ -62,12 +62,12 @@ const CarouselSection = (prop) => {
     await dispatch(fetchCartProducts({ id, singleItem }));
   };
 
-  const handleWishlistClick = async (event) => {
+  // const handleWishlistClick = async (event) => {
 
-    // if (cartdata.type === "api/postData/fulfilled") {
-      await dispatch(fetchCartProducts({ id, singleItem }));
-    // }
-  };
+  //   // if (cartdata.type === "api/postData/fulfilled") {
+  //     await dispatch(fetchCartProducts({ id, singleItem }));
+  //   // }
+  // };
 
   if (error) {
     // If an error occurred during API call, redirect to the 404 page

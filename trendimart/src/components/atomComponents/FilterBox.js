@@ -14,25 +14,27 @@ import { useState } from "react";
 import productSlice from "../../store/slices/productSlice";
 import { useEffect } from "react";
 
-const FilterBox = () => {
+const FilterBox = ({
+  filterBrands
+}) => {
   const { data, loading, error } = useSelector((state) => state.products);
   const [resultSet, setResultSet] = useState(new Set(data));
 
   const brands = Array.from(resultSet, (item) => item.brand);
-  console.log("element", brands);
+  // console.log("element", brands);
   const uniqueBrands = [...new Set(brands)];
-  console.log("uniqueBrands", uniqueBrands);
+  // console.log("uniqueBrands", uniqueBrands);
   
   const [isZaraChecked, setZaraChecked] = useState(false);
   const handleCheckboxChange = (event) => {
     setZaraChecked(event.target.checked);
-    console.log("target", event.target.value);
+    console.log("target", isZaraChecked? event.target.value : "");
   };
 
-  const filteredItems = isZaraChecked
-    ? uniqueBrands.filter((item) => item.brand === "Zara")
-    : uniqueBrands;
-  console.log("filteredItems", filteredItems);
+  // const filteredItems = isZaraChecked
+  //   ? uniqueBrands.filter((item) => item.brand === "Zara")
+  //   : uniqueBrands;
+  // console.log("filteredItems", filteredItems);
 
   return (
     <>
@@ -69,7 +71,7 @@ const FilterBox = () => {
                   <FormGroup key={index}>
                     <FormControlLabel
                       control={<Checkbox />}
-                      onChange={handleCheckboxChange}
+                      onChange={filterBrands}
                       label={brand}
                       value={brand}
                     />
