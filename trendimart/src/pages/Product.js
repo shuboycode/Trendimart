@@ -13,36 +13,57 @@ import CardTwo from "../components/CardTwo";
 
 const ProductPageSec = () => {
   // const [showFilterBox, setShowFilterBox] = useState(false);
+  const { data, loading, error } = useSelector((state) => state.products);
+  const [filterproducts, setfilterproducts] = useState();
+
+  // const [categorydata, setcategorydata] = useState(data);
+
+  // const [isChecked ,setchecked] = useState(false);
+  const [categorydata, setcategorydata] = useState([...data]);
+
+  console.log("categorydata", categorydata);
+
   const { slug } = useParams();
 
   console.log("slug", slug);
 
-  //fetching data
-  const dispatch = useDispatch();
-
-  // getting data from store
-  const { data, loading, error } = useSelector((state) => state.products);
-
-  useEffect(() => {
-    // dispatching function to store
-    dispatch(fetchProductsData());
-  }, [dispatch]);
-
-  const category =
+  let category =
     slug === "all" ? data : data.filter((el) => el.category === slug);
 
-  // function handleClick() {
-  //   setShowFilterBox(!showFilterBox);
-  // }
+  // setcategorydata(
+  //   slug === "all" ? data : data.filter((el) => el.category === slug)
+  // );
+
+  useEffect(() => {
+    setcategorydata(category);
+  }, []);
 
   const [showFilterBox, setShowFilterBox] = useState(false);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProductsData());
+  }, [dispatch]);
 
   const handleClick = () => {
     setShowFilterBox(!showFilterBox);
   };
 
-   const filterBrands = () => console.log("categoryFiltered");
-  // category = newFilterCategory;
+  let filterProducts;
+  const handleFilterCategory = (event, products) => {
+    let filterbrand = event.target.value;
+    console.log("target", event.target.value);
+    console.log("target checked", event.target.checked);
+
+    if (event.target.checked) {
+      filterProducts = products.filter((item) => item.brand === filterbrand);
+    }
+
+    setcategorydata(filterProducts);
+    console.log("categorydata", categorydata);
+  };
+
   return (
     <>
       {/* content section start here */}
@@ -57,7 +78,11 @@ const ProductPageSec = () => {
               <div
                 className={`filter-content ${showFilterBox ? "active" : ""}`}
               >
-                {showFilterBox && <FilterBox filterBrands={filterBrands}></FilterBox>}
+                {showFilterBox && (
+                  <FilterBox
+                    handleFilterCategory={handleFilterCategory}
+                  ></FilterBox>
+                )}
               </div>
 
               <div className="width-100 filtered-product-wrapper">
@@ -90,7 +115,7 @@ const ProductPageSec = () => {
                         spacing={{ xs: 2, md: 3 }}
                         columns={{ xs: 4, sm: 8, md: 12 }}
                       >
-                        {category.map((item) => {
+                        {categorydata?.map((item) => {
                           return (
                             <CardTwo
                               prop={item}

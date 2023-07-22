@@ -14,12 +14,98 @@ import { fetchProductsData } from "../store/slices/productSlice";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 
-const CardTwo = ({ prop, filterOn, key }) => {
-
+const CardTwo = ({ prop, filterOn }) => {
   return (
-    <Grid item xs={2} sm={4} md={filterOn ? 4 : 3} key={key}>
+    // <Grid item xs={2} sm={4} md={filterOn ? 4 : 3} key={key}>
+    //   <Link to={`${prop.id}`}>
+    //     <div key={prop.id} className="card-wrapper">
+    //       <Card sx={{ minWidth: 410 }} className="wrapper-card" elevation={0}>
+    //         <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
+    //           {/* <img src={women1} alt="women-danim" className="card-image" /> */}
+
+    //           <div>
+    //             <img
+    //               src={
+    //                 prop.image
+    //                   ? prop.image
+    //                   : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
+    //               }
+    //               alt="women-danim"
+    //               className="card-image"
+    //             />
+    //           </div>
+
+    //           <div className="card-content">
+    //             <Typography
+    //               gutterBottom
+    //               variant="h5"
+    //               component="div"
+    //               className="heading"
+    //             >
+    //               {prop.title}
+    //             </Typography>
+
+    //             <div className="card-info flex">
+    //               <Typography
+    //                 variant="body2"
+    //                 color="text.secondary"
+    //                 className="brand-name"
+    //               >
+    //                 {/* Brand Name */}
+
+    //                 {prop.brand}
+    //               </Typography>
+    //               <div className="right-content baseline pl-7">
+    //                 <Typography
+    //                   variant="body2"
+    //                   color="text.secondary"
+    //                   className="rating"
+    //                   sx={{}}
+    //                 >
+    //                   {prop.rating}
+    //                 </Typography>
+    //                 <img
+    //                   src={darkstar}
+    //                   alt="women-danim"
+    //                   className="icon-brand"
+    //                 />
+    //               </div>
+    //             </div>
+    //             <CardActions className="discount" sx={{ padding: 0 }}>
+    //               <Typography
+    //                 variant="body2"
+    //                 color="text.secondary"
+    //                 className="discount-primary"
+    //               >
+    //                 Rs. {prop.price * 100}
+    //               </Typography>
+    //               <Typography
+    //                 variant="body2"
+    //                 color="text.secondary"
+    //                 className="discount-secondary primary-font-family"
+    //                 sx={{ margin: 0 }}
+    //               >
+    //                 Rs. {prop.price * 100 * 1.3}
+    //               </Typography>
+
+    //               <Typography
+    //                 variant="body2"
+    //                 color="text.secondary"
+    //                 className="discount-tartionary"
+    //               >
+    //                 (30% off)
+    //               </Typography>
+    //             </CardActions>
+    //           </div>
+    //         </CardContent>
+    //       </Card>
+    //     </div>
+    //   </Link>
+    // </Grid>
+
+    <Grid item xs={2} sm={4} md={filterOn ? 4 : 3}>
       <Link to={`${prop.id}`}>
-        <div key={prop.id} className="card-wrapper">
+        <div className="card-wrapper">
           <Card sx={{ minWidth: 410 }} className="wrapper-card" elevation={0}>
             <CardContent className="img-wrapper-banner" sx={{ padding: 0 }}>
               {/* <img src={women1} alt="women-danim" className="card-image" /> */}
@@ -52,8 +138,6 @@ const CardTwo = ({ prop, filterOn, key }) => {
                     color="text.secondary"
                     className="brand-name"
                   >
-                    {/* Brand Name */}
-
                     {prop.brand}
                   </Typography>
                   <div className="right-content baseline pl-7">
@@ -61,7 +145,6 @@ const CardTwo = ({ prop, filterOn, key }) => {
                       variant="body2"
                       color="text.secondary"
                       className="rating"
-                      sx={{}}
                     >
                       {prop.rating}
                     </Typography>
@@ -103,8 +186,6 @@ const CardTwo = ({ prop, filterOn, key }) => {
         </div>
       </Link>
     </Grid>
-
-    
   );
 };
 
