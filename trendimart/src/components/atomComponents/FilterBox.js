@@ -16,30 +16,14 @@ import { useEffect } from "react";
 
 const FilterBox = ({ handleFilterCategory }) => {
   const { data, loading, error } = useSelector((state) => state.products);
-  const [isZaraChecked, setZaraChecked] = useState(false);
-  const [resultSet, setResultSet] = useState(new Set(data));
+  const [resultSet, setResultSet] = useState(data);
 
-  const [isChecked, setchecked] = useState(false);
-  const [categorydata, setcategorydata] = useState([...data]);
+  useEffect(() => {
+    setResultSet(data);
+  }, [data]);
 
   const brands = Array.from(resultSet, (item) => item.brand);
   const uniqueBrands = [...new Set(brands)];
-
-  console.log("element", data);
-  console.log("uniqueBrands", uniqueBrands);
-
-  const handleCheckboxChange = () => {
-    setchecked(!isChecked);
-    // setcategorydata(isChecked ? [] : [[...data]]);
-  };
-
-  // const handleFilterCategory = (event, products) => {
-  //   let filterbrand = event.target.value;
-
-  //   console.log("target", event.target.value);
-  //   let filterProducts = products.filter((item) => item.brand === filterbrand);
-  //   console.log("filterProducts: ", filterProducts);
-  // };
 
   return (
     <>
@@ -79,7 +63,7 @@ const FilterBox = ({ handleFilterCategory }) => {
                       // checked={isChecked}
                       // onChange={(e) => handleFilterCategory(e, data)}
                       // onChange={handleCheckboxChange}
-                      onChange={(e) => handleFilterCategory(e, data, handleCheckboxChange)}
+                      onChange={(e) => handleFilterCategory(e)}
                       label={brand}
                       value={brand}
                     />

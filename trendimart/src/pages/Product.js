@@ -12,56 +12,45 @@ import TuneIcon from "@mui/icons-material/Tune";
 import CardTwo from "../components/CardTwo";
 
 const ProductPageSec = () => {
-  // const [showFilterBox, setShowFilterBox] = useState(false);
   const { data, loading, error } = useSelector((state) => state.products);
-  const [filterproducts, setfilterproducts] = useState();
 
-  // const [categorydata, setcategorydata] = useState(data);
-
-  // const [isChecked ,setchecked] = useState(false);
-  const [categorydata, setcategorydata] = useState([...data]);
-
-  console.log("categorydata", categorydata);
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [showFilterBox, setShowFilterBox] = useState(true);
 
   const { slug } = useParams();
-
-  console.log("slug", slug);
-
-  let category =
-    slug === "all" ? data : data.filter((el) => el.category === slug);
-
-  // setcategorydata(
-  //   slug === "all" ? data : data.filter((el) => el.category === slug)
-  // );
-
-  useEffect(() => {
-    setcategorydata(category);
-  }, []);
-
-  const [showFilterBox, setShowFilterBox] = useState(false);
-
   const dispatch = useDispatch();
+
+  let categoryAllProducts =
+    slug === "all" ? data : data.filter((el) => el.category === slug);
 
   useEffect(() => {
     dispatch(fetchProductsData());
   }, [dispatch]);
 
+  useEffect(() => {
+    const filteredProducts = data.filter((product) =>
+      selectedBrands.includes(product.brand)
+    );
+    setFilteredProducts(filteredProducts);
+  }, [selectedBrands]);
+
   const handleClick = () => {
     setShowFilterBox(!showFilterBox);
   };
 
-  let filterProducts;
-  const handleFilterCategory = (event, products) => {
-    let filterbrand = event.target.value;
-    console.log("target", event.target.value);
-    console.log("target checked", event.target.checked);
-
+  const handleBrandCheckboxChange = (event) => {
+    const brandName = event.target.value;
     if (event.target.checked) {
-      filterProducts = products.filter((item) => item.brand === filterbrand);
+      setSelectedBrands((prevSelectedBrands) => [
+        ...prevSelectedBrands,
+        brandName,
+      ]);
+    } else {
+      setSelectedBrands((prevSelectedBrands) =>
+        prevSelectedBrands.filter((brand) => brand !== brandName)
+      );
     }
-
-    setcategorydata(filterProducts);
-    console.log("categorydata", categorydata);
   };
 
   return (
@@ -80,7 +69,7 @@ const ProductPageSec = () => {
               >
                 {showFilterBox && (
                   <FilterBox
-                    handleFilterCategory={handleFilterCategory}
+                    handleFilterCategory={handleBrandCheckboxChange}
                   ></FilterBox>
                 )}
               </div>
@@ -115,15 +104,25 @@ const ProductPageSec = () => {
                         spacing={{ xs: 2, md: 3 }}
                         columns={{ xs: 4, sm: 8, md: 12 }}
                       >
-                        {categorydata?.map((item) => {
-                          return (
-                            <CardTwo
-                              prop={item}
-                              filterOn={showFilterBox}
-                              key={item.id}
-                            ></CardTwo>
-                          );
-                        })}
+                        {selectedBrands.length === 0
+                          ? categoryAllProducts.map((item) => {
+                              return (
+                                <CardTwo
+                                  prop={item}
+                                  filterOn={showFilterBox}
+                                  key={item.id}
+                                ></CardTwo>
+                              );
+                            })
+                          : filteredProducts.map((item) => {
+                              return (
+                                <CardTwo
+                                  prop={item}
+                                  filterOn={showFilterBox}
+                                  key={item.id}
+                                ></CardTwo>
+                              );
+                            })}
                       </Grid>
                     </Box>
                   </div>
