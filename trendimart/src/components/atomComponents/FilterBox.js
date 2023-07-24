@@ -18,9 +18,10 @@ const FilterBox = ({ handleFilterCategory }) => {
   const { data, loading, error } = useSelector((state) => state.products);
   const [isZaraChecked, setZaraChecked] = useState(false);
   const [resultSet, setResultSet] = useState(new Set(data));
-
+  const [filterproducts, setfilterproducts] = useState();
   const [isChecked, setchecked] = useState(false);
   const [categorydata, setcategorydata] = useState([...data]);
+  
 
   const brands = Array.from(resultSet, (item) => item.brand);
   const uniqueBrands = [...new Set(brands)];
@@ -28,18 +29,12 @@ const FilterBox = ({ handleFilterCategory }) => {
   console.log("element", data);
   console.log("uniqueBrands", uniqueBrands);
 
-  const handleCheckboxChange = () => {
+  const handleCheckboxChange = (event) => {
     setchecked(!isChecked);
-    // setcategorydata(isChecked ? [] : [[...data]]);
+    // setchecked(event.target.checked);
   };
 
-  // const handleFilterCategory = (event, products) => {
-  //   let filterbrand = event.target.value;
 
-  //   console.log("target", event.target.value);
-  //   let filterProducts = products.filter((item) => item.brand === filterbrand);
-  //   console.log("filterProducts: ", filterProducts);
-  // };
 
   return (
     <>
@@ -80,9 +75,11 @@ const FilterBox = ({ handleFilterCategory }) => {
                       // onChange={(e) => handleFilterCategory(e, data)}
                       // onChange={handleCheckboxChange}
                       onChange={(e) => handleFilterCategory(e, data, handleCheckboxChange)}
-                     
-                      label={brand}
                       value={brand}
+                      // checked={selectedBrands.includes(brand)}
+                      // onChange={handleCheckboxChange}
+                      label={brand}
+                      // value={brand}
                     />
                   </FormGroup>
                 ))}

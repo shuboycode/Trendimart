@@ -11,14 +11,16 @@ import DropdownMenu from "../components/atomComponents/DropdownMenu";
 import TuneIcon from "@mui/icons-material/Tune";
 import CardTwo from "../components/CardTwo";
 
+
 const ProductPageSec = () => {
   // const [showFilterBox, setShowFilterBox] = useState(false);
   const { data, loading, error } = useSelector((state) => state.products);
   const [filterproducts, setfilterproducts] = useState();
-
-  // const [categorydata, setcategorydata] = useState(data);
-
-  // const [isChecked ,setchecked] = useState(false);
+  const [selectedFilters, setSelectedFilters] = useState([]);
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [isChecked, setchecked] = useState(false);
+  const [arr, setArr] = useState([]);
+ 
   const [categorydata, setcategorydata] = useState([...data]);
 
   console.log("categorydata", categorydata);
@@ -58,6 +60,7 @@ const ProductPageSec = () => {
 
     if (event.target.checked) {
       filterProducts = products.filter((item) => item.brand === filterbrand);
+      setfilterproducts(filterProducts);
     }
 
     setcategorydata(filterProducts);
