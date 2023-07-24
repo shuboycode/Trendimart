@@ -17,19 +17,27 @@ const ProductPageSec = () => {
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [showFilterBox, setShowFilterBox] = useState(true);
+  const [categoryAllProducts, setcategoryAllProducts] = useState([]);
 
   const { slug } = useParams();
   const dispatch = useDispatch();
 
-  let categoryAllProducts =
-    slug === "all" ? data : data.filter((el) => el.category === slug);
+  // let categoryAllProducts =
+  //   slug === "all" ? data : data.filter((el) => el.category === slug);
+
+  useEffect(() => {
+    setcategoryAllProducts(
+      slug === "all" ? data : data.filter((el) => el.category === slug)
+    );
+    setSelectedBrands([]);
+  }, [slug]);
 
   useEffect(() => {
     dispatch(fetchProductsData());
   }, [dispatch]);
 
   useEffect(() => {
-    const filteredProducts = data.filter((product) =>
+    const filteredProducts = categoryAllProducts.filter((product) =>
       selectedBrands.includes(product.brand)
     );
     setFilteredProducts(filteredProducts);
@@ -53,6 +61,16 @@ const ProductPageSec = () => {
     }
   };
 
+  const handleFilterByPrice = (min, max) => {
+    const filteredProducts = categoryAllProducts.filter((product) =>
+     product.price >= (min/100) && product.price <= (max/100)
+    );
+    setFilteredProducts(filteredProducts);
+  
+
+    console.log("price filter is working",min, max, filteredProducts);
+  };
+
   return (
     <>
       {/* content section start here */}
@@ -70,6 +88,8 @@ const ProductPageSec = () => {
                 {showFilterBox && (
                   <FilterBox
                     handleFilterCategory={handleBrandCheckboxChange}
+                    categoryAllProducts={categoryAllProducts}
+                    handleFilterByPriceProp={handleFilterByPrice}
                   ></FilterBox>
                 )}
               </div>

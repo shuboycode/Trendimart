@@ -11,7 +11,8 @@
       "seller": "Zara",
       "created_at": null,
       "updated_at": null,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdV3L_cGYeNM0aKHWMmNkSxg-EFFcaNUxWXw&usqp=CAU"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdV3L_cGYeNM0aKHWMmNkSxg-EFFcaNUxWXw&usqp=CAU",
+      "color": "blue"
     },
     {
       "id": 4,
@@ -24,7 +25,8 @@
       "seller": "Zara",
       "created_at": null,
       "updated_at": null,
-      "image": "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/India%20LOB/Clothing%20and%20Bags/Men's%20Basic%20Cotton%20T-Shirts/IN_Men_s-Basic-Cotton-T-Shirts_Hero-image_02"
+      "image": "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/India%20LOB/Clothing%20and%20Bags/Men's%20Basic%20Cotton%20T-Shirts/IN_Men_s-Basic-Cotton-T-Shirts_Hero-image_02",
+      "color": "blue"
     },
     {
       "id": 7,
@@ -37,7 +39,8 @@
       "seller": "Nike",
       "created_at": null,
       "updated_at": null,
-      "image": "https://mirzacdns3.s3.ap-south-1.amazonaws.com/cache/catalog/RFS3396/1-445x618.jpg"
+      "image": "https://mirzacdns3.s3.ap-south-1.amazonaws.com/cache/catalog/RFS3396/1-445x618.jpg",
+      "color": "grey"
     },
     {
       "id": 10,
@@ -50,7 +53,8 @@
       "seller": "Nike",
       "created_at": null,
       "updated_at": null,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwVnCPVujIJcRz5SjvFCLmsmxtZTThRJMaXQ&usqp=CAU"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwVnCPVujIJcRz5SjvFCLmsmxtZTThRJMaXQ&usqp=CAU",
+      "color": "pink"
     },
     {
       "id": 2,
@@ -63,7 +67,8 @@
       "seller": "Nike",
       "created_at": null,
       "updated_at": null,
-      "image": "https://cdn.shopify.com/s/files/1/1018/4207/products/1_eaa93969-8181-4b90-b3d3-0adb19412766_large.jpg?v=1648036966"
+      "image": "https://cdn.shopify.com/s/files/1/1018/4207/products/1_eaa93969-8181-4b90-b3d3-0adb19412766_large.jpg?v=1648036966",
+      "color": "blue"
     },
     {
       "id": 5,
@@ -76,7 +81,8 @@
       "seller": "Nike",
       "created_at": null,
       "updated_at": null,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuGynjAF6AkVmvZ48_8-7FTzgvBxcRE1pvxU1tZZISrI78WM18y-AiTtGfhUClGhI6XuA&usqp=CAU"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuGynjAF6AkVmvZ48_8-7FTzgvBxcRE1pvxU1tZZISrI78WM18y-AiTtGfhUClGhI6XuA&usqp=CAU",
+      "color": "orange"
     },
     {
       "id": 8,
@@ -89,7 +95,8 @@
       "seller": "Gap",
       "created_at": null,
       "updated_at": null,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPgGdUudJ1VJIuXGoTNIeyAXn756tQjxNjIg&usqp=CAU"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPgGdUudJ1VJIuXGoTNIeyAXn756tQjxNjIg&usqp=CAU",
+      "color": "white"
     },
     {
       "id": 3,

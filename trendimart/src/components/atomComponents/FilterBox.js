@@ -14,14 +14,20 @@ import { useState } from "react";
 import productSlice from "../../store/slices/productSlice";
 import { useEffect } from "react";
 
-const FilterBox = ({ handleFilterCategory }) => {
-  const { data, loading, error } = useSelector((state) => state.products);
-  const [resultSet, setResultSet] = useState(data);
+const FilterBox = ({
+  handleFilterByPriceProp,
+  handleFilterCategory,
+  categoryAllProducts,
+}) => {
+  // const { data, loading, error } = useSelector((state) => state.products);
+  const [resultSet, setResultSet] = useState(categoryAllProducts);
 
   useEffect(() => {
-    setResultSet(data);
-  }, [data]);
+    setResultSet(categoryAllProducts);
+    // console.log('inside useeffect');
+  }, [categoryAllProducts]);
 
+  // console.log('outside useeffect');
   const brands = Array.from(resultSet, (item) => item.brand);
   const uniqueBrands = [...new Set(brands)];
 
@@ -38,7 +44,8 @@ const FilterBox = ({ handleFilterCategory }) => {
         <div className="price-wrapper">
           <div className="sub-heading mt-4 mb-7">Price</div>
 
-          <PlainSlider></PlainSlider>
+          <PlainSlider handleFilterByPriceProp={handleFilterByPriceProp}>
+          </PlainSlider>
         </div>
 
         {/* first accordian  */}

@@ -6,13 +6,14 @@ function valuetext(value) {
   return `$0{value}°C`;
 }
 
-export default function RangeSlider() {
+export default function RangeSlider({handleFilterByPriceProp}) {
   const [value, setValue] = React.useState([700, 2000]);
   const minValue = value[0];
   const maxValue = value[1];
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    handleFilterByPriceProp(minValue, maxValue )
   };
 
   return (
