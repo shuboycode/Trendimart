@@ -212,7 +212,6 @@ const Header = ({ InviteBrand = false }) => {
                 <Link to={wishlistRoute}>
                   <FavoriteBorderIcon />
                 </Link>
-                if()
                 <Badge
                   badgeContent={CartItem}
                   color="primary"
