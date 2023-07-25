@@ -57,16 +57,12 @@ const Header = ({ InviteBrand = false }) => {
   const PaymentRoute = "/Payment";
   const [CartItem, setCartItem] = useState(0);
   // const CartItemCount = useSelector((state) => state.counter);
-  const {cartCount} = useSelector((state) => state.cart);
+  const { cartCount } = useSelector((state) => state.cart);
   console.log("cartcount", cartCount);
 
   useEffect(() => {
     setCartItem(cartCount);
   }, [cartCount]);
-
-
-
-
 
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -100,24 +96,23 @@ const Header = ({ InviteBrand = false }) => {
           sx={{ maxWidth: "1920px", border: "1px solid" }}
         >
           <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              <img src={LogoHead} alt="logo" className="logo-icon" />
-            </Typography>
-
+            <Link to="/">
+              <Typography
+                variant="h6"
+                noWrap
+                sx={{
+                  mr: 2,
+                  display: { xs: "none", md: "flex" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                <img src={LogoHead} alt="logo" className="logo-icon" />
+              </Typography>
+            </Link>
             <Box
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
               className="nav-content"
@@ -212,11 +207,7 @@ const Header = ({ InviteBrand = false }) => {
                 <Link to={wishlistRoute}>
                   <FavoriteBorderIcon />
                 </Link>
-                <Badge
-                  badgeContent={CartItem}
-                  color="primary"
-                  className="ml-4"
-                >
+                <Badge badgeContent={CartItem} color="primary" className="ml-4">
                   <Link to={PaymentRoute}>
                     <ShoppingCartOutlinedIcon />
                   </Link>

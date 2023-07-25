@@ -63,7 +63,7 @@ export default function IndeterminateCheckbox() {
       <div className="detailed">
         <div className="flex form-label">
           <FormControlLabel
-            label="1/2 ITEMS SELECTED"
+            label={`1/ ${cartItems.length} ITEMS SELECTED`}
             className="form-heading"
             control={
               <Checkbox

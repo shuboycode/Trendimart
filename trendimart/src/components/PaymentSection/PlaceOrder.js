@@ -17,14 +17,12 @@ const PlaceOrder = () => {
     //  toggleFormVisibility();
   };
 
-  const { data, loading, error } = useSelector((state) => state.products);
+  const { cartItems, loading, error } = useSelector((state) => state.cart);
   const discount = 1.3;
 
   const dispatch = useDispatch();
 
   useEffect(() => {}, [dispatch]);
-
-  console.log(data);
 
   if (loading) {
     return console.log("loading");
@@ -34,7 +32,7 @@ const PlaceOrder = () => {
     return console.log("error ", error);
   }
 
-  const totalPrice = data.reduce((sum, cart) => sum + cart.price, 0);
+  const totalPrice = cartItems.reduce((sum, cart) => sum + cart.price, 0);
   const fee = 10;
   const result = totalPrice * 100 * discount;
   const discountResult = totalPrice * 100 * 0.3;
@@ -45,7 +43,7 @@ const PlaceOrder = () => {
       <div className="detail-wrapper">
         {!formVisible && (
           <>
-            <h2 className="heading font-weight-700">PRICE DETAILS (1Item)</h2>
+            <h2 className="heading font-weight-700">PRICE DETAILS ({cartItems.length} Item)</h2>
             <div className="price-style">
               <div className="amount justify-between flex pt-4">
                 <span className="">Total MRP</span>

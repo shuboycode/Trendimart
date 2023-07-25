@@ -22,6 +22,7 @@ const ProductPageSec = () => {
 
   const [selectedColor, setSelectedColors] = useState([]);
   const [categoryAllColor, setcategoryAllColor] = useState([]);
+  const [clearClicked, setClearClicked] = useState(false);
 
   const { slug } = useParams();
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ const ProductPageSec = () => {
     );
     setSelectedBrands([]);
     setSelectedColors([]);
+    setmaxValue(0);
   }, [slug]);
 
   useEffect(() => {
@@ -76,11 +78,13 @@ const ProductPageSec = () => {
         prevSelectedBrands.filter((brand) => brand !== brandName)
       );
     }
+    setClearClicked(false);
   };
 
   const handleColorCheckboxChange = (event) => {
     const colorName = event.target.value;
     console.log("colorName", colorName);
+    setClearClicked(false);
     if (event.target.checked) {
       setSelectedColors((prevSelectedColors) => [
         ...prevSelectedColors,
@@ -94,25 +98,19 @@ const ProductPageSec = () => {
   };
 
   const handleFilterByPrice = (min, max) => {
-    // const maxVaue = 1;
-
-    // console.log("max-value",maxVaue);
     const filteredProducts = categoryAllProducts.filter(
       (product) => product.price >= min / 100 && product.price <= max / 100
     );
     setFilteredProducts(filteredProducts);
-    // max(maxValue);
     setmaxValue(max);
-    // console.log("max-value", setmaxValue(max)0);
-
-    console.log("price filter is working", min, max, filteredProducts);
+    setClearClicked(false);
   };
 
-
-  const clearButton = (event) => {
+  const handleClearButtonClick = () => {
     setSelectedBrands([]);
     setSelectedColors([]);
     setmaxValue(0);
+    setClearClicked(true);
   };
 
   return (
@@ -136,7 +134,10 @@ const ProductPageSec = () => {
                     handleFilterByPriceProp={handleFilterByPrice}
                     categoryAllColor={categoryAllColor}
                     handleColorCategory={handleColorCheckboxChange}
-                    handleClear={clearButton}
+                    selectedBrands={selectedBrands}
+                    selectedColor={selectedColor}
+                    clearClicked={clearClicked}
+                    handleClearButtonClick={handleClearButtonClick}
                   ></FilterBox>
                 )}
               </div>
@@ -203,7 +204,6 @@ const ProductPageSec = () => {
       </div>
     </>
   );
-  
 };
 
 export default ProductPageSec;

@@ -22,7 +22,10 @@ const FilterBox = ({
   handleColorCategory,
   handleChange,
   maxValue,
-  handleClear,
+  selectedBrands,
+  selectedColor,
+  clearClicked,
+  handleClearButtonClick
 }) => {
   // const { data, loading, error } = useSelector((state) => state.products);
   const [resultSet, setResultSet] = useState(categoryAllProducts);
@@ -51,7 +54,7 @@ const FilterBox = ({
           <h3 className="heading font-weight-700">Filters</h3>
           <Button
             variant="text"
-            onClick={handleClear}
+            onClick={handleClearButtonClick}
             className="button-text text-blue"
           >
             Clear all
@@ -93,6 +96,7 @@ const FilterBox = ({
                       onChange={(e) => handleFilterCategory(e)}
                       label={brand}
                       value={brand}
+                      checked={selectedBrands.includes(brand) && !clearClicked}
                     />
                   </FormGroup>
                 ))}
@@ -125,6 +129,7 @@ const FilterBox = ({
                       onChange={(e) => handleColorCategory(e)}
                       label={color}
                       value={color}
+                      checked={selectedColor.includes(color) && !clearClicked}
                     />
                   </FormGroup>
                 ))}

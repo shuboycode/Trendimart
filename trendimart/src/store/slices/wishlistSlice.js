@@ -1,3 +1,4 @@
+import _default from "@mui/material/styles/identifier";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -31,6 +32,7 @@ const wishlistSlice = createSlice({
   reducers: {
     addToWishlist: (state, action) => {
       state.wishlistItems.push(action.payload);
+      postItemToServer(action.payload)
     },
     removeFromWishlist: (state, action) => {
       state.wishlistItems = state.wishlistItems.filter(
@@ -45,7 +47,7 @@ const wishlistSlice = createSlice({
       })
       .addCase(postItemToServer.fulfilled, (state, action) => {
         state.status = "idle";
-        state.wishlistItems.push(action.payload);
+        // state.wishlistItems.push(action.payload);
       })
       .addCase(postItemToServer.rejected, (state, action) => {
         state.status = "idle";
@@ -57,7 +59,7 @@ const wishlistSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchWishlist.fulfilled, (state, action) => {
-        state.wishlistItems.push(...action.payload);
+        // state.wishlistItems.push(...action.payload);
         state.isLoading = false;
       })
       .addCase(fetchWishlist.rejected, (state, action) => {

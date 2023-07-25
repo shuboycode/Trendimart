@@ -23,7 +23,7 @@ const WomenCard = ({ prop, filterOn, key }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchWishlist());
+    // dispatch(fetchWishlist());
   }, [dispatch]);
 
   return (

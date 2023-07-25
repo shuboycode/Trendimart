@@ -20,7 +20,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import { addToCart, fetchCartProducts } from "../../store/slices/cartSlice";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CircularProgress from "@mui/material/CircularProgress";
-import item, { postItemToServer } from "../../store/slices/wishlistSlice";
+import item, { addToWishlist, postItemToServer } from "../../store/slices/wishlistSlice";
 // import wishlistSlice from "../../store/slices/wishlistSlice";
 
 const CarouselSection = (prop) => {
@@ -59,7 +59,8 @@ const CarouselSection = (prop) => {
     setIsShown((current) => !current);
     console.log("id :", id);
 
-    await dispatch(fetchCartProducts({ id, singleItem }));
+    // await dispatch(fetchCartProducts({ id, singleItem }));
+    dispatch(addToCart(singleItem));
   };
 
   // const handleWishlistClick = async (event) => {
@@ -278,8 +279,6 @@ const CarouselSection = (prop) => {
                 <Link to="/Payment">
                   <Button
                     onClick={() => {
-                      handleClick();
-                      // dispatch(increment());
                     }}
                     className="pay-button"
                   >
@@ -290,7 +289,6 @@ const CarouselSection = (prop) => {
                 <Button
                   onClick={() => {
                     handleClick();
-                    // dispatch(increment());
                   }}
                   className="pay-button"
                 >
@@ -311,7 +309,8 @@ const CarouselSection = (prop) => {
                 <FavoriteBorderIcon
                   className="border-icon"
                   onClick={() => {
-                    handleWishlistClick();
+                    // handleWishlistClick();
+                    dispatch(addToWishlist(singleItem))
                   }}
                 />
               )}
