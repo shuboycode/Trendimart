@@ -14,34 +14,46 @@ import { useState } from "react";
 import productSlice from "../../store/slices/productSlice";
 import { useEffect } from "react";
 
-const FilterBox = ({ handleFilterCategory }) => {
-  const { data, loading, error } = useSelector((state) => state.products);
-  const [isZaraChecked, setZaraChecked] = useState(false);
-  const [resultSet, setResultSet] = useState(new Set(data));
-  const [filterproducts, setfilterproducts] = useState();
-  const [isChecked, setchecked] = useState(false);
-  const [categorydata, setcategorydata] = useState([...data]);
-  
+const FilterBox = ({
+  handleFilterByPriceProp,
+  handleFilterCategory,
+  categoryAllProducts,
+  categoryAllColor,
+  handleColorCategory,
+  handleChange,
+  maxValue,
+  handleClear,
+}) => {
+  // const { data, loading, error } = useSelector((state) => state.products);
+  const [resultSet, setResultSet] = useState(categoryAllProducts);
+  const [expanded, setExpanded] = React.useState("panel1");
+
+  useEffect(() => {
+    setResultSet(categoryAllProducts);
+  }, [categoryAllProducts]);
 
   const brands = Array.from(resultSet, (item) => item.brand);
   const uniqueBrands = [...new Set(brands)];
 
-  console.log("element", data);
-  console.log("uniqueBrands", uniqueBrands);
+  // code for color
 
-  const handleCheckboxChange = (event) => {
-    setchecked(!isChecked);
-    // setchecked(event.target.checked);
+  const colors = Array.from(resultSet, (item) => item.color);
+  const uniqueColors = [...new Set(colors)];
+
+  const handleChangeAccordian = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false);
   };
-
-
 
   return (
     <>
       <div className="dropdown-wrapper">
         <div className="heading-text">
           <h3 className="heading font-weight-700">Filters</h3>
-          <Button variant="text" className="button-text text-blue">
+          <Button
+            variant="text"
+            onClick={handleClear}
+            className="button-text text-blue"
+          >
             Clear all
           </Button>
         </div>
@@ -49,7 +61,9 @@ const FilterBox = ({ handleFilterCategory }) => {
         <div className="price-wrapper">
           <div className="sub-heading mt-4 mb-7">Price</div>
 
-          <PlainSlider></PlainSlider>
+          <PlainSlider
+            handleFilterByPriceProp={handleFilterByPriceProp}
+          ></PlainSlider>
         </div>
 
         {/* first accordian  */}
@@ -57,7 +71,12 @@ const FilterBox = ({ handleFilterCategory }) => {
           <hr sx="width:50%;text-align:left;" className="mt-6" />
 
           <div>
-            <Accordion className="accordion-style">
+            {/* <Accordion  className="accordion-style"> */}
+            <Accordion
+              className="accordion-style"
+              expanded={expanded === "panel1"}
+              onChange={handleChangeAccordian("panel1")}
+            >
               <AccordionSummary
                 className="accordian-icon"
                 expandIcon={<ExpandMoreIcon />}
@@ -71,15 +90,9 @@ const FilterBox = ({ handleFilterCategory }) => {
                   <FormGroup key={index}>
                     <FormControlLabel
                       control={<Checkbox />}
-                      // checked={isChecked}
-                      // onChange={(e) => handleFilterCategory(e, data)}
-                      // onChange={handleCheckboxChange}
-                      onChange={(e) => handleFilterCategory(e, data, handleCheckboxChange)}
-                      value={brand}
-                      // checked={selectedBrands.includes(brand)}
-                      // onChange={handleCheckboxChange}
+                      onChange={(e) => handleFilterCategory(e)}
                       label={brand}
-                      // value={brand}
+                      value={brand}
                     />
                   </FormGroup>
                 ))}
@@ -103,58 +116,19 @@ const FilterBox = ({ handleFilterCategory }) => {
               >
                 <Typography className="heading">Color</Typography>
               </AccordionSummary>
-              <AccordionDetails>
-                <FormGroup>
-                  <FormControlLabel
-                    control={<Checkbox defaultChecked />}
-                    label={
-                      <span>
-                        Blue <span className="text-color">(206)</span>
-                      </span>
-                    }
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <span>
-                        Blue <span className="text-color">(206)</span>
-                      </span>
-                    }
-                  />
 
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <span>
-                        Blue <span className="text-color">(206)</span>
-                      </span>
-                    }
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <span>
-                        Blue <span className="text-color">(206)</span>
-                      </span>
-                    }
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <span>
-                        Blue <span className="text-color">(206)</span>
-                      </span>
-                    }
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <span>
-                        Blue <span className="text-color">(206)</span>
-                      </span>
-                    }
-                  />
-                </FormGroup>
+              <AccordionDetails>
+                {uniqueColors.map((color, index) => (
+                  <FormGroup key={index}>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      onChange={(e) => handleColorCategory(e)}
+                      label={color}
+                      value={color}
+                    />
+                  </FormGroup>
+                ))}
+
                 <Button variant="text">+ 40 more</Button>
               </AccordionDetails>
             </Accordion>

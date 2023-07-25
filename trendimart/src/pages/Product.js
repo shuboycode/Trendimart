@@ -11,60 +11,108 @@ import DropdownMenu from "../components/atomComponents/DropdownMenu";
 import TuneIcon from "@mui/icons-material/Tune";
 import CardTwo from "../components/CardTwo";
 
-
 const ProductPageSec = () => {
-  // const [showFilterBox, setShowFilterBox] = useState(false);
   const { data, loading, error } = useSelector((state) => state.products);
-  const [filterproducts, setfilterproducts] = useState();
-  const [selectedFilters, setSelectedFilters] = useState([]);
-  const [selectedBrands, setSelectedBrands] = useState([]);
-  const [isChecked, setchecked] = useState(false);
-  const [arr, setArr] = useState([]);
- 
-  const [categorydata, setcategorydata] = useState([...data]);
 
-  console.log("categorydata", categorydata);
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [showFilterBox, setShowFilterBox] = useState(true);
+  const [categoryAllProducts, setcategoryAllProducts] = useState([]);
+  const [maxValue, setmaxValue] = useState(0);
+
+  const [selectedColor, setSelectedColors] = useState([]);
+  const [categoryAllColor, setcategoryAllColor] = useState([]);
 
   const { slug } = useParams();
-
-  console.log("slug", slug);
-
-  let category =
-    slug === "all" ? data : data.filter((el) => el.category === slug);
-
-  // setcategorydata(
-  //   slug === "all" ? data : data.filter((el) => el.category === slug)
-  // );
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setcategorydata(category);
-  }, []);
+    console.log("maxValue:", maxValue);
+    // setmaxValue(maxValue);
+    return () => {};
+  }, [maxValue]);
 
-  const [showFilterBox, setShowFilterBox] = useState(false);
-
-  const dispatch = useDispatch();
+  useEffect(() => {
+    setcategoryAllProducts(
+      slug === "all" ? data : data.filter((el) => el.category === slug)
+    );
+    setSelectedBrands([]);
+    setSelectedColors([]);
+  }, [slug]);
 
   useEffect(() => {
     dispatch(fetchProductsData());
   }, [dispatch]);
 
+  useEffect(() => {
+    const filteredProducts = categoryAllProducts.filter((product) =>
+      selectedBrands.includes(product.brand)
+    );
+    setFilteredProducts(filteredProducts);
+  }, [selectedBrands]);
+
+  useEffect(() => {
+    const filteredProducts = categoryAllProducts.filter((product) =>
+      selectedColor.includes(product.color)
+    );
+    console.log("filteredProducts color", filteredProducts);
+    setFilteredProducts(filteredProducts);
+  }, [selectedColor]);
+
   const handleClick = () => {
     setShowFilterBox(!showFilterBox);
   };
 
-  let filterProducts;
-  const handleFilterCategory = (event, products) => {
-    let filterbrand = event.target.value;
-    console.log("target", event.target.value);
-    console.log("target checked", event.target.checked);
-
+  const handleBrandCheckboxChange = (event) => {
+    const brandName = event.target.value;
+    console.log("brandName name", brandName);
     if (event.target.checked) {
-      filterProducts = products.filter((item) => item.brand === filterbrand);
-      setfilterproducts(filterProducts);
+      setSelectedBrands((prevSelectedBrands) => [
+        ...prevSelectedBrands,
+        brandName,
+      ]);
+    } else {
+      setSelectedBrands((prevSelectedBrands) =>
+        prevSelectedBrands.filter((brand) => brand !== brandName)
+      );
     }
+  };
 
-    setcategorydata(filterProducts);
-    console.log("categorydata", categorydata);
+  const handleColorCheckboxChange = (event) => {
+    const colorName = event.target.value;
+    console.log("colorName", colorName);
+    if (event.target.checked) {
+      setSelectedColors((prevSelectedColors) => [
+        ...prevSelectedColors,
+        colorName,
+      ]);
+    } else {
+      setSelectedColors((prevSelectedColors) =>
+        prevSelectedColors.filter((color) => color !== colorName)
+      );
+    }
+  };
+
+  const handleFilterByPrice = (min, max) => {
+    // const maxVaue = 1;
+
+    // console.log("max-value",maxVaue);
+    const filteredProducts = categoryAllProducts.filter(
+      (product) => product.price >= min / 100 && product.price <= max / 100
+    );
+    setFilteredProducts(filteredProducts);
+    // max(maxValue);
+    setmaxValue(max);
+    // console.log("max-value", setmaxValue(max)0);
+
+    console.log("price filter is working", min, max, filteredProducts);
+  };
+
+
+  const clearButton = (event) => {
+    setSelectedBrands([]);
+    setSelectedColors([]);
+    setmaxValue(0);
   };
 
   return (
@@ -83,7 +131,12 @@ const ProductPageSec = () => {
               >
                 {showFilterBox && (
                   <FilterBox
-                    handleFilterCategory={handleFilterCategory}
+                    handleFilterCategory={handleBrandCheckboxChange}
+                    categoryAllProducts={categoryAllProducts}
+                    handleFilterByPriceProp={handleFilterByPrice}
+                    categoryAllColor={categoryAllColor}
+                    handleColorCategory={handleColorCheckboxChange}
+                    handleClear={clearButton}
                   ></FilterBox>
                 )}
               </div>
@@ -118,15 +171,27 @@ const ProductPageSec = () => {
                         spacing={{ xs: 2, md: 3 }}
                         columns={{ xs: 4, sm: 8, md: 12 }}
                       >
-                        {categorydata?.map((item) => {
-                          return (
-                            <CardTwo
-                              prop={item}
-                              filterOn={showFilterBox}
-                              key={item.id}
-                            ></CardTwo>
-                          );
-                        })}
+                        {selectedBrands.length === 0 &&
+                        selectedColor.length === 0 &&
+                        maxValue === 0
+                          ? categoryAllProducts.map((item) => {
+                              return (
+                                <CardTwo
+                                  prop={item}
+                                  filterOn={showFilterBox}
+                                  key={item.id}
+                                ></CardTwo>
+                              );
+                            })
+                          : filteredProducts.map((item) => {
+                              return (
+                                <CardTwo
+                                  prop={item}
+                                  filterOn={showFilterBox}
+                                  key={item.id}
+                                ></CardTwo>
+                              );
+                            })}
                       </Grid>
                     </Box>
                   </div>
@@ -138,6 +203,7 @@ const ProductPageSec = () => {
       </div>
     </>
   );
+  
 };
 
 export default ProductPageSec;
