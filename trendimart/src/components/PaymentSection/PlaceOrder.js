@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useState } from "react";
 import FormComponents from "../PaymentSection/FormComponents";
+import Gateway from "../PaymentSection/Gateway";
 import { hydrate } from "react-dom";
 
 const PlaceOrder = () => {
@@ -13,6 +14,7 @@ const PlaceOrder = () => {
 
   const toggleFormVisibility = () => {
     setFormVisible(!formVisible);
+    //  toggleFormVisibility();
   };
 
   const { data, loading, error } = useSelector((state) => state.products);

@@ -12,7 +12,7 @@
       "created_at": null,
       "updated_at": null,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdV3L_cGYeNM0aKHWMmNkSxg-EFFcaNUxWXw&usqp=CAU",
-      "color": "blue"
+      "color": "black"
     },
     {
       "id": 4,
@@ -26,7 +26,7 @@
       "created_at": null,
       "updated_at": null,
       "image": "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/India%20LOB/Clothing%20and%20Bags/Men's%20Basic%20Cotton%20T-Shirts/IN_Men_s-Basic-Cotton-T-Shirts_Hero-image_02",
-      "color": "blue"
+      "color": "grey"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "created_at": null,
       "updated_at": null,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwVnCPVujIJcRz5SjvFCLmsmxtZTThRJMaXQ&usqp=CAU",
-      "color": "pink"
+      "color": "blue"
     },
     {
       "id": 2,
@@ -68,7 +68,7 @@
       "created_at": null,
       "updated_at": null,
       "image": "https://cdn.shopify.com/s/files/1/1018/4207/products/1_eaa93969-8181-4b90-b3d3-0adb19412766_large.jpg?v=1648036966",
-      "color": "blue"
+      "color": "black"
     },
     {
       "id": 5,
@@ -82,7 +82,7 @@
       "created_at": null,
       "updated_at": null,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuGynjAF6AkVmvZ48_8-7FTzgvBxcRE1pvxU1tZZISrI78WM18y-AiTtGfhUClGhI6XuA&usqp=CAU",
-      "color": "orange"
+      "color": "red"
     },
     {
       "id": 8,
@@ -109,6 +109,7 @@
       "seller": "Gap",
       "created_at": null,
       "updated_at": null,
+      "color": "black",
       "image": "data:image/jpeg;base64,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"
     },
     {
@@ -122,6 +123,7 @@
       "seller": "Gap",
       "created_at": null,
       "updated_at": null,
+      "color": "pink",
       "image": "https://image.made-in-china.com/202f0j00FWNVTjnrlJYL/China-Wholesale-Children-S-Kids-Wear-Baby-Children-Clothes-New-Design-Wedding-Fashion-Girl-Dress.jpg"
     },
     {
@@ -135,6 +137,7 @@
       "seller": "Gap",
       "created_at": null,
       "updated_at": null,
+      "color": "white",
       "image": "https://m.media-amazon.com/images/I/61grawY88OL._AC_UY1100_.jpg"
     },
     {
@@ -148,6 +151,7 @@
       "seller": "Gap",
       "created_at": null,
       "updated_at": null,
+      "color": "grey",
       "image": "https://storage.sg.content-cdn.io/cdn-cgi/image/width=400,height=490,quality=90,format=auto,fit=cover,g=top/in-resources/22a79ec5-e694-4d7a-ac5a-85c8fa45b7f1/Images/ProductImages/Source/ITMTR01139-Olive_01.jpg"
     },
     {
@@ -161,6 +165,7 @@
       "seller": "Calvin Klein",
       "created_at": null,
       "updated_at": null,
+      "color": "grey",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMh5NF2k9ZOXEfPmd2Zq0Tt0ur7WH_XVvPvw&usqp=CAU"
     },
     {
@@ -174,6 +179,7 @@
       "seller": "Calvin Klein",
       "created_at": null,
       "updated_at": null,
+      "color": "grey",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJAYnEXTjuHAOonEV2fTNxiY9ADSuLqpClNQ&usqp=CAU"
     },
     {
@@ -187,6 +193,7 @@
       "seller": "Calvin Klein",
       "created_at": null,
       "updated_at": null,
+      "color": "grey",
       "image": "https://contents.mediadecathlon.com/p210134/e93bd7ecd3a62cb2a34f456d5d330f29/p210134.jpg?format=auto&quality=70&f=350x0"
     },
     {
@@ -200,6 +207,7 @@
       "seller": "Calvin Klein",
       "created_at": null,
       "updated_at": null,
+      "color": "grey",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC1DlVU8E4tSs4VL3gFkvoaAB93JYhYcR46E66JWpEd77o59DOEfa9Nmo-RIDIGL6FJPA&usqp=CAU"
     },
     {
@@ -213,6 +221,7 @@
       "seller": "Calvin Klein",
       "created_at": null,
       "updated_at": null,
+      "color": "red",
       "image": "https://img.joomcdn.net/92cd781f91e6ca86f3aa3fa0fdfba89c23857a5c_original.jpeg"
     },
     {
@@ -226,6 +235,7 @@
       "seller": "Calvin Klein",
       "created_at": null,
       "updated_at": null,
+      "color": "black",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShXMaD1-fbua6pOQsnI0xGMBl1F7bDF6Ue_w&usqp=CAU"
     },
     {
@@ -239,6 +249,7 @@
       "seller": "Calvin Klein",
       "created_at": null,
       "updated_at": null,
+      "color": "black",
       "image": "https://5.imimg.com/data5/SELLER/Default/2021/7/RL/IV/TI/123871663/new-product-500x500.jpeg"
     },
     {
@@ -252,6 +263,7 @@
       "seller": "Calvin Klein",
       "created_at": null,
       "updated_at": null,
+      "color": "brown",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE56_yo4D6Q09Y9Milb6Xy5CAZO4o35dZ1Sw&usqp=CAU"
     }
   ],

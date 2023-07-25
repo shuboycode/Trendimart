@@ -1,9 +1,6 @@
 import React, { createContext, useContext } from "react";
 
 import Container from "@mui/material/Container";
-
-// import styled from "@emotion/styled";
-
 import { Carousel } from "react-responsive-carousel";
 import bannerw from "../styles/components/assets/images/bannerw.svg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -50,16 +47,6 @@ const HomePage = () => {
   const category =
     slug === "all" ? data : data.filter((el) => el.category === slug);
 
-  // function handleClick() {
-  //   setShowFilterBox(!showFilterBox);
-  // }
-
-  // const [showFilterBox, setShowFilterBox] = useState(false);
-
-  // const handleClick = () => {
-  //   setShowFilterBox(!showFilterBox);
-  // };
-
   // consume data here.
   const sharedData = useContext(MyContext);
   console.log("sharedData:", sharedData);
@@ -86,11 +73,13 @@ const HomePage = () => {
       </section>
 
       {/* slider sec start here */}
+
       <section className="slider-sec">
         <ImageCard title="Trending now"></ImageCard>
       </section>
 
       {/* deals of the day */}
+      
       <Deals></Deals>
 
       {/* trending offer sec start here */}

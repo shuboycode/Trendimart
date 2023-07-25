@@ -18,18 +18,26 @@ const ProductPageSec = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [showFilterBox, setShowFilterBox] = useState(true);
   const [categoryAllProducts, setcategoryAllProducts] = useState([]);
+  const [maxValue, setmaxValue] = useState(0);
+
+  const [selectedColor, setSelectedColors] = useState([]);
+  const [categoryAllColor, setcategoryAllColor] = useState([]);
 
   const { slug } = useParams();
   const dispatch = useDispatch();
 
-  // let categoryAllProducts =
-  //   slug === "all" ? data : data.filter((el) => el.category === slug);
+  useEffect(() => {
+    console.log("maxValue:", maxValue);
+    // setmaxValue(maxValue);
+    return () => {};
+  }, [maxValue]);
 
   useEffect(() => {
     setcategoryAllProducts(
       slug === "all" ? data : data.filter((el) => el.category === slug)
     );
     setSelectedBrands([]);
+    setSelectedColors([]);
   }, [slug]);
 
   useEffect(() => {
@@ -43,12 +51,21 @@ const ProductPageSec = () => {
     setFilteredProducts(filteredProducts);
   }, [selectedBrands]);
 
+  useEffect(() => {
+    const filteredProducts = categoryAllProducts.filter((product) =>
+      selectedColor.includes(product.color)
+    );
+    console.log("filteredProducts color", filteredProducts);
+    setFilteredProducts(filteredProducts);
+  }, [selectedColor]);
+
   const handleClick = () => {
     setShowFilterBox(!showFilterBox);
   };
 
   const handleBrandCheckboxChange = (event) => {
     const brandName = event.target.value;
+    console.log("brandName name", brandName);
     if (event.target.checked) {
       setSelectedBrands((prevSelectedBrands) => [
         ...prevSelectedBrands,
@@ -61,14 +78,41 @@ const ProductPageSec = () => {
     }
   };
 
+  const handleColorCheckboxChange = (event) => {
+    const colorName = event.target.value;
+    console.log("colorName", colorName);
+    if (event.target.checked) {
+      setSelectedColors((prevSelectedColors) => [
+        ...prevSelectedColors,
+        colorName,
+      ]);
+    } else {
+      setSelectedColors((prevSelectedColors) =>
+        prevSelectedColors.filter((color) => color !== colorName)
+      );
+    }
+  };
+
   const handleFilterByPrice = (min, max) => {
-    const filteredProducts = categoryAllProducts.filter((product) =>
-     product.price >= (min/100) && product.price <= (max/100)
+    // const maxVaue = 1;
+
+    // console.log("max-value",maxVaue);
+    const filteredProducts = categoryAllProducts.filter(
+      (product) => product.price >= min / 100 && product.price <= max / 100
     );
     setFilteredProducts(filteredProducts);
-  
+    // max(maxValue);
+    setmaxValue(max);
+    // console.log("max-value", setmaxValue(max)0);
 
-    console.log("price filter is working",min, max, filteredProducts);
+    console.log("price filter is working", min, max, filteredProducts);
+  };
+
+
+  const clearButton = (event) => {
+    setSelectedBrands([]);
+    setSelectedColors([]);
+    setmaxValue(0);
   };
 
   return (
@@ -90,6 +134,9 @@ const ProductPageSec = () => {
                     handleFilterCategory={handleBrandCheckboxChange}
                     categoryAllProducts={categoryAllProducts}
                     handleFilterByPriceProp={handleFilterByPrice}
+                    categoryAllColor={categoryAllColor}
+                    handleColorCategory={handleColorCheckboxChange}
+                    handleClear={clearButton}
                   ></FilterBox>
                 )}
               </div>
@@ -124,7 +171,9 @@ const ProductPageSec = () => {
                         spacing={{ xs: 2, md: 3 }}
                         columns={{ xs: 4, sm: 8, md: 12 }}
                       >
-                        {selectedBrands.length === 0
+                        {selectedBrands.length === 0 &&
+                        selectedColor.length === 0 &&
+                        maxValue === 0
                           ? categoryAllProducts.map((item) => {
                               return (
                                 <CardTwo
@@ -154,6 +203,7 @@ const ProductPageSec = () => {
       </div>
     </>
   );
+  
 };
 
 export default ProductPageSec;

@@ -6,14 +6,15 @@ function valuetext(value) {
   return `$0{value}°C`;
 }
 
-export default function RangeSlider({handleFilterByPriceProp}) {
+export default function RangeSlider({ handleFilterByPriceProp }) {
   const [value, setValue] = React.useState([700, 2000]);
   const minValue = value[0];
+
   const maxValue = value[1];
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    handleFilterByPriceProp(minValue, maxValue )
+    handleFilterByPriceProp(minValue, maxValue);
   };
 
   return (
@@ -26,6 +27,7 @@ export default function RangeSlider({handleFilterByPriceProp}) {
         getAriaValueText={valuetext}
         max={2000}
         min={700}
+        // onChange={(e) =>  handleFilterByPriceProp(e)}
         className="plain-slider"
       />
 
