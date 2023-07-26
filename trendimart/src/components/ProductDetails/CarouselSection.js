@@ -63,6 +63,7 @@ const CarouselSection = (prop) => {
     console.log("id :", id);
 
     // await dispatch(fetchCartProducts({ id, singleItem }));
+    
     dispatch(addToCart(singleItem));
   };
 

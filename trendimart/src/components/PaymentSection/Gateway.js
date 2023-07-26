@@ -3,6 +3,7 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
+import { useSelector } from "react-redux";
 
 import {
   visaPic,
@@ -19,6 +20,13 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 
 const Gateway = () => {
+  const { cartItems, loading, error } = useSelector((state) => state.cart);
+  const totalPrice = cartItems.reduce((sum, cart) => sum + cart.price, 0);
+  const fee = 10;
+  const discount = 1.3;
+  const result = totalPrice * 100 * discount;
+  const discountResult = totalPrice * 100 * 0.3;
+  const totalAmount = result - discountResult + fee;
   return (
     <>
       <div className="card-payment">
@@ -131,7 +139,7 @@ const Gateway = () => {
             className="pay-button"
           >
             {" "}
-            Pay $164.23
+            Pay ${totalAmount}
           </Button>
         </div>
       </div>
