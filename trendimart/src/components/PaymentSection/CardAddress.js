@@ -8,6 +8,7 @@ import {
   Frame,
   Rup,
 } from "../../styles/components/assets/images";
+import { Routes, Route } from "react-router-dom";
 
 import SmallDropdown from "../atomComponents/SmallDropdown";
 import CloseIcon from "@mui/icons-material/Close";
@@ -15,6 +16,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import { fetchCart } from "../../store/slices/cartSlice";
+import ProductDetailsSection from "../../pages/ProductOpen";
+// import ProductOpen from "../../pages/ProductOpen";
+import { Link } from "react-router-dom";
 
 export default function IndeterminateCheckbox() {
   const [checked, setChecked] = React.useState([true, false]);
@@ -42,13 +46,13 @@ export default function IndeterminateCheckbox() {
   const { cartItems, loading, error } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const discount = 1.3; // 30%
-  
+
   useEffect(() => {
     // dispatching function to store
     dispatch(fetchCart());
   }, [dispatch]);
 
-  console.log("cartItems:",cartItems);
+  console.log("cartItems:", cartItems);
 
   if (loading) {
     return console.log("loading");
@@ -97,9 +101,7 @@ export default function IndeterminateCheckbox() {
 
                 <div className="data ml-3">
                   <h4 className="brand-title">{product.title}</h4>
-                  <h4 className="description mt-2">
-                   {product.brand}
-                  </h4>
+                  <h4 className="description mt-2">{product.brand}</h4>
                   <h4 className="info mt-2">{product.seller}</h4>
 
                   <div className="flex dropdown pt-2">
@@ -115,7 +117,6 @@ export default function IndeterminateCheckbox() {
                         className="left-image"
                       />
                       <span> {product.price * 100}</span>
-
                     </div>
 
                     <div className="number">
@@ -124,7 +125,9 @@ export default function IndeterminateCheckbox() {
                         alt="summer-collection"
                         className="left-image"
                       />
-                      <span className="text">{product.price * 100 * discount}</span>
+                      <span className="text">
+                        {product.price * 100 * discount}
+                      </span>
                     </div>
 
                     <span className="benifit">(30% off)</span>
@@ -148,7 +151,6 @@ export default function IndeterminateCheckbox() {
             </div>
           );
         })}
-        
       </div>
     </>
   );

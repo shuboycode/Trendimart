@@ -27,6 +27,7 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { Badge } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ProductDetailsSection from "../pages/ProductOpen";
 
 const Header = ({ InviteBrand = false }) => {
   const pages = ["Men", "Women", "Kids", "Shop", "Contact us"];
