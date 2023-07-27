@@ -4,8 +4,18 @@ import CardAddress from "../components/PaymentSection/CardAddress";
 import Container from "@mui/material/Container";
 import PlaceOrder from "../components/PaymentSection/PlaceOrder";
 import { Link } from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+import { useState } from "react";
 
 const PaymentPageSection = () => {
+  // const stripePromise = loadStripe(
+  //   "pk_test_51NYLknSDdQJOY36sGUCpDlA9hJcMDpxSIr1zec77Lfi9zSkQAIIUDMITryWhojASfCU4quM7ixqIKjGVF8dri3lk00Wazlk1Xj"
+  // );
+
+  // console.log("stripePromise",stripePromise);
   return (
     <>
       <Container
@@ -15,7 +25,7 @@ const PaymentPageSection = () => {
       >
         <div className="justify-center flex">
           <div className="address-wrapper flex">
-            <div className="">
+            <div className="address-style">
               <div className="address flex">
                 <div>
                   <span>
@@ -24,8 +34,8 @@ const PaymentPageSection = () => {
                   </span>
 
                   <p className="pt-1">
-                    Nehar singh building, near ratan college, sohana Mohali
-                    140308, Sohana, Mohali
+                    building, near ratan college, sohana Mohali 140308, Sohana,
+                    Mohali,singh Mohali
                   </p>
                 </div>
 
@@ -45,7 +55,10 @@ const PaymentPageSection = () => {
             </div>
 
             <div className="price">
+            
               <PlaceOrder></PlaceOrder>
+            
+              {/* <PlaceOrder></PlaceOrder> */}
             </div>
           </div>
         </div>
@@ -55,3 +68,5 @@ const PaymentPageSection = () => {
 };
 
 export default PaymentPageSection;
+
+// pk_test_51NYLknSDdQJOY36sGUCpDlA9hJcMDpxSIr1zec77Lfi9zSkQAIIUDMITryWhojASfCU4quM7ixqIKjGVF8dri3lk00Wazlk1Xj
