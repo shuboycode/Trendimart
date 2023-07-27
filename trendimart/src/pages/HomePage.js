@@ -79,7 +79,7 @@ const HomePage = () => {
       </section>
 
       {/* deals of the day */}
-      
+
       <Deals></Deals>
 
       {/* trending offer sec start here */}

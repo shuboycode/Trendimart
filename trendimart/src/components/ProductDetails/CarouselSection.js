@@ -20,7 +20,10 @@ import { Link, Route, Routes } from "react-router-dom";
 import { addToCart, fetchCartProducts } from "../../store/slices/cartSlice";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CircularProgress from "@mui/material/CircularProgress";
-import item, { addToWishlist, postItemToServer } from "../../store/slices/wishlistSlice";
+import item, {
+  addToWishlist,
+  postItemToServer,
+} from "../../store/slices/wishlistSlice";
 // import wishlistSlice from "../../store/slices/wishlistSlice";
 
 const CarouselSection = (prop) => {
@@ -60,6 +63,7 @@ const CarouselSection = (prop) => {
     console.log("id :", id);
 
     // await dispatch(fetchCartProducts({ id, singleItem }));
+    
     dispatch(addToCart(singleItem));
   };
 
@@ -86,22 +90,13 @@ const CarouselSection = (prop) => {
   }
 
   return (
+
     <div className="product-wrapper flex">
       <div className="left-wrapper flex">
         <div className="render-image">
           <div>
             {Array.from({ length: 5 }, (_, i) => (
               <div className="hover-card">
-                {/* <img
-                  src={
-                    prop.image
-                      ? prop.image
-                      : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
-                  }
-                  key={i}
-                  alt="summer-collection"
-                  className="left-image pointer"
-                /> */}
                 <img
                   src={singleItem?.image}
                   alt="summer-collection"
@@ -121,10 +116,7 @@ const CarouselSection = (prop) => {
       </div>
 
       <div className="product-content-wrapper">
-        <h3 className="content-heading font-weight-700">
-          {/* Womens Denim Jacket (Blue) */}
-          {singleItem?.title}
-        </h3>
+        <h3 className="content-heading font-weight-700">{singleItem?.title}</h3>
         <h4 className="brand-text mt-6 font-weight-400">
           {" "}
           {singleItem?.brand}
@@ -178,39 +170,13 @@ const CarouselSection = (prop) => {
 
         <div className="color-selector">
           <span className="mb-5 font-weight-700">Select Color</span>
-          {/* 
-          <img
-            src={
-              prop.image
-                ? prop.image
-                : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
-            }
-            alt="summer-collection"
-            className="left-image"
-          /> */}
-          {/* <img
-            src={
-              prop.image
-                ? prop.image
-                : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
-            }
-            alt="summer-collection"
-            className="left-image"
-          /> */}
+
           <img
             src={singleItem?.image}
             alt="summer-collection"
             className="product-img"
           />
-          {/* <img
-            src={
-              prop.image
-                ? prop.image
-                : "https://fixthephoto.com/images/content/mannequin-clothing-photography.jpg"
-            }
-            alt="summer-collection"
-            className="left-image"
-          /> */}
+
           <img
             src={singleItem?.image}
             alt="summer-collection"
@@ -277,11 +243,7 @@ const CarouselSection = (prop) => {
             >
               {isShown ? (
                 <Link to="/Payment">
-                  <Button
-                    onClick={() => {
-                    }}
-                    className="pay-button"
-                  >
+                  <Button onClick={() => {}} className="pay-button">
                     Go to cart
                   </Button>
                 </Link>
@@ -310,7 +272,7 @@ const CarouselSection = (prop) => {
                   className="border-icon"
                   onClick={() => {
                     // handleWishlistClick();
-                    dispatch(addToWishlist(singleItem))
+                    dispatch(addToWishlist(singleItem));
                   }}
                 />
               )}
@@ -319,6 +281,9 @@ const CarouselSection = (prop) => {
         </div>
       </div>
     </div>
+
+
+  
   );
 };
 

@@ -27,6 +27,7 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { Badge } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ProductDetailsSection from "../pages/ProductOpen";
 
 const Header = ({ InviteBrand = false }) => {
   const pages = ["Men", "Women", "Kids", "Shop", "Contact us"];
@@ -55,14 +56,13 @@ const Header = ({ InviteBrand = false }) => {
 
   const wishlistRoute = "/MyWishlist";
   const PaymentRoute = "/Payment";
-  const [CartItem, setCartItem] = useState(0);
-  // const CartItemCount = useSelector((state) => state.counter);
-  const { cartCount } = useSelector((state) => state.cart);
-  console.log("cartcount", cartCount);
+  const [CartItemCount, setCartItem] = useState(0);
+
+  const { cartItems } = useSelector((state) => state.cart);
 
   useEffect(() => {
-    setCartItem(cartCount);
-  }, [cartCount]);
+    setCartItem(cartItems);
+  }, []);
 
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -207,7 +207,11 @@ const Header = ({ InviteBrand = false }) => {
                 <Link to={wishlistRoute}>
                   <FavoriteBorderIcon />
                 </Link>
-                <Badge badgeContent={CartItem} color="primary" className="ml-4">
+                <Badge
+                  badgeContent={cartItems.length}
+                  color="primary"
+                  className="ml-4"
+                >
                   <Link to={PaymentRoute}>
                     <ShoppingCartOutlinedIcon />
                   </Link>

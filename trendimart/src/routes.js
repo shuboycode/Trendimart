@@ -15,6 +15,7 @@ import ProductDetailsSection from "./pages/ProductOpen";
 import ContactUs from "./pages/ContactUs";
 import MyWishlist from "./pages/MyWishlist";
 import Gateway from "./components/PaymentSection/Gateway";
+// import ProductOpen from "./pages/ProductOpen";
 
 const AppRoutes = () => {
   return (
@@ -37,6 +38,7 @@ const AppRoutes = () => {
         <Route path="ContactUs" element={<ContactUs/>}/>
         <Route path="MyWishlist" element={<MyWishlist/>}/>
         {/* <Route path="Gateway" element={<Gateway/>}/> */}
+       
 
 
 

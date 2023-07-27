@@ -11,8 +11,17 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Gateway from "../PaymentSection/Gateway";
+import { loadStripe } from "@stripe/stripe-js";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 export default function BasicTextFields() {
+  const stripePromise = loadStripe(
+    "pk_test_51NYLknSDdQJOY36sGUCpDlA9hJcMDpxSIr1zec77Lfi9zSkQAIIUDMITryWhojASfCU4quM7ixqIKjGVF8dri3lk00Wazlk1Xj"
+  );
+
+  
+  console.log("stripePromise",stripePromise);
   const [formVisible, setFormVisible] = useState(false);
 
   const toggleFormVisibility = () => {
@@ -186,7 +195,10 @@ export default function BasicTextFields() {
 
         <div className="submit-button mt-7">
           {formVisible ? (
-            <Gateway></Gateway>
+              <Elements stripe={stripePromise}>
+                <Gateway></Gateway>
+              </Elements>
+          
           ) : (
             <Button
               onClick={toggleFormVisibility}

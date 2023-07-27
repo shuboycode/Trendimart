@@ -8,7 +8,7 @@ import Divider from "@mui/material/Divider";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-const StyledMenu = styled((props) => (
+const StyledMenu = styled((props, handleSorting) => (
   <Menu
     elevation={0}
     anchorOrigin={{
@@ -51,7 +51,7 @@ const StyledMenu = styled((props) => (
   },
 }));
 
-export default function DropdownMenu() {
+export default function DropdownMenu({ handleSorting }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -71,6 +71,11 @@ export default function DropdownMenu() {
         className="menu-heading"
         disableElevation
         onClick={handleClick}
+        // onClick={() => {
+        //   handleClick();
+        //   handleClose();
+        // }}
+
         endIcon={<KeyboardArrowDownIcon />}
       >
         Sort By
@@ -82,21 +87,34 @@ export default function DropdownMenu() {
         }}
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
+        onClick={(e) => handleSorting(e)}
       >
-        <MenuItem onClick={handleClose} disableRipple>
+        {/* <MenuItem onClick={(e) => handleSorting(e)} disableRipple>
           Popularity
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
+        </MenuItem> */}
+        <MenuItem
+          onClick={(e) => {
+            handleSorting(e);
+            handleClose();
+          }}
+          value={"Price - Low to High"}
+          disableRipple
+        >
           Price - Low to High
         </MenuItem>
         <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem
+          onClick={(e) => {
+            handleSorting(e);
+            handleClose();
+          }}
+          disableRipple
+        >
           Price - High to Low
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
+        {/* <MenuItem onClick={handleClose} disableRipple>
           Newest
-        </MenuItem>
+        </MenuItem> */}
       </StyledMenu>
     </div>
   );

@@ -17,7 +17,7 @@ const PaymentPageSection = () => {
       >
         <div className="justify-center">
           <div className="address-wrapper flex">
-            <div className="">
+          
               <div className="address flex">
                 <div>
                   <span>
@@ -39,7 +39,8 @@ const PaymentPageSection = () => {
                   {" "}
                   CHANGE ADDRESS
                 </Button>
-              </div>
+             
+             
 
               <div className="">
                 <CardAddress></CardAddress>

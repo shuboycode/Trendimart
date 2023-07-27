@@ -16,6 +16,7 @@ const ProductPageSec = () => {
 
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [sortProduct, setProduct] = useState([]);
   const [showFilterBox, setShowFilterBox] = useState(true);
   const [categoryAllProducts, setcategoryAllProducts] = useState([]);
   const [maxValue, setmaxValue] = useState(0);
@@ -23,13 +24,16 @@ const ProductPageSec = () => {
   const [selectedColor, setSelectedColors] = useState([]);
   const [categoryAllColor, setcategoryAllColor] = useState([]);
   const [clearClicked, setClearClicked] = useState(false);
+  const [resultSet, setResultSet] = useState(categoryAllProducts);
+
+  const [sortOrder, setSortOrder] = useState(null);
 
   const { slug } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
     console.log("maxValue:", maxValue);
-    // setmaxValue(maxValue);
+
     return () => {};
   }, [maxValue]);
 
@@ -39,6 +43,7 @@ const ProductPageSec = () => {
     );
     setSelectedBrands([]);
     setSelectedColors([]);
+    // setProduct([]);
     setmaxValue(0);
   }, [slug]);
 
@@ -113,6 +118,25 @@ const ProductPageSec = () => {
     setClearClicked(true);
   };
 
+  const handleSortingButtonClick = (event) => {
+    const sortName = event.target.innerHTML;
+    console.log("sortName", event);
+
+    const sortedProducts = [...categoryAllProducts].sort((a, b) => {
+      if (sortName === "Price - Low to High") {
+        return a.price - b.price;
+      } else if (sortName === "Price - High to Low") {
+        return b.price - a.price;
+      }
+      return 0;
+    });
+
+    setcategoryAllProducts(sortedProducts);
+
+    console.log("sortedProducts", sortedProducts);
+    console.log("sortName", sortName);
+  };
+
   return (
     <>
       {/* content section start here */}
@@ -159,7 +183,10 @@ const ProductPageSec = () => {
                     </div>
 
                     <div className="right-contentbaseline">
-                      <DropdownMenu className="drop-menu"></DropdownMenu>
+                      <DropdownMenu
+                        handleSorting={handleSortingButtonClick}
+                        className="drop-menu"
+                      ></DropdownMenu>
                     </div>
                   </div>
                 </div>
