@@ -92,7 +92,8 @@ const ContactUs = () => {
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                title="google map"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
