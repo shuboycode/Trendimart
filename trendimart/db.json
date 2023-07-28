@@ -268,5 +268,14 @@
     }
   ],
   "cart": [],
-  "wishlist": []
+  "wishlist": [],
+  "users": [
+    {
+      "name": "Brijesh",
+      "lastName": "Rohilla",
+      "password": "Welcome@123",
+      "email": "Brijesh@softobiz.com",
+      "id": 1
+    }
+  ]
 }
