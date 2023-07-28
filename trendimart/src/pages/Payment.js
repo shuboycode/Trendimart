@@ -11,11 +11,6 @@ import { Elements } from "@stripe/react-stripe-js";
 import { useState } from "react";
 
 const PaymentPageSection = () => {
-  // const stripePromise = loadStripe(
-  //   "pk_test_51NYLknSDdQJOY36sGUCpDlA9hJcMDpxSIr1zec77Lfi9zSkQAIIUDMITryWhojASfCU4quM7ixqIKjGVF8dri3lk00Wazlk1Xj"
-  // );
-
-  // console.log("stripePromise",stripePromise);
   return (
     <>
       <Container
@@ -55,10 +50,7 @@ const PaymentPageSection = () => {
             </div>
 
             <div className="price">
-            
               <PlaceOrder></PlaceOrder>
-            
-              {/* <PlaceOrder></PlaceOrder> */}
             </div>
           </div>
         </div>
@@ -68,5 +60,3 @@ const PaymentPageSection = () => {
 };
 
 export default PaymentPageSection;
-
-// pk_test_51NYLknSDdQJOY36sGUCpDlA9hJcMDpxSIr1zec77Lfi9zSkQAIIUDMITryWhojASfCU4quM7ixqIKjGVF8dri3lk00Wazlk1Xj

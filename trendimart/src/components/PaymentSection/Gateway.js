@@ -7,6 +7,9 @@ import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import { CardElement } from "@stripe/react-stripe-js";
 import { ElementsConsumer } from "@stripe/react-stripe-js";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+
+import { useNavigate } from "react-router";
 
 import {
   visaPic,
@@ -23,68 +26,83 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { useState } from "react";
 import { useStripe } from "@stripe/react-stripe-js";
 import { useElements } from "@stripe/react-stripe-js";
+import PaymentGateway from "../../pages/PaymentGateway";
+import { Link } from "@mui/material";
 
 const Gateway = () => {
+  const PaymentGateway = "/PaymentGateway";
+  const navigate = useNavigate();
+
   const { cartItems, loading, error } = useSelector((state) => state.cart);
   const totalPrice = cartItems.reduce((sum, cart) => sum + cart.price, 0);
+
   const fee = 10;
   const discount = 1.3;
   const result = totalPrice * 100 * discount;
   const discountResult = totalPrice * 100 * 0.3;
   const totalAmount = result - discountResult + fee;
-  const stripe = useStripe();
-  const elements = useElements();
+
   const [errorCard, setErrorCard] = useState(null);
   const [loadingCard, setLoadingCard] = useState(false);
+  const [amount, setAmount] = useState("");
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   const { stripe, elements } = this.props;
-  //   if (!stripe || !elements) return;
-  //   const card = elements.getElement(CardElement);
-  //   console.log("card ",card )
-  //   const result = await stripe.createToken(card);
-  //   console.log("result ",result)
-
-  //   if (result.error) {
-  //     console.log("error", result.error.message);
-  //   }
-  //   else{
-  //     console.log(result.token);
-  //   }
-  // };
+  const stripe = useStripe();
+  const elements = useElements();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setLoadingCard(true);
+
+    if (!stripe || !elements) {
+      return;
+    }
 
     const cardElement = elements.getElement(CardElement);
+    console.log("cardElement", cardElement);
 
-    try {
-      // Create a PaymentMethod from the card information
-      const { paymentMethod } = await stripe.createPaymentMethod({
-        type: "card",
-        card: cardElement,
-      });
+    const { paymentMethod, error } = await stripe.createPaymentMethod({
+      type: "card",
+      card: cardElement,
+    });
 
-      setLoadingCard(false);
-    } catch (err) {
-      setErrorCard("Error processing payment: " + err.message);
-      setLoadingCard(false);
+    if (error) {
+      console.log("Error:", error.message);
+      return;
     }
+
+    // console.log("Payment method created:", paymentMethod);
+    console.log("Payment is successful");
   };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Card details:</label>
-          <CardElement />
+          <label>
+            Amount:
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              required
+            />
+          </label>
         </div>
-        <button type="submit" disabled={!stripe || loading}>
-          {loading ? "Processing..." : "Pay"}
+        <div className="mt-5">
+          <label>
+            Card Details:
+            <CardElement className="mt-5" />
+          </label>
+        </div>
+
+        <button
+          onClick={() => navigate("/PaymentGateway")}
+          disabled={!stripe}
+          className="pay-button mt-5"
+          variant="contained"
+        >
+          {" "}
+          Pay Now
         </button>
-        {error && <div>{error}</div>}
       </form>
 
       {/* <div className="card-payment">
