@@ -110,7 +110,7 @@ const PlaceOrder = () => {
 
         <div>
           {formVisible ? (
-            <FormComponents></FormComponents>
+            <FormComponents totalAmount={totalAmount}></FormComponents>
           ) : (
             <Button
               onClick={toggleFormVisibility}

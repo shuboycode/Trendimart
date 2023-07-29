@@ -12,18 +12,18 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Gateway from "../PaymentSection/Gateway";
 import { loadStripe } from "@stripe/stripe-js";
-import {Link} from "@mui/material";
+import { Link } from "@mui/material";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import PaymentGateway from "../../pages/PaymentGateway";
 
-export default function BasicTextFields() {
+export default function BasicTextFields({totalAmount}) {
   const stripePromise = loadStripe(
     "pk_test_51NYLknSDdQJOY36sGUCpDlA9hJcMDpxSIr1zec77Lfi9zSkQAIIUDMITryWhojASfCU4quM7ixqIKjGVF8dri3lk00Wazlk1Xj"
   );
 
-  
-  console.log("stripePromise",stripePromise);
+
+  console.log("stripePromise", stripePromise);
   const [formVisible, setFormVisible] = useState(false);
 
   const toggleFormVisibility = () => {
@@ -188,7 +188,7 @@ export default function BasicTextFields() {
                 <FormControlLabel
                   control={<Checkbox defaultChecked />}
                   label="My shipping and billing address are same"
-                  className="mt-5" 
+                  className="mt-5"
                 />
               </FormGroup>
             </div>
@@ -197,12 +197,12 @@ export default function BasicTextFields() {
 
         <div className="submit-button mt-7">
           {formVisible ? (
-              <Elements stripe={stripePromise}>
-                 <Link to="/PaymentGateway">
+            <Elements stripe={stripePromise}>
+              {/* <Link to="/PaymentGateway" width='100%'> */}
                 <Gateway></Gateway>
-                </Link>
-              </Elements>
-          
+              {/* </Link> */}
+            </Elements>
+
           ) : (
             <Button
               onClick={toggleFormVisibility}
