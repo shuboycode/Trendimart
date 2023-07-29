@@ -101,6 +101,7 @@ const PlaceOrder = () => {
                     className="left-image"
                   />
                   <span className="number">{totalAmount}</span>
+                 
                 </div>
               </div>
             </div>

@@ -2,6 +2,10 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
+// import Box from "@mui/material/Box";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 import {
   Jacket,
   Rupees,
@@ -18,11 +22,29 @@ import { useState } from "react";
 
 import { fetchCart } from "../../store/slices/cartSlice";
 // import removeToCart from "../../store/slices/cartSlice";
-import {removeFromWishlist} from "../../store/slices/cartSlice";
+import { removeFromWishlist } from "../../store/slices/cartSlice";
 import singleItem from "../../store/slices/cardSlice";
 import { Link } from "react-router-dom";
 
-export default function IndeterminateCheckbox() {
+export default function IndeterminateCheckbox({ heading }) {
+  const [quantity, setQuantity] = useState(1);
+  const [age, setAge] = React.useState("");
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  // Event handler for the quantity select input change
+  const handleQuantityChange = (event) => {
+    const newQuantity = parseInt(event.target.value);
+    setQuantity(newQuantity);
+  };
+
+  const handleSelectChange = (event) => {
+    handleQuantityChange(event);
+    handleChange(event);
+  };
+
   const [checked, setChecked] = React.useState([true, false]);
   const [isVisible, setIsVisible] = useState(true);
   const [isShown, setIsShown] = useState(false);
@@ -65,11 +87,6 @@ export default function IndeterminateCheckbox() {
   if (error) {
     return console.log("error ", error);
   }
-
-  // const removeFromWishlist = () => {
-  //   dispatch(removeToCart(singleItem));
-  //   console.log("removeFromWishlist action dispatched!");
-  // };
 
   return (
     <>
@@ -205,10 +222,29 @@ export default function IndeterminateCheckbox() {
                   <h4 className="brand-title">{product.title}</h4>
                   <h4 className="description mt-2">{product.brand}</h4>
                   <h4 className="info mt-2">{product.seller}</h4>
-
                   <div className="flex dropdown pt-2">
                     <SmallDropdown heading="Size"></SmallDropdown>
-                    <SmallDropdown heading="Qty"></SmallDropdown>
+
+                    <Box sx={{ minWidth: 12 }} className="dropdown">
+                      <FormControl
+                        sx={{ m: 1, minWidth: 120 }}
+                        size="small"
+                        variant="filled"
+                      >
+                        <Select
+                          labelId="demo-select-small-label"
+                          id="demo-select-small"
+                          value={age}
+                          onChange={handleSelectChange}
+                          displayEmpty
+                        >
+                          <MenuItem value="">Qty</MenuItem>
+                          <MenuItem value={1}>1</MenuItem>
+                          <MenuItem value={2}>2</MenuItem>
+                          <MenuItem value={3}>3</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
                   </div>
 
                   <div className="number-wrapper flex pt-2">
@@ -218,7 +254,8 @@ export default function IndeterminateCheckbox() {
                         alt="summer-collection"
                         className="left-image"
                       />
-                      <span> {product.price * 100}</span>
+                      {/* <span> {product.price * 100}    </span> */}
+                      <span>{product.price * 100 * quantity}</span>
                     </div>
 
                     <div className="number">
