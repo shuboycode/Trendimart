@@ -350,3 +350,18 @@
   background-color: rgba(0, 36, 130, 1);
 }
 
+.submit-button {
+  width: 100%;
+}
+
+form {
+  width: 100%;
+}
+
+.StripeElement.StripeElement--empty {
+  border: 1px solid grey;
+  border-radius: 12px;
+  height: 43px;
+  padding: 13px;
+  margin-top: 16px;
+}

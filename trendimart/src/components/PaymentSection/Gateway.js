@@ -4,7 +4,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { useSelector } from "react-redux";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { CardElement } from "@stripe/react-stripe-js";
 import { ElementsConsumer } from "@stripe/react-stripe-js";
 
@@ -81,9 +81,14 @@ const Gateway = () => {
           <label>Card details:</label>
           <CardElement />
         </div>
-        <button type="submit" disabled={!stripe || loading}>
-          {loading ? "Processing..." : "Pay"}
-        </button>
+        <Box display="flex" justifyContent="flex-end" mt={4}>
+          <Button type="submit" variant="contained"
+            disableElevation="true"
+            className="pay-button" disabled={!stripe || loading}>
+            {loading ? "Processing..." : "Pay"}
+          </Button>
+        </Box>
+
         {error && <div>{error}</div>}
       </form>
 
