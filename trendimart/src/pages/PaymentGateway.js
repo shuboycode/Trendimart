@@ -14,10 +14,10 @@ const PaymentGateway = () => {
         <h1 className="heading flex-center">Success</h1>
         <p className="info">We received your purchase request</p>
       </div>
-      <Link to="/" style={{
+      <a href="/" style={{
         color: "deeppink",
         marginTop: "24px"
-      }}>continue shopping</Link>
+      }}>continue shopping</a>
     </div>
   );
 };
