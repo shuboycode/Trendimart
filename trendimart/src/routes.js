@@ -16,6 +16,7 @@ import ContactUs from "./pages/ContactUs";
 import MyWishlist from "./pages/MyWishlist";
 import Gateway from "./components/PaymentSection/Gateway";
 import PaymentGateway from "./pages/PaymentGateway";
+import SignIn from "./pages/signin";
 // import ProductOpen from "./pages/ProductOpen";
 
 const AppRoutes = () => {
@@ -46,6 +47,7 @@ const AppRoutes = () => {
 
       </Route>
       <Route path="/PaymentGateway" element={<PaymentGateway/>}/>
+      <Route path="/signin" element={<SignIn/>}/>
     </Routes>
   );
 };

@@ -3,6 +3,7 @@ import React, { createContext } from "react";
 
 import AppRoutes from "./routes";
 import { useDispatch, useSelector } from "react-redux";
+import { AuthProvider } from "./context/authContext";
 
 export const MyContext = createContext();
 
@@ -18,9 +19,11 @@ function App() {
 
   return (
     <>
-      <MyContext.Provider value={sharedData}>
-        <AppRoutes />
-      </MyContext.Provider>
+      <AuthProvider>
+        <MyContext.Provider value={sharedData}>
+          <AppRoutes />
+        </MyContext.Provider>
+      </AuthProvider>
     </>
   );
 }

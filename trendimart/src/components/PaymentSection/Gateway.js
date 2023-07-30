@@ -28,7 +28,7 @@ import { useStripe } from "@stripe/react-stripe-js";
 import { useElements } from "@stripe/react-stripe-js";
 import PaymentGateway from "../../pages/PaymentGateway";
 import { Link } from "@mui/material";
-import { Padding } from "@mui/icons-material";
+import { ConstructionOutlined, Padding } from "@mui/icons-material";
 
 const Gateway = () => {
   const PaymentGateway = "/PaymentGateway";
@@ -69,9 +69,9 @@ const Gateway = () => {
       console.log("Error:", error.message);
       return;
     }
-
-    // console.log("Payment method created:", paymentMethod);
+    
     console.log("Payment is successful");
+    navigate("/PaymentGateway")
   };
 
   return (
@@ -95,7 +95,7 @@ const Gateway = () => {
         </div>
 
         <button
-          onClick={() => navigate("/PaymentGateway")}
+          type="submit"
           disabled={!stripe}
           className="pay-button mt-5"
           variant="contained"

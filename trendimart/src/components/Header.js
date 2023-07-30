@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "@mui/material/Button";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -25,11 +25,13 @@ import LogoHead from "../styles/components/assets/images/LogoHead.jpg";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { Badge } from "@mui/material";
+import { Badge, ButtonBase } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import ProductDetailsSection from "../pages/ProductOpen";
+import { AuthContext } from "../context/authContext";
 
 const Header = ({ InviteBrand = false }) => {
+  const { user, handleSignOut } = useContext(AuthContext);
   const pages = ["Men", "Women", "Kids", "Shop", "Contact us"];
   const navLinks = [
     {
@@ -64,7 +66,7 @@ const Header = ({ InviteBrand = false }) => {
     setCartItem(cartItems);
   }, []);
 
-  const settings = ["Profile", "Account", "Dashboard", "Logout"];
+  const settings = ["Profile", "Logout"];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -218,7 +220,7 @@ const Header = ({ InviteBrand = false }) => {
                 </Badge>
               </div>
 
-              <Tooltip title="Open settings">
+              {/* <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar alt="Remy Sharp" src={image} />
                   <div className="content">
@@ -247,7 +249,58 @@ const Header = ({ InviteBrand = false }) => {
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}
-              </Menu>
+              </Menu> */}
+
+              {!user ? (
+                <Link to="/signin">
+                  <Button variant="contained" size="small" >Login</Button>
+                </Link>
+              ) : (
+                <>
+                  <Tooltip title="Open settings">
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                      <Avatar alt="Remy Sharp" src={image} />
+                      <div className="content">
+                        <span>{user.name}</span>
+                      </div>
+                    </IconButton>
+                  </Tooltip>
+                  <Menu
+                    sx={{ mt: "45px" }}
+                    id="menu-appbar"
+                    anchorEl={anchorElUser}
+                    anchorOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    open={Boolean(anchorElUser)}
+                    onClose={handleCloseUserMenu}
+                  >
+                    {settings.map((setting) =>
+                      setting === "Logout" ? (
+                        <MenuItem
+                          key={setting}
+                          onClick={() => {
+                            handleCloseUserMenu();
+                            handleSignOut()
+                          }}
+                        >
+                          <Typography textAlign="center">{setting}</Typography>
+                        </MenuItem>
+                      ) : (
+                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                          <Typography textAlign="center">{setting}</Typography>
+                        </MenuItem>
+                      )
+                    )}
+                  </Menu>
+                </>
+              )}
             </Box>
           </Toolbar>
         </Container>
